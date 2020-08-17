@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/image.jpg">
+    <title>Gráficos da COVID-19 em São Carlos</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: radial-gradient(circle, rgb(233, 241, 255) 100%, rgb(125, 90, 221) 0%);  
+        }
+
+        .c3-axis-y text {
+            font-size: 15px;
+        }
+
+        .c3-axis-x text {
+            font-size: 15px;
+        }
+
+        .c3-title {
+            font-size: 180%;
+        }
+
+        .c3-legend-item text {
+            font-size: 15px;
+        }
+
+        #titulo {
+            font-size: xx-large;
+            font-family: sans-serif;
+            color: black;
+            font-weight: 300;
+        }
+
+        #subti {
+            font-size: large;
+        }
+
+
+
+        .chart__{
+            background-color: rgba(255, 255, 255, 0.746);
+            box-shadow: 0 0 0 3px black; 
+            border-radius: 10px; 
+            transition: box-shadow 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, background-color 3.5s;
+        }
+        .chart__:hover{
+            background-color: rgb(255, 255, 255);
+            /* border-radius: 50px; */
+            box-shadow: 0 0 0 5px black;  
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 0.5s;
+        }
+
+        .gra {
+            padding: 1%;
+            width: 30%;
+            height: auto;
+
+            transition: box-shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+        }
+
+        .gra:hover {
+            background-color: rgba(238, 250, 225, 0.986);
+            border-radius: 50px;
+            box-shadow: 0 0 20px 0 black;
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+        }
+
+        p#texto_exp {
+            text-align: justify;
+            font: normal 16pt Arial;
+            line-height: 1.1;
+
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .exp {
+            width: 500px;
+            height: 30px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 39px;
+            margin-bottom: 10px;
+            text-align: center;
+            background: rgb(136, 207, 253);
+            transition-property: background, height, border-radius, padding-left, padding-right, transform, width;
+            transition-duration: 4s, 2s, 5s, 2s, 2s, 3s, 1.5s;
+            transition-timing-function: ease-in-out, ease, ease-out, ease, ease, ease-in;
+        }
+
+        div.exp:hover {
+            width: 50%;
+            height: fit-content;
+            padding-left: 35px;
+            padding-right: 35px;
+            background: #d2dffc;
+            border-radius: 60px;
+            transform: scale(1.13);
+        }
+
+        div.exp:hover p#texto_exp {
+            color: rgb(14, 0, 63);
+            transition: color 3s ease-in 2s;
+        }
+
+        h2 {
+            font-weight: normal;
+        }
+
+        .two {
+            height: auto;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            transition: transform 2.5s cubic-bezier(1, -1, 0.735, 1) 0s;
+
+        }
+
+        .two:hover {
+            transform: rotate(360deg) scale(1.2);
+            transition: transform 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load c3.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet">
+
+    <!-- Load d3.js and c3.js 
+    <script src="d3.v5.min.js" charset="utf-8"></script>
+    -->
+    <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" title="@covid19saocarlos"><img
+            class="two" src="../images/insta.jpg" alt="Instagrão"></img></a>
+
+
+    <header>
+
+        <span id="titulo">Dados sobre a COVID-19 em São Carlos - SP <br><span id="subti">Dados retirados de <a
+                    style="color: rgb(81, 50, 255);" href="http://coronavirus.saocarlos.sp.gov.br/" target="_blank">Subcomitê de
+                    Comunicação de Combate ao Coronavírus</a></span><br>
+            <div id="xambra">
+                <span style="font-size: large;">Siga <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br"
+                        target="_blank" style="font-size: large; color: rgb(81, 50, 255);">@covid19saocarlos</a> no
+                    instagram</span>
+
+            </div>
+            <span style="font-size: large; color: rgb(255, 109, 11);">Este gráfico é interativo, clique nas tags da
+                legenda</span>
+    </header>
+    <br>
+    <div id="chart2" class="chart__"></div>
+
+
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.js"></script>
+    <script>
+        function showMore() {
+            document.getElementById("xambra").innerHTML = `<a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" onmouseout='showLess()'>
+    <img src="../images/image.jpg" alt="" srcset="" style="width:160px;height: auto;">
+    </a>`;
+        }
+
+        function showLess() {
+            document.getElementById("xambra").innerHTML = `<span onmouseover='showMore()' style="font-size: large; color: rgb(81, 50, 255);">Siga @covid19saocarlos no instagram</span>`;
+        }
+        var B = document.body, H = document.documentElement, height
+
+        if (typeof document.height !== 'undefined') {
+            height = document.height // For webkit browsers
+        } else {
+            height = Math.max(B.scrollHeight, B.offsetHeight, H.clientHeight, H.scrollHeight, H.offsetHeight);
+        }
+
+        var chart3 = c3.generate({
+                bindto: '#chart2',
+                size: { height: height * 0.75 },
+                data: {
+                    x: 'x',
+                    columns: [
+                        ['x', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'],
+                        ['Total de internados', 0, 0, 0, 3, 8, 9, 8, 9, 19, 19, 22, 24, 24, 27, 29, 25, 26, 27, 29, 23, 22, 25, 25, 32, 31, 29, 27, 28, 25, 24, 23, 22, 21, 13, 17, 24, 23, 25, 20, 20, 17, 15, 16, 13, 18, 20, 11, 12, 10, 11, 5, 8, 7, 12, 15, 15, 13, 12, 5, 9, 10, 13, 16, 19, 16, 16, 20, 16, 20, 24, 25, 19, 17, 19, 18, 15, 13, 14, 16, 15, 19, 22, 22, 29, 33, 37, 34, 35, 41, 39, 39, 34, 29, 32, 32, 34, 34, 35, 40, 34, 27, 31, 27, 29, 27, 27, 35, 33, 33, 34, 32, 36, 30, 35, 34, 32, 39, 38, 34, 39, 36, 38, 38, 35, 32, 33, 33, 31, 30, 28, 29, 30, 36, 38, 41, 35, 38, 36, 38, 41, 37, 36, 35, 34, 44, 45, 36, 34, 34, 32, 30, 39, 31, 34], // INTERNADOS
+                        ['Média móvel (7 dias) de internados', 4, 4, 4, 4, 5, 8, 11, 13, 16, 18, 21, 23, 24, 25, 26, 27, 27, 26, 25, 25, 26, 27, 27, 27, 28, 28, 28, 27, 25, 24, 22, 21, 21, 20, 21, 20, 20, 21, 21, 19, 18, 17, 17, 16, 15, 14, 14, 12, 11, 9, 9, 10, 10, 11, 12, 11, 12, 11, 11, 11, 12, 13, 14, 16, 17, 18, 19, 20, 20, 20, 20, 20, 20, 18, 16, 16, 16, 16, 16, 17, 20, 22, 25, 28, 30, 33, 35, 37, 37, 36, 36, 35, 34, 33, 33, 34, 34, 34, 34, 33, 32, 31, 29, 29, 30, 30, 31, 32, 33, 33, 33, 33, 33, 34, 35, 35, 36, 36, 37, 37, 37, 36, 36, 35, 34, 33, 32, 31, 31, 31, 32, 33, 34, 35, 36, 37, 38, 38, 37, 37, 37, 38, 39, 38, 38, 37, 37, 36, 36, 34, 33, 33, 33, 33],
+                        ['Óbitos em investigação', 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 9, 10, 11, 10, 9, 4, 4, 5, 5, 7, 7, 5, 6, 6, 8, 6, 6, 6, 6, 6, 7, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // �BITOS EM INVESTIGA��
+                        ['Óbitos confirmados', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7, 8, 9, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 19, 19, 20, 20, 20, 20, 20, 20, 21, 21, 21, 22, 23, 24, 25, 26, 26, 27, 27, 27, 29, 29, 30, 31, 31, 31] // �BITOS CONFIRMADOS
+                    ],
+                    colors: {
+                        'Total de internados': '#ffa500',
+                        'Óbitos confirmados': '#ff0000',
+                        'Óbitos em investigação': '#00ff00',
+                        'Média móvel (7 dias) de internados': 'black',
+                    }
+
+                },
+                axis: {
+                    y: {
+                        label: {
+                            text: 'Número de casos',
+                            position: 'outer-middle'
+                        }
+                    },
+                    x: {
+                        type: 'timeseries',
+                        tick: {
+                            format: function (x) {
+                                var aux = ''
+
+                                aux += x.getDate()
+                                if (aux.length == 1) {
+                                    aux = '0' + aux
+                                }
+                                var aux2 = ''
+                                aux2 += (x.getMonth() + 1)
+                                if (aux2.length == 1) {
+                                    aux2 = '0' + aux2
+                                }
+                                return aux + '/' + aux2;
+                            }
+                            //format: '%Y' // format string is also available for timeseries data
+                        }
+                    }
+                },
+                title: {
+                    text: 'Número de casos internados, de óbitos em investigação e de óbitos confirmados do dia 16/03/20 até 16/08/20'
+                }
+            });
+
+    </script>
+</body>
+
+</html>
