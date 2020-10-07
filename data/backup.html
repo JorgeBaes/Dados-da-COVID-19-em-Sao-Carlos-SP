@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/image.jpg">
+    <title>Gráficos da COVID-19 em São Carlos</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: radial-gradient(circle, rgb(233, 241, 255) 100%, rgb(125, 90, 221) 0%);
+        }
+
+        .c3-axis-y text {
+            font-size: 15px;
+        }
+
+        .c3-axis-x text {
+            font-size: 15px;
+        }
+
+        .c3-title {
+            font-size: 180%;
+        }
+
+        .c3-legend-item text {
+            font-size: 15px;
+        }
+
+        #titulo {
+            font-size: xx-large;
+            font-family: sans-serif;
+            color: black;
+            font-weight: 300;
+        }
+
+        #subti {
+            font-size: large;
+        }
+
+        .chart__ {
+            background-color: rgba(255, 255, 255, 0.746);
+            box-shadow: 0 0 0 3px black;
+            border-radius: 10px;
+            transition: box-shadow 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, background-color 3.5s;
+        }
+
+        .chart__:hover {
+            background-color: rgb(255, 255, 255);
+            /* border-radius: 50px; */
+            box-shadow: 0 0 0 5px black;
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 0.5s;
+        }
+
+        .gra {
+            margin: 1%;
+            width: 30%;
+            height: auto;
+            transition: box-shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+        }
+
+        .gra:hover {
+            background-color: rgba(238, 250, 225, 0.986);
+            border-radius: 50px;
+            box-shadow: 0 0 20px 0 black;
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+        }
+
+        .exp {
+            width: 500px;
+            height: 30px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 39px;
+            margin-bottom: 100px;
+            text-align: center;
+            transition-property: background, border-radius, transform;
+            transition-duration: 4s, 4s, 3s;
+            transition-timing-function: ease;
+            transition: box-shadow 1s ease-in-out 0s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, background-color 2s, border-width 0.5s;
+            width: 80%;
+            height: fit-content;
+            padding-left: 35px;
+            padding-right: 35px;
+            background-image: linear-gradient(to right, #ffffff6e 0%, #ffffff77 50%, #ffffff85 100%);
+            border-radius: 60px;
+            border-style: solid;
+            border-width: 3px;
+        }
+
+        #texto_exp {
+            text-align: justify;
+            font: normal 16pt Arial;
+            line-height: 1.1;
+            color: rgb(14, 0, 63);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* div.exp:hover{
+            background: #abb8ff;
+            border-radius: 80;
+            box-shadow: 0 0 20px 0 black;  
+            border-width: 0px;
+            transition: box-shadow 1s ease-in-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 1s, border-width 0.5s; 
+        } */
+
+        h2 {
+            font: normal 18pt Arial;
+        }
+
+        .two {
+            height: auto;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            transition: transform 2.5s cubic-bezier(1, -1, 0.735, 1) 0s;
+        }
+
+        .two:hover {
+            transform: rotate(360deg) scale(1.2);
+            transition: transform 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load c3.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet">
+
+    <!-- Load d3.js and c3.js 
+    <script src="d3.v5.min.js" charset="utf-8"></script>
+    -->
+
+
+    <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" title="@covid19saocarlos"><img
+            class="two" src="./images/insta.jpg" alt="Instagrão"></img></a>
+    <header>
+
+        <span id="titulo">Dados sobre a COVID-19 em São Carlos - SP <br>
+            <span id="subti">Dados retirados de <a style="color: rgb(81, 50, 255);"
+                    href="http://coronavirus.saocarlos.sp.gov.br/" target="_blank">Subcomitê de Comunicação de Combate
+                    ao Coronavírus</a></span><br>
+            <div id="xambra">
+                <span style="font-size: large;">Siga <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br"
+                        target="_blank" style="font-size: large; color: rgb(81, 50, 255);">@covid19saocarlos</a> no
+                    instagram</span><br>
+                <span style="font-size: large;"><a href="https://github.com/JorgeBaes/covid19-sc" target="_blank"
+                        style="font-size: large; color: rgb(81, 50, 255);">Repositório do GitHub</a></span>
+            </div>
+
+
+    </header>
+
+    <br>
+
+    <div id="wrap">
+
+        <!-- <a href="g3.html" target="_blank">
+            <img src="casos e óbitos acumulados.png" class="gra" alt="" srcset="">
+        </a> -->
+        <a href="./html/g3.html#5" target="_blank">
+            <img src="./images/casos recuperados dentre os confirmados.png" class="gra" alt="" srcset="">
+        </a>
+        <a href="./html/g3.html#8" target="_blank">
+            <img src="./images/c recuperados dentre....jpg" class="gra" alt="" srcset="">
+        </a>
+        <a href="./html/g3.html#6" target="_blank">
+            <img src="./images/c taxa de ocupacao.jpg" class="gra" alt="" srcset="">
+        </a>
+        <a href="./html/g3.html#7" target="_blank">
+            <img src="./images/c obitos confirmados....jpg" class="gra" alt="" srcset="">
+        </a>
+        <a href="./html/g3.html#3" target="_blank">
+            <img src="./images/casos confirmados e acumulados.jpg" class="gra" alt="" srcset="">
+        </a>
+        <a href="./html/g3.html#4" target="_blank">
+            <img src="./images/casos novos por dia.jpg" class="gra" alt="" srcset="">
+        </a>
+
+
+    </div>
+    <br>
+    <span style="font-size: x-large; color:rgb(255, 71, 71);">Os gráficos abaixo são interativos, clique nas tags da
+        legenda. Aperte
+        shift e clique em um gráfico para abrí-lo em outra janela </span>
+    <br><br>
+    <div id="chart" class="chart__"></div>
+    <br><br>
+    <div id="chart3" class="chart__"></div>
+    <br><br>
+    <div id="chart2" class="chart__"></div>
+
+    <br>
+    <div class='exp'>
+        <br>
+        <span style="font-size: xx-large;"> Sobre os gráficos</span>
+        <br>
+        <p id='texto_exp'>Os 6 primeiros gráficos foram construídos por Glória Palma Levcovitz com as ferramentas do
+            Excel a partir dos dados
+            fornecidos pelo <a style="color: rgb(8, 8, 255);" target="blank"
+                href="http://coronavirus.saocarlos.sp.gov.br/">Subcomitê de Comunicação de Combate ao Coronavírus</a>.
+            Os 3 últimos gráficos foram construídos por Jorge Baes a partir dos dados fornecidos pelo <a
+                style="color: rgb(8, 8, 255);" target="blank" href="http://coronavirus.saocarlos.sp.gov.br/">Subcomitê
+                de Comunicação
+                de Combate ao Coronavírus</a> com a biblioteca C3.js.
+            Os 3 últimos gráficos são interativos, você pode escolher quais dados serão analisados clicando nas tags da
+            legenda. Para
+            qualquer dúvida ou sugestão fale com @covid19saocarlos ou @baescaetano no instagram. O texto abaixo foi
+            retirado do último post
+            (16/08/2020) da Subcomitê de Comunicação de Combate ao Coronavírus sobre os dados da COVID-19 no município.
+            <hr>
+            <br>
+            <span id="texto_exp">
+                A Vigilância Epidemiológica de São Carlos confirma neste domingo (16/08) os números da COVID-19 no
+                município. São Carlos
+                contabiliza neste momento 1.771 casos positivos para COVID-19 (2 resultados positivos foram divulgados
+                hoje), com 31
+                mortes confirmadas. 70 óbitos já foram descartados.
+                <br><br>
+                Dos 1.771 casos positivos, 1.623 pessoas apresentaram síndrome gripal e não foram internadas, 3 óbitos
+                sem internação,
+                145 pessoas precisaram de internação devido a COVID-19, 107 receberam alta hospitalar, 10 estão
+                internadas, 1 paciente
+                de São Carlos está internado em Jaú e 28 positivos internados foram a óbito. 1.458 pessoas já se
+                recuperaram totalmente
+                da doença. 6.430 casos suspeitos já foram descartados para o novo coronavírus.
+                <br><br>
+                Estão internadas neste momento 34 pessoas, sendo 18 adultos na enfermaria (4 positivos, 10 suspeitos e 4
+                negativos). Na
+                UTI adulto estão internadas 14 pessoas (10 positivos, 3 suspeitos e 1 negativo). Uma criança está
+                internada na UTI com
+                suspeita da doença. Na enfermaria uma criança está internada com resultado negativo para COVID-19. 5
+                pacientes de outros
+                municípios estão internados em São Carlos. A taxa de ocupação dos leitos especiais para COVID-19 de
+                UTI/SUS está hoje em
+                45,9%.
+                <br><br>
+                Na rede privada estão internados 4 pacientes na UTI adulto, sendo 2 positivos e 2 com suspeita da
+                doença. Já na
+                enfermaria adulto 2 pacientes estão internados na rede particular, 1 com resultado positivo e 1 com
+                suspeita da doença.
+                Esses números já estão contabilizados no total de internações.
+                <br><br>
+                NOTIFICAÇÕES – Já passaram pelo sistema de notificação de Síndrome Gripal do município 10.488 pessoas
+                desde o dia 21 de
+                março, sendo que 9.032 pessoas já cumpriram o período de isolamento de 14 dias e 1.456 ainda continuam
+                em isolamento.
+                <br><br>
+                A Prefeitura de São Carlos está fazendo testes em pessoas que passam em atendimento nos serviços
+                públicos de saúde com
+                Síndrome Gripal (febre, acompanhada de um ou mais sintomas como tosse, dor de garganta, coriza, falta de
+                ar). 5.931
+                pessoas já realizaram coleta de exames, sendo que 4.726 tiveram resultado negativo para COVID-19, 1.138
+                apresentaram
+                resultado positivo (esses resultados já estão contabilizados no total de casos positivos). 67 pessoas
+                ainda aguardam o
+                resultado.
+                <br><br>
+                O boletim emitido diariamente pela Vigilância Epidemiológica de São Carlos contabiliza as notificações
+                das unidades de
+                saúde da Prefeitura, Hospital Universitário (HU), Santa Casa, rede particular e planos de saúde.
+            </span>
+        </p>
+
+
+
+
+    </div>
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.js"></script>
+    <script>
+        function showMore() {
+            document.getElementById("xambra").innerHTML = `<a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" onmouseout='showLess()'>
+    <img src="./images/image.jpg" alt="" srcset="" style="width:160px;height: auto;">
+    </a>`;
+        }
+        function showLess() {
+            document.getElementById("xambra").innerHTML = `<span onmouseover='showMore()' style="font-size: large; color: rgb(81, 50, 255);">Siga @covid19saocarlos no instagram</span>`;
+        }
+        var B = document.body, H = document.documentElement, height
+        if (typeof document.height !== 'undefined') {
+            height = document.height // For webkit browsers
+        } else {
+            height = Math.max(B.scrollHeight, B.offsetHeight, H.clientHeight, H.scrollHeight, H.offsetHeight);
+        }
+        var chart = c3.generate({
+            bindto: '#chart',
+            size: { height: height * 0.45 },
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'],
+                    ['Descartados', 4, 4, 4, 4, 4, 4, 4, 7, 7, 7, 7, 7, 7, 11, 11, 13, 13, 13, 21, 26, 33, 33, 36, 38, 50, 51, 51, 51, 62, 71, 122, 136, 173, 173, 183, 184, 192, 202, 216, 223, 229, 401, 418, 419, 430, 459, 471, 471, 471, 477, 489, 495, 498, 510, 519, 521, 530, 540, 564, 589, 606, 625, 666, 685, 718, 728, 752, 757, 771, 771, 784, 839, 843, 897, 905, 920, 925, 944, 954, 990, 1018, 1065, 1077, 1077, 1103, 1181, 1203, 1211, 1211, 1283, 1283, 1296, 1305, 1378, 1421, 1499, 1501, 1501, 1555, 1653, 1724, 1799, 1859, 1860, 1860, 1915, 2015, 2098, 2158, 2193, 2203, 2261, 2274, 2364, 3469, 3513, 3575, 3650, 3682, 3702, 3793, 3900, 3990, 4078, 4172, 4176, 4191, 4247, 4336, 4439, 4544, 4635, 4697, 4697, 4843, 4925, 5025, 5198, 5256, 5286, 5326, 5404, 5530, 5606, 5698, 5850, 5850, 5856, 5961, 6073, 6235, 6352, 6430, 6430], // DESCARTADOS	
+                    ['Confirmados', 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 6, 6, 6, 6, 7, 7, 7, 8, 10, 10, 10, 10, 10, 16, 16, 22, 22, 25, 28, 29, 30, 30, 33, 33, 33, 33, 35, 35, 36, 38, 40, 40, 40, 42, 45, 49, 55, 57, 58, 62, 67, 70, 85, 91, 92, 92, 96, 107, 114, 122, 128, 137, 138, 157, 162, 165, 167, 192, 205, 205, 248, 266, 280, 285, 285, 302, 303, 310, 315, 337, 353, 362, 367, 368, 376, 418, 434, 455, 470, 501, 501, 509, 541, 563, 577, 601, 608, 633, 646, 692, 729, 751, 771, 800, 824, 842, 902, 937, 974, 997, 1028, 1029, 1055, 1084, 1128, 1166, 1185, 1219, 1233, 1239, 1274, 1294, 1337, 1387, 1406, 1419, 1433, 1448, 1487, 1516, 1548, 1613, 1613, 1621, 1636, 1671, 1712, 1739, 1769, 1771]
+                ],
+                colors: {
+                    'Confirmados': '#ff0000',
+                    'Descartados': '#00ff00',
+                }
+
+            },
+            axis: {
+                y: {
+                    label: {
+                        text: 'Número de casos',
+                        position: 'outer-middle'
+                    }
+                },
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: function (x) {
+                            var aux = ''
+
+                            aux += x.getDate()
+                            if (aux.length == 1) {
+                                aux = '0' + aux
+                            }
+                            var aux2 = ''
+                            aux2 += (x.getMonth() + 1)
+                            if (aux2.length == 1) {
+                                aux2 = '0' + aux2
+                            }
+                            return aux + '/' + aux2;
+                        }
+                        //format: '%Y' // format string is also available for timeseries data
+                    }
+                }
+            },
+            title: {
+                text: 'Número de casos confirmados e descartados do dia 16/03/20 até 16/08/20'
+            }
+        });
+
+        var chart3 = c3.generate({
+            bindto: '#chart3',
+            size: { height: height * 0.45 },
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'],
+                    ['Total de internados', 0, 0, 0, 3, 8, 9, 8, 9, 19, 19, 22, 24, 24, 27, 29, 25, 26, 27, 29, 23, 22, 25, 25, 32, 31, 29, 27, 28, 25, 24, 23, 22, 21, 13, 17, 24, 23, 25, 20, 20, 17, 15, 16, 13, 18, 20, 11, 12, 10, 11, 5, 8, 7, 12, 15, 15, 13, 12, 5, 9, 10, 13, 16, 19, 16, 16, 20, 16, 20, 24, 25, 19, 17, 19, 18, 15, 13, 14, 16, 15, 19, 22, 22, 29, 33, 37, 34, 35, 41, 39, 39, 34, 29, 32, 32, 34, 34, 35, 40, 34, 27, 31, 27, 29, 27, 27, 35, 33, 33, 34, 32, 36, 30, 35, 34, 32, 39, 38, 34, 39, 36, 38, 38, 35, 32, 33, 33, 31, 30, 28, 29, 30, 36, 38, 41, 35, 38, 36, 38, 41, 37, 36, 35, 34, 44, 45, 36, 34, 34, 32, 30, 39, 31, 34], // INTERNADOS
+                    ['Média móvel (7 dias) de internados', 4, 4, 4, 4, 5, 8, 11, 13, 16, 18, 21, 23, 24, 25, 26, 27, 27, 26, 25, 25, 26, 27, 27, 27, 28, 28, 28, 27, 25, 24, 22, 21, 21, 20, 21, 20, 20, 21, 21, 19, 18, 17, 17, 16, 15, 14, 14, 12, 11, 9, 9, 10, 10, 11, 12, 11, 12, 11, 11, 11, 12, 13, 14, 16, 17, 18, 19, 20, 20, 20, 20, 20, 20, 18, 16, 16, 16, 16, 16, 17, 20, 22, 25, 28, 30, 33, 35, 37, 37, 36, 36, 35, 34, 33, 33, 34, 34, 34, 34, 33, 32, 31, 29, 29, 30, 30, 31, 32, 33, 33, 33, 33, 33, 34, 35, 35, 36, 36, 37, 37, 37, 36, 36, 35, 34, 33, 32, 31, 31, 31, 32, 33, 34, 35, 36, 37, 38, 38, 37, 37, 37, 38, 39, 38, 38, 37, 37, 36, 36, 34, 33, 33, 33, 33],
+                    ['Óbitos em investigação', 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 9, 10, 11, 10, 9, 4, 4, 5, 5, 7, 7, 5, 6, 6, 8, 6, 6, 6, 6, 6, 7, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // �BITOS EM INVESTIGA��
+                    ['Óbitos confirmados', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7, 8, 9, 10, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 19, 19, 20, 20, 20, 20, 20, 20, 21, 21, 21, 22, 23, 24, 25, 26, 26, 27, 27, 27, 29, 29, 30, 31, 31, 31] // �BITOS CONFIRMADOS
+                ],
+                colors: {
+                    'Total de internados': '#ffa500',
+                    'Óbitos confirmados': '#ff0000',
+                    'Óbitos em investigação': '#00ff00',
+                    'Média móvel (7 dias) de internados': 'black',
+                }
+
+            },
+            axis: {
+                y: {
+                    label: {
+                        text: 'Número de casos',
+                        position: 'outer-middle'
+                    }
+                },
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: function (x) {
+                            var aux = ''
+
+                            aux += x.getDate()
+                            if (aux.length == 1) {
+                                aux = '0' + aux
+                            }
+                            var aux2 = ''
+                            aux2 += (x.getMonth() + 1)
+                            if (aux2.length == 1) {
+                                aux2 = '0' + aux2
+                            }
+                            return aux + '/' + aux2;
+                        }
+                        //format: '%Y' // format string is also available for timeseries data
+                    }
+                }
+            },
+            title: {
+                text: 'Número de casos internados, de óbitos em investigação e de óbitos confirmados do dia 16/03/20 até 16/08/20'
+            }
+        });
+
+        var chart2 = c3.generate({
+            bindto: '#chart2',
+            size: { height: height * 0.45 },
+
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06', '2020-06-07', '2020-06-08', '2020-06-09', '2020-06-10', '2020-06-11', '2020-06-12', '2020-06-13', '2020-06-14', '2020-06-15', '2020-06-16', '2020-06-17', '2020-06-18', '2020-06-19', '2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26', '2020-07-27', '2020-07-28', '2020-07-29', '2020-07-30', '2020-07-31', '2020-08-01', '2020-08-02', '2020-08-03', '2020-08-04', '2020-08-05', '2020-08-06', '2020-08-07', '2020-08-08', '2020-08-09', '2020-08-10', '2020-08-11', '2020-08-12', '2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'],
+                    ['Síndrome gripal notificadas', null, null, null, null, null, null, null, null, null, null, null, 482, 530, 573, 614, 734, 765, 819, 875, 884, 892, 940, 1088, 1154, 1170, 1193, 1201, 1217, 1245, 1291, 1301, 1317, 1340, 1365, 1375, 1413, 1429, 1513, 1538, 1615, 1635, 1647, 1678, 1788, 1806, 1840, 1862, 1880, 1916, 1974, 2046, 2073, 2085, 2113, 2130, 2155, 2161, 2252, 2303, 2325, 2356, 2364, 2364, 2402, 2429, 2464, 2486, 2538, 2542, 2547, 2556, 2587, 2621, 2656, 2684, 2694, 2710, 2750, 2816, 2851, 2886, 2932, 2953, 2973, 3050, 3103, 3172, 3191, 3221, 3239, 3249, 3310, 3359, 3425, 3523, 3592, 3615, 3644, 3724, 3833, 3906, 3986, 4069, 4087, 4116, 4202, 4261, 4310, 4401, 4470, 4491, 4518, 4640, 4736, 4831, 4911, 5018, 5054, 5054, 5216, 5336, 5446, 6469, 6637, 6676, 6718, 6853, 6980, 7128, 7256, 7401, 7451, 7488, 7913, 8117, 8246, 8370, 8488, 8517, 8558, 8900, 9081, 9294, 9420, 9537, 9583, 9625, 9782, 9948, 10109, 10268, 10397, 10453, 10488],
+                    ['Média móvel (7 dias) Síndrome gripal notificadas', null, null, null, null, null, null, null, null, null, null, null, 314, 419, 528, 645, 701, 752, 798, 844, 895, 950, 1000, 1046, 1091, 1138, 1181, 1210, 1231, 1252, 1273, 1297, 1319, 1343, 1363, 1393, 1425, 1464, 1503, 1541, 1579, 1631, 1672, 1716, 1751, 1786, 1824, 1867, 1903, 1942, 1977, 2012, 2048, 2082, 2109, 2138, 2171, 2206, 2240, 2274, 2304, 2338, 2363, 2386, 2409, 2435, 2461, 2487, 2509, 2531, 2554, 2578, 2599, 2621, 2644, 2672, 2704, 2737, 2770, 2806, 2843, 2880, 2923, 2964, 3010, 3053, 3095, 3136, 3175, 3212, 3249, 3285, 3332, 3385, 3439, 3495, 3555, 3622, 3691, 3757, 3825, 3893, 3960, 4028, 4090, 4147, 4207, 4264, 4322, 4379, 4442, 4509, 4584, 4657, 4735, 4815, 4892, 4974, 5060, 5148, 5370, 5602, 5833, 6071, 6305, 6540, 6780, 6893, 7002, 7112, 7222, 7374, 7536, 7696, 7855, 8010, 8163, 8316, 8457, 8594, 8744, 8894, 9044, 9196, 9349, 9475, 9598, 9715, 9836, 9959, 10083, 10206, 10206, 10206, 10206],
+                    ['Síndrome gripal ainda em isolamento', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 443, 384, 361, 273, 335, 314, 300, 278, 257, 260, 250, 257, 249, 280, 273, 268, 261, 332, 325, 343, 333, 336, 339, 375, 420, 409, 398, 393, 362, 347, 314, 359, 371, 354, 350, 329, 298, 311, 311, 319, 298, 322, 311, 285, 268, 268, 290, 302, 299, 299, 288, 317, 353, 365, 370, 363, 361, 353, 353, 420, 420, 444, 445, 440, 414, 444, 449, 463, 522, 567, 557, 537, 571, 631, 662, 705, 838, 731, 717, 765, 745, 721, 767, 765, 713, 672, 728, 751, 790, 800, 863, 848, 848, 908, 969, 1010, 1494, 1578, 1518, 1462, 1500, 1531, 1571, 1575, 1604, 1544, 1430, 1717, 1811, 1797, 1792, 1794, 1696, 1567, 1786, 1819, 1816, 1810, 1769, 1697, 1584, 1643, 1683, 1656, 1671, 1661, 1574, 1456],
+                    ['Média móvel (7 dias) Síndrome gripal ainda em isolamento', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 301, 344, 321, 303, 288, 285, 274, 264, 262, 261, 262, 263, 274, 284, 297, 305, 314, 324, 340, 353, 365, 373, 381, 385, 386, 378, 369, 363, 357, 351, 346, 339, 339, 332, 325, 317, 313, 310, 308, 302, 296, 292, 292, 289, 287, 288, 295, 307, 318, 327, 336, 345, 355, 360, 369, 377, 388, 399, 411, 419, 432, 437, 443, 454, 471, 488, 506, 524, 550, 578, 604, 643, 668, 694, 721, 738, 746, 755, 744, 742, 735, 730, 731, 741, 746, 760, 779, 804, 830, 861, 892, 991, 1094, 1189, 1277, 1362, 1442, 1522, 1534, 1537, 1541, 1536, 1567, 1607, 1640, 1671, 1698, 1720, 1739, 1749, 1750, 1753, 1755, 1752, 1752, 1754, 1734, 1715, 1692, 1672, 1656, 1639, 1621, 1621, 1621, 1621]
+                ],
+                colors: {
+                    'Síndrome gripal notificadas': '#ff0000',
+                    'Média móvel (7 dias) Síndrome gripal notificadas': 'black',
+                    'Média móvel (7 dias) Síndrome gripal ainda em isolamento': 'green',
+                    'Síndrome gripal ainda em isolamento': '#0F36F9',
+                }
+            },
+            axis: {
+                y: {
+                    label: {
+                        text: 'Número de casos',
+                        position: 'outer-middle'
+                    }
+                },
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: function (x) {
+                            var aux = ''
+
+                            aux += x.getDate()
+                            if (aux.length == 1) {
+                                aux = '0' + aux
+                            }
+                            var aux2 = ''
+                            aux2 += (x.getMonth() + 1)
+                            if (aux2.length == 1) {
+                                aux2 = '0' + aux2
+                            }
+                            return aux + '/' + aux2;
+                        }
+                        //format: '%Y' // format string is also available for timeseries data
+                    }
+                }
+            },
+            title: {
+                text: 'Número de casos de síndrome gripal notificadas e de síndrome gripal ainda em isolamento do dia dia 27/03/20 até 03/07/20'
+            }
+        });
+
+        var cont = 0
+        window.addEventListener('keydown', kd)
+        window.addEventListener('keyup', kd2)
+        fired = false
+        function kd(e) {
+            var key = e.keyCode
+            if (!fired) {
+                fired = true;
+                if (key === 16) {
+                    cont++
+                }
+            }
+        }
+        function kd2(e) {
+            fired = false;
+            var key = e.keyCode
+            if (key === 16) {
+                cont++
+            }
+        }
+        document.getElementById('chart').onclick = () => {
+            if (cont % 2 == 1) {
+                cont++
+                window.open('./html/g1.html', "_blank").focus();
+            }
+        }
+        document.getElementById('chart2').onclick = () => {
+            if (cont % 2 == 1) {
+                cont++
+                window.open('./html/g2.html', "_blank");
+            }
+        }
+        document.getElementById('chart3').onclick = () => {
+            if (cont % 2 == 1) {
+                cont++
+                window.open('./html/g4.html', "_blank");
+            }
+        }
+    ///
+
+
+    </script>
+</body>
+
+</html>
