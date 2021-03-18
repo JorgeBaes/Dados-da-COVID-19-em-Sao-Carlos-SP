@@ -1,4 +1,4 @@
-# Covid-19 São Carlos SP -> Dados de um ano de pandemia
+# Covid-19 São Carlos SP, dados referentes a um ano de pandemia
 
 Este repositório contém os dados fornecidos pelo [Subcomitê de Comunicação de Combate ao Coronavírus de São Carlos](http://coronavirus.saocarlos.sp.gov.br) sobre a situação da pandemia na cidade. Os dados estão dispostos em gráficos que permitem **visualizar melhor a progressão dos casos de Covid-19 entre outros dados durante 1 ano (365 dias) de pandemia**.
 
@@ -13,11 +13,11 @@ index.html
 Abra este arquivo e visualize os dados da Covid-19 no município de São Carlos em gráficos interativos. 
 Ou acesse o link [Covid-19 em São Carlos](https://covid19-sp-sao-carlos.herokuapp.com)
 
-## Pasta : data
+## Pasta -> data
 
-Nesta pasta estão disponíveis os dados extraídos para você fazer sua análise computacional, caso queira. Os 2 arquivos com os dados são <i>**dados_covid_sao_carlos_sp.json**<i> e <i>**dados_covid_sao_carlos_sp.xlsx**<i>. O primeiro é um arquivo **json** que contém um array com objetos que contém os dados de cada dia desde **16/03/2020 até 16/03/2021**. O segundo é um arquivo **excel** que possuí duas pastas, a primeira possuí os dados nas colunas e a segunda contém alguns gráficos sobre os dados em questão.
+Nesta pasta estão disponíveis os dados extraídos para você fazer sua análise computacional caso queira. Os 2 arquivos com os dados são **dados_covid_sao_carlos_sp.json** e **dados_covid_sao_carlos_sp.xlsx**. O primeiro é um arquivo **json** que contém um array com objetos que contém os dados de cada dia desde **16/03/2020 até 16/03/2021**. O segundo é um arquivo **excel** que possuí duas pastas, a primeira possuí os dados nas colunas e a segunda contém alguns gráficos sobre os dados em questão.
 
-### dados_covid_sao_carlos_sp.json
+### JSON -> dados_covid_sao_carlos_sp.json
 ```json
  {
     "n_boletim": 278,
@@ -70,11 +70,11 @@ Nesta pasta estão disponíveis os dados extraídos para você fazer sua anális
 }
 ```
 
-### dados_covid_sao_carlos_sp.xlsx
+### EXCEL ->dados_covid_sao_carlos_sp.xlsx
 
 <img width="600" src="https://github.com/JorgeBaes/covid19-sc/blob/master/images/excel_demo.png">
 
-## Pasta : images
+## Pasta -> images
 
 Esta pasta contém gráficos feito pela [Glória Palma Levcovitz](https://www.instagram.com/gloriallev/) com os dados fornecidos pelo [Subcomitê de Comunicação de Combate ao Coronavírus de São Carlos](http://coronavirus.saocarlos.sp.gov.br).
 
