@@ -1,182 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/image.jpg">
-    <title>Gráficos da COVID-19 em São Carlos</title>
-    <style>
-        body {
-            text-align: center;
-            background-image: radial-gradient(circle, rgb(233, 241, 255) 100%, rgb(125, 90, 221) 0%);  
-        }
-
-        .c3-axis-y text {
-            font-size: 15px;
-        }
-
-        .c3-axis-x text {
-            font-size: 15px;
-        }
-
-        .c3-title {
-            font-size: 180%;
-        }
-
-        .c3-legend-item text {
-            font-size: 15px;
-        }
-
-        #titulo{
-            font-size:xx-large;
-            font-family: sans-serif;
-            color: black;
-            font-weight: 300;
-        }
-
-        #subti {
-            font-size: large;
-        }
-
-        
-
-        .chart__{
-            background-color: rgba(255, 255, 255, 0.746);
-            box-shadow: 0 0 0 3px black; 
-            border-radius: 10px; 
-            transition: box-shadow 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, background-color 3.5s;
-        }
-        .chart__:hover{
-            background-color: rgb(255, 255, 255);
-            /* border-radius: 50px; */
-            box-shadow: 0 0 0 5px black;  
-            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 0.5s;
-        }
-
-        .gra {
-            padding: 1%;
-            width: 30%;
-            height: auto;
-
-            transition: box-shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-        }
-
-        .gra:hover {
-            background-color: rgba(238, 250, 225, 0.986);
-            border-radius: 50px;
-            box-shadow: 0 0 20px 0 black;
-            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-
-        }
-
-        p#texto_exp {
-            text-align: justify;
-            font: normal 16pt Arial;
-            line-height: 1.1;
-
-            color: rgba(0, 0, 0, 0);
-        }
-
-        .exp {
-            width: 500px;
-            height: 30px;
-            padding-bottom: 10px;
-            border-radius: 20px;
-            margin: auto;
-            margin-top: 39px;
-            margin-bottom: 10px;
-            text-align: center;
-            background: rgb(136, 207, 253);
-            transition-property: background, height, border-radius, padding-left, padding-right, transform, width;
-            transition-duration: 4s, 2s, 5s, 2s, 2s, 3s, 1.5s;
-            transition-timing-function: ease-in-out, ease, ease-out, ease, ease, ease-in;
-        }
-
-        div.exp:hover {
-            width: 50%;
-            height: fit-content;
-            padding-left: 35px;
-            padding-right: 35px;
-            background: #d2dffc;
-            border-radius: 60px;
-            transform: scale(1.13);
-        }
-
-        div.exp:hover p#texto_exp {
-            color: rgb(14, 0, 63);
-            transition: color 3s ease-in 2s;
-        }
-
-        h2 {
-            font-weight: normal;
-        }.two {
-        height: auto;
-        position: absolute;
-        top: 20px;
-        right:20px;
-        width: 40px;  
-        transition: transform 2.5s cubic-bezier(1, -1, 0.735, 1) 0s;      
-        
-        }
-        .two:hover {
-            transform: rotate(360deg) scale(1.2);            
-            transition: transform 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;   
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Load c3.css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet">
-
-    <!-- Load d3.js and c3.js 
-    <script src="d3.v5.min.js" charset="utf-8"></script>
-    -->
-    <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" title="@covid19saocarlos"><img
-            class="two" src="../images/insta.jpg" alt="Instagrão"></img></a>
-
-
-    <header>
-
-        <span id="titulo">Dados sobre a COVID-19 em São Carlos - SP <br><span id="subti">Dados retirados de <a
-                    style="color: rgb(81, 50, 255);" href="http://coronavirus.saocarlos.sp.gov.br/" target="_blank">Subcomitê de
-                    Comunicação de Combate ao Coronavírus</a></span><br>
-            <div id="xambra">
-                        <span style="font-size: large;">Siga <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank"
-                                style="font-size: large; color: rgb(81, 50, 255);">@covid19saocarlos</a> no instagram</span>
-
-            </div>
-            <span style="font-size: large; color: rgb(255, 109, 11);">Este gráfico é interativo, clique nas tags da
-                legenda</span>
-    </header>
-    <br>
-    <div id="chart2" class="chart__"></div>
-
-
-
-    <script src="https://d3js.org/d3.v5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.js"></script>
-    <script>
-        function showMore() {
-            document.getElementById("xambra").innerHTML = `<a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" onmouseout='showLess()'>
-    <img src="../images/image.jpg" alt="" srcset="" style="width:160px;height: auto;">
-    </a>`;
-        }
-
-        function showLess() {
-            document.getElementById("xambra").innerHTML = `<span onmouseover='showMore()' style="font-size: large; color: rgb(81, 50, 255);">Siga @covid19saocarlos no instagram</span>`;
-        }
-        var B = document.body, H = document.documentElement, height
-
-        if (typeof document.height !== 'undefined') {
-            height = document.height // For webkit browsers
-        } else {
-            height = Math.max(B.scrollHeight, B.offsetHeight, H.clientHeight, H.scrollHeight, H.offsetHeight);
-        }
-        const data_array = [{
+let array =     [
+    {
+    "n_boletim": 1,
     "dia": "2020-03-16",
-    "n": 1,
+    "n_dia": 1,
     "descartados": 4,
     "confirmados": 0,
     "internados": 0,
@@ -190,8 +16,9 @@
     }
     ,
     {
+    "n_boletim": 2,
     "dia": "2020-03-17",
-    "n": 2,
+    "n_dia": 2,
     "descartados": 4,
     "confirmados": 0,
     "internados": 0,
@@ -205,8 +32,9 @@
     }
     ,
     {
+    "n_boletim": 3,
     "dia": "2020-03-18",
-    "n": 3,
+    "n_dia": 3,
     "descartados": 4,
     "confirmados": 1,
     "internados": 0,
@@ -220,8 +48,9 @@
     }
     ,
     {
+    "n_boletim": 4,
     "dia": "2020-03-19",
-    "n": 4,
+    "n_dia": 4,
     "descartados": 4,
     "confirmados": 1,
     "internados": 3,
@@ -235,8 +64,9 @@
     }
     ,
     {
+    "n_boletim": 5,
     "dia": "2020-03-20",
-    "n": 5,
+    "n_dia": 5,
     "descartados": 4,
     "confirmados": 1,
     "internados": 8,
@@ -250,8 +80,9 @@
     }
     ,
     {
+    "n_boletim": 6,
     "dia": "2020-03-21",
-    "n": 6,
+    "n_dia": 6,
     "descartados": 4,
     "confirmados": 1,
     "internados": 9,
@@ -265,8 +96,9 @@
     }
     ,
     {
+    "n_boletim": 7,
     "dia": "2020-03-22",
-    "n": 7,
+    "n_dia": 7,
     "descartados": 4,
     "confirmados": 1,
     "internados": 8,
@@ -280,8 +112,9 @@
     }
     ,
     {
+    "n_boletim": 8,
     "dia": "2020-03-23",
-    "n": 8,
+    "n_dia": 8,
     "descartados": 7,
     "confirmados": 1,
     "internados": 9,
@@ -295,8 +128,9 @@
     }
     ,
     {
+    "n_boletim": 9,
     "dia": "2020-03-24",
-    "n": 9,
+    "n_dia": 9,
     "descartados": 7,
     "confirmados": 1,
     "internados": 19,
@@ -310,8 +144,9 @@
     }
     ,
     {
+    "n_boletim": 10,
     "dia": "2020-03-25",
-    "n": 10,
+    "n_dia": 10,
     "descartados": 7,
     "confirmados": 1,
     "internados": 19,
@@ -325,8 +160,9 @@
     }
     ,
     {
+    "n_boletim": 11,
     "dia": "2020-03-26",
-    "n": 11,
+    "n_dia": 11,
     "descartados": 7,
     "confirmados": 1,
     "internados": 22,
@@ -340,8 +176,9 @@
     }
     ,
     {
+    "n_boletim": 12,
     "dia": "2020-03-27",
-    "n": 12,
+    "n_dia": 12,
     "descartados": 7,
     "confirmados": 2,
     "internados": 24,
@@ -355,8 +192,9 @@
     }
     ,
     {
+    "n_boletim": 13,
     "dia": "2020-03-28",
-    "n": 13,
+    "n_dia": 13,
     "descartados": 7,
     "confirmados": 2,
     "internados": 24,
@@ -370,8 +208,9 @@
     }
     ,
     {
+    "n_boletim": 14,
     "dia": "2020-03-29",
-    "n": 14,
+    "n_dia": 14,
     "descartados": 11,
     "confirmados": 2,
     "internados": 27,
@@ -385,8 +224,9 @@
     }
     ,
     {
+    "n_boletim": 15,
     "dia": "2020-03-30",
-    "n": 15,
+    "n_dia": 15,
     "descartados": 11,
     "confirmados": 2,
     "internados": 29,
@@ -400,8 +240,9 @@
     }
     ,
     {
+    "n_boletim": 16,
     "dia": "2020-03-31",
-    "n": 16,
+    "n_dia": 16,
     "descartados": 13,
     "confirmados": 2,
     "internados": 25,
@@ -415,8 +256,9 @@
     }
     ,
     {
+    "n_boletim": 17,
     "dia": "2020-04-01",
-    "n": 17,
+    "n_dia": 17,
     "descartados": 13,
     "confirmados": 2,
     "internados": 26,
@@ -430,8 +272,9 @@
     }
     ,
     {
+    "n_boletim": 18,
     "dia": "2020-04-02",
-    "n": 18,
+    "n_dia": 18,
     "descartados": 13,
     "confirmados": 2,
     "internados": 27,
@@ -445,8 +288,9 @@
     }
     ,
     {
+    "n_boletim": 19,
     "dia": "2020-04-03",
-    "n": 19,
+    "n_dia": 19,
     "descartados": 21,
     "confirmados": 2,
     "internados": 29,
@@ -460,8 +304,9 @@
     }
     ,
     {
+    "n_boletim": 20,
     "dia": "2020-04-04",
-    "n": 20,
+    "n_dia": 20,
     "descartados": 26,
     "confirmados": 3,
     "internados": 23,
@@ -475,8 +320,9 @@
     }
     ,
     {
+    "n_boletim": 21,
     "dia": "2020-04-05",
-    "n": 21,
+    "n_dia": 21,
     "descartados": 33,
     "confirmados": 3,
     "internados": 22,
@@ -490,8 +336,9 @@
     }
     ,
     {
+    "n_boletim": 22,
     "dia": "2020-04-06",
-    "n": 22,
+    "n_dia": 22,
     "descartados": 33,
     "confirmados": 3,
     "internados": 25,
@@ -505,8 +352,9 @@
     }
     ,
     {
+    "n_boletim": 23,
     "dia": "2020-04-07",
-    "n": 23,
+    "n_dia": 23,
     "descartados": 36,
     "confirmados": 3,
     "internados": 25,
@@ -520,8 +368,9 @@
     }
     ,
     {
+    "n_boletim": 24,
     "dia": "2020-04-08",
-    "n": 24,
+    "n_dia": 24,
     "descartados": 38,
     "confirmados": 4,
     "internados": 32,
@@ -535,8 +384,9 @@
     }
     ,
     {
+    "n_boletim": 25,
     "dia": "2020-04-09",
-    "n": 25,
+    "n_dia": 25,
     "descartados": 50,
     "confirmados": 6,
     "internados": 31,
@@ -550,8 +400,9 @@
     }
     ,
     {
+    "n_boletim": 26,
     "dia": "2020-04-10",
-    "n": 26,
+    "n_dia": 26,
     "descartados": 51,
     "confirmados": 6,
     "internados": 29,
@@ -565,8 +416,9 @@
     }
     ,
     {
+    "n_boletim": 27,
     "dia": "2020-04-11",
-    "n": 27,
+    "n_dia": 27,
     "descartados": 51,
     "confirmados": 6,
     "internados": 27,
@@ -580,8 +432,9 @@
     }
     ,
     {
+    "n_boletim": 28,
     "dia": "2020-04-12",
-    "n": 28,
+    "n_dia": 28,
     "descartados": 51,
     "confirmados": 6,
     "internados": 28,
@@ -595,8 +448,9 @@
     }
     ,
     {
+    "n_boletim": 29,
     "dia": "2020-04-13",
-    "n": 29,
+    "n_dia": 29,
     "descartados": 62,
     "confirmados": 7,
     "internados": 25,
@@ -610,8 +464,9 @@
     }
     ,
     {
+    "n_boletim": 30,
     "dia": "2020-04-14",
-    "n": 30,
+    "n_dia": 30,
     "descartados": 71,
     "confirmados": 7,
     "internados": 24,
@@ -625,8 +480,9 @@
     }
     ,
     {
+    "n_boletim": 31,
     "dia": "2020-04-15",
-    "n": 31,
+    "n_dia": 31,
     "descartados": 122,
     "confirmados": 7,
     "internados": 23,
@@ -640,8 +496,9 @@
     }
     ,
     {
+    "n_boletim": 32,
     "dia": "2020-04-16",
-    "n": 32,
+    "n_dia": 32,
     "descartados": 136,
     "confirmados": 8,
     "internados": 22,
@@ -655,8 +512,9 @@
     }
     ,
     {
+    "n_boletim": 33,
     "dia": "2020-04-17",
-    "n": 33,
+    "n_dia": 33,
     "descartados": 173,
     "confirmados": 10,
     "internados": 21,
@@ -670,8 +528,9 @@
     }
     ,
     {
+    "n_boletim": 34,
     "dia": "2020-04-18",
-    "n": 34,
+    "n_dia": 34,
     "descartados": 173,
     "confirmados": 10,
     "internados": 13,
@@ -685,8 +544,9 @@
     }
     ,
     {
+    "n_boletim": 35,
     "dia": "2020-04-19",
-    "n": 35,
+    "n_dia": 35,
     "descartados": 183,
     "confirmados": 10,
     "internados": 17,
@@ -700,8 +560,9 @@
     }
     ,
     {
+    "n_boletim": 36,
     "dia": "2020-04-20",
-    "n": 36,
+    "n_dia": 36,
     "descartados": 184,
     "confirmados": 10,
     "internados": 24,
@@ -715,8 +576,9 @@
     }
     ,
     {
+    "n_boletim": 37,
     "dia": "2020-04-21",
-    "n": 37,
+    "n_dia": 37,
     "descartados": 192,
     "confirmados": 10,
     "internados": 23,
@@ -730,8 +592,9 @@
     }
     ,
     {
+    "n_boletim": 38,
     "dia": "2020-04-22",
-    "n": 38,
+    "n_dia": 38,
     "descartados": 202,
     "confirmados": 16,
     "internados": 25,
@@ -745,8 +608,9 @@
     }
     ,
     {
+    "n_boletim": 39,
     "dia": "2020-04-23",
-    "n": 39,
+    "n_dia": 39,
     "descartados": 216,
     "confirmados": 16,
     "internados": 20,
@@ -760,8 +624,9 @@
     }
     ,
     {
+    "n_boletim": 40,
     "dia": "2020-04-24",
-    "n": 40,
+    "n_dia": 40,
     "descartados": 223,
     "confirmados": 22,
     "internados": 20,
@@ -775,8 +640,9 @@
     }
     ,
     {
+    "n_boletim": 41,
     "dia": "2020-04-25",
-    "n": 41,
+    "n_dia": 41,
     "descartados": 229,
     "confirmados": 22,
     "internados": 17,
@@ -790,8 +656,9 @@
     }
     ,
     {
+    "n_boletim": 42,
     "dia": "2020-04-26",
-    "n": 42,
+    "n_dia": 42,
     "descartados": 401,
     "confirmados": 25,
     "internados": 15,
@@ -805,8 +672,9 @@
     }
     ,
     {
+    "n_boletim": 43,
     "dia": "2020-04-27",
-    "n": 43,
+    "n_dia": 43,
     "descartados": 418,
     "confirmados": 28,
     "internados": 16,
@@ -820,8 +688,9 @@
     }
     ,
     {
+    "n_boletim": 44,
     "dia": "2020-04-28",
-    "n": 44,
+    "n_dia": 44,
     "descartados": 419,
     "confirmados": 29,
     "internados": 13,
@@ -835,8 +704,9 @@
     }
     ,
     {
+    "n_boletim": 45,
     "dia": "2020-04-29",
-    "n": 45,
+    "n_dia": 45,
     "descartados": 430,
     "confirmados": 30,
     "internados": 18,
@@ -850,8 +720,9 @@
     }
     ,
     {
+    "n_boletim": 46,
     "dia": "2020-04-30",
-    "n": 46,
+    "n_dia": 46,
     "descartados": 459,
     "confirmados": 30,
     "internados": 20,
@@ -865,8 +736,9 @@
     }
     ,
     {
+    "n_boletim": 47,
     "dia": "2020-05-01",
-    "n": 47,
+    "n_dia": 47,
     "descartados": 471,
     "confirmados": 33,
     "internados": 11,
@@ -880,8 +752,9 @@
     }
     ,
     {
+    "n_boletim": 48,
     "dia": "2020-05-02",
-    "n": 48,
+    "n_dia": 48,
     "descartados": 471,
     "confirmados": 33,
     "internados": 12,
@@ -895,8 +768,9 @@
     }
     ,
     {
+    "n_boletim": 49,
     "dia": "2020-05-03",
-    "n": 49,
+    "n_dia": 49,
     "descartados": 471,
     "confirmados": 33,
     "internados": 10,
@@ -910,8 +784,9 @@
     }
     ,
     {
+    "n_boletim": 50,
     "dia": "2020-05-04",
-    "n": 50,
+    "n_dia": 50,
     "descartados": 477,
     "confirmados": 33,
     "internados": 11,
@@ -925,8 +800,9 @@
     }
     ,
     {
+    "n_boletim": 51,
     "dia": "2020-05-05",
-    "n": 51,
+    "n_dia": 51,
     "descartados": 489,
     "confirmados": 35,
     "internados": 5,
@@ -940,8 +816,9 @@
     }
     ,
     {
+    "n_boletim": 52,
     "dia": "2020-05-06",
-    "n": 52,
+    "n_dia": 52,
     "descartados": 495,
     "confirmados": 35,
     "internados": 8,
@@ -955,8 +832,9 @@
     }
     ,
     {
+    "n_boletim": 53,
     "dia": "2020-05-07",
-    "n": 53,
+    "n_dia": 53,
     "descartados": 498,
     "confirmados": 36,
     "internados": 7,
@@ -970,8 +848,9 @@
     }
     ,
     {
+    "n_boletim": 54,
     "dia": "2020-05-08",
-    "n": 54,
+    "n_dia": 54,
     "descartados": 510,
     "confirmados": 38,
     "internados": 12,
@@ -985,8 +864,9 @@
     }
     ,
     {
+    "n_boletim": 55,
     "dia": "2020-05-09",
-    "n": 55,
+    "n_dia": 55,
     "descartados": 519,
     "confirmados": 40,
     "internados": 15,
@@ -1000,8 +880,9 @@
     }
     ,
     {
+    "n_boletim": 56,
     "dia": "2020-05-10",
-    "n": 56,
+    "n_dia": 56,
     "descartados": 521,
     "confirmados": 40,
     "internados": 15,
@@ -1015,8 +896,9 @@
     }
     ,
     {
+    "n_boletim": 57,
     "dia": "2020-05-11",
-    "n": 57,
+    "n_dia": 57,
     "descartados": 530,
     "confirmados": 40,
     "internados": 13,
@@ -1030,8 +912,9 @@
     }
     ,
     {
+    "n_boletim": 58,
     "dia": "2020-05-12",
-    "n": 58,
+    "n_dia": 58,
     "descartados": 540,
     "confirmados": 42,
     "internados": 12,
@@ -1045,8 +928,9 @@
     }
     ,
     {
+    "n_boletim": 59,
     "dia": "2020-05-13",
-    "n": 59,
+    "n_dia": 59,
     "descartados": 564,
     "confirmados": 45,
     "internados": 5,
@@ -1060,8 +944,9 @@
     }
     ,
     {
+    "n_boletim": 60,
     "dia": "2020-05-14",
-    "n": 60,
+    "n_dia": 60,
     "descartados": 589,
     "confirmados": 49,
     "internados": 9,
@@ -1075,8 +960,9 @@
     }
     ,
     {
+    "n_boletim": 61,
     "dia": "2020-05-15",
-    "n": 61,
+    "n_dia": 61,
     "descartados": 606,
     "confirmados": 55,
     "internados": 10,
@@ -1090,8 +976,9 @@
     }
     ,
     {
+    "n_boletim": 62,
     "dia": "2020-05-16",
-    "n": 62,
+    "n_dia": 62,
     "descartados": 625,
     "confirmados": 57,
     "internados": 13,
@@ -1105,8 +992,9 @@
     }
     ,
     {
+    "n_boletim": 63,
     "dia": "2020-05-17",
-    "n": 63,
+    "n_dia": 63,
     "descartados": 666,
     "confirmados": 58,
     "internados": 16,
@@ -1120,8 +1008,9 @@
     }
     ,
     {
+    "n_boletim": 64,
     "dia": "2020-05-18",
-    "n": 64,
+    "n_dia": 64,
     "descartados": 685,
     "confirmados": 62,
     "internados": 19,
@@ -1135,8 +1024,9 @@
     }
     ,
     {
+    "n_boletim": 65,
     "dia": "2020-05-19",
-    "n": 65,
+    "n_dia": 65,
     "descartados": 718,
     "confirmados": 67,
     "internados": 16,
@@ -1150,8 +1040,9 @@
     }
     ,
     {
+    "n_boletim": 66,
     "dia": "2020-05-20",
-    "n": 66,
+    "n_dia": 66,
     "descartados": 728,
     "confirmados": 70,
     "internados": 16,
@@ -1165,8 +1056,9 @@
     }
     ,
     {
+    "n_boletim": 67,
     "dia": "2020-05-21",
-    "n": 67,
+    "n_dia": 67,
     "descartados": 752,
     "confirmados": 85,
     "internados": 20,
@@ -1180,8 +1072,9 @@
     }
     ,
     {
+    "n_boletim": 68,
     "dia": "2020-05-22",
-    "n": 68,
+    "n_dia": 68,
     "descartados": 757,
     "confirmados": 91,
     "internados": 16,
@@ -1195,8 +1088,9 @@
     }
     ,
     {
+    "n_boletim": 69,
     "dia": "2020-05-23",
-    "n": 69,
+    "n_dia": 69,
     "descartados": 771,
     "confirmados": 92,
     "internados": 20,
@@ -1210,8 +1104,9 @@
     }
     ,
     {
+    "n_boletim": 70,
     "dia": "2020-05-24",
-    "n": 70,
+    "n_dia": 70,
     "descartados": 771,
     "confirmados": 92,
     "internados": 24,
@@ -1225,8 +1120,9 @@
     }
     ,
     {
+    "n_boletim": 71,
     "dia": "2020-05-25",
-    "n": 71,
+    "n_dia": 71,
     "descartados": 784,
     "confirmados": 96,
     "internados": 25,
@@ -1240,8 +1136,9 @@
     }
     ,
     {
+    "n_boletim": 72,
     "dia": "2020-05-26",
-    "n": 72,
+    "n_dia": 72,
     "descartados": 839,
     "confirmados": 107,
     "internados": 19,
@@ -1255,8 +1152,9 @@
     }
     ,
     {
+    "n_boletim": 73,
     "dia": "2020-05-27",
-    "n": 73,
+    "n_dia": 73,
     "descartados": 843,
     "confirmados": 114,
     "internados": 17,
@@ -1270,8 +1168,9 @@
     }
     ,
     {
+    "n_boletim": 74,
     "dia": "2020-05-28",
-    "n": 74,
+    "n_dia": 74,
     "descartados": 897,
     "confirmados": 122,
     "internados": 19,
@@ -1285,8 +1184,9 @@
     }
     ,
     {
+    "n_boletim": 75,
     "dia": "2020-05-29",
-    "n": 75,
+    "n_dia": 75,
     "descartados": 905,
     "confirmados": 128,
     "internados": 18,
@@ -1300,8 +1200,9 @@
     }
     ,
     {
+    "n_boletim": 76,
     "dia": "2020-05-30",
-    "n": 76,
+    "n_dia": 76,
     "descartados": 920,
     "confirmados": 137,
     "internados": 15,
@@ -1315,8 +1216,9 @@
     }
     ,
     {
+    "n_boletim": 77,
     "dia": "2020-05-31",
-    "n": 77,
+    "n_dia": 77,
     "descartados": 925,
     "confirmados": 138,
     "internados": 13,
@@ -1330,8 +1232,9 @@
     }
     ,
     {
+    "n_boletim": 78,
     "dia": "2020-06-01",
-    "n": 78,
+    "n_dia": 78,
     "descartados": 944,
     "confirmados": 157,
     "internados": 14,
@@ -1345,8 +1248,9 @@
     }
     ,
     {
+    "n_boletim": 79,
     "dia": "2020-06-02",
-    "n": 79,
+    "n_dia": 79,
     "descartados": 954,
     "confirmados": 162,
     "internados": 16,
@@ -1360,8 +1264,9 @@
     }
     ,
     {
+    "n_boletim": 80,
     "dia": "2020-06-03",
-    "n": 80,
+    "n_dia": 80,
     "descartados": 990,
     "confirmados": 165,
     "internados": 15,
@@ -1375,8 +1280,9 @@
     }
     ,
     {
+    "n_boletim": 81,
     "dia": "2020-06-04",
-    "n": 81,
+    "n_dia": 81,
     "descartados": 1018,
     "confirmados": 167,
     "internados": 19,
@@ -1390,8 +1296,9 @@
     }
     ,
     {
+    "n_boletim": 82,
     "dia": "2020-06-05",
-    "n": 82,
+    "n_dia": 82,
     "descartados": 1065,
     "confirmados": 192,
     "internados": 22,
@@ -1405,8 +1312,9 @@
     }
     ,
     {
+    "n_boletim": 83,
     "dia": "2020-06-06",
-    "n": 83,
+    "n_dia": 83,
     "descartados": 1077,
     "confirmados": 205,
     "internados": 22,
@@ -1420,8 +1328,9 @@
     }
     ,
     {
+    "n_boletim": 84,
     "dia": "2020-06-07",
-    "n": 84,
+    "n_dia": 84,
     "descartados": 1077,
     "confirmados": 205,
     "internados": 29,
@@ -1435,8 +1344,9 @@
     }
     ,
     {
+    "n_boletim": 85,
     "dia": "2020-06-08",
-    "n": 85,
+    "n_dia": 85,
     "descartados": 1103,
     "confirmados": 248,
     "internados": 33,
@@ -1450,8 +1360,9 @@
     }
     ,
     {
+    "n_boletim": 86,
     "dia": "2020-06-09",
-    "n": 86,
+    "n_dia": 86,
     "descartados": 1181,
     "confirmados": 266,
     "internados": 37,
@@ -1465,8 +1376,9 @@
     }
     ,
     {
+    "n_boletim": 87,
     "dia": "2020-06-10",
-    "n": 87,
+    "n_dia": 87,
     "descartados": 1203,
     "confirmados": 280,
     "internados": 34,
@@ -1480,8 +1392,9 @@
     }
     ,
     {
+    "n_boletim": 88,
     "dia": "2020-06-11",
-    "n": 88,
+    "n_dia": 88,
     "descartados": 1211,
     "confirmados": 285,
     "internados": 35,
@@ -1495,8 +1408,9 @@
     }
     ,
     {
+    "n_boletim": 89,
     "dia": "2020-06-12",
-    "n": 89,
+    "n_dia": 89,
     "descartados": 1211,
     "confirmados": 285,
     "internados": 41,
@@ -1510,8 +1424,9 @@
     }
     ,
     {
+    "n_boletim": 90,
     "dia": "2020-06-13",
-    "n": 90,
+    "n_dia": 90,
     "descartados": 1283,
     "confirmados": 302,
     "internados": 39,
@@ -1525,8 +1440,9 @@
     }
     ,
     {
+    "n_boletim": 91,
     "dia": "2020-06-14",
-    "n": 91,
+    "n_dia": 91,
     "descartados": 1283,
     "confirmados": 303,
     "internados": 39,
@@ -1540,8 +1456,9 @@
     }
     ,
     {
+    "n_boletim": 92,
     "dia": "2020-06-15",
-    "n": 92,
+    "n_dia": 92,
     "descartados": 1296,
     "confirmados": 310,
     "internados": 34,
@@ -1555,8 +1472,9 @@
     }
     ,
     {
+    "n_boletim": 93,
     "dia": "2020-06-16",
-    "n": 93,
+    "n_dia": 93,
     "descartados": 1305,
     "confirmados": 315,
     "internados": 29,
@@ -1570,8 +1488,9 @@
     }
     ,
     {
+    "n_boletim": 94,
     "dia": "2020-06-17",
-    "n": 94,
+    "n_dia": 94,
     "descartados": 1378,
     "confirmados": 337,
     "internados": 32,
@@ -1585,8 +1504,9 @@
     }
     ,
     {
+    "n_boletim": 95,
     "dia": "2020-06-18",
-    "n": 95,
+    "n_dia": 95,
     "descartados": 1421,
     "confirmados": 353,
     "internados": 32,
@@ -1600,8 +1520,9 @@
     }
     ,
     {
+    "n_boletim": 96,
     "dia": "2020-06-19",
-    "n": 96,
+    "n_dia": 96,
     "descartados": 1499,
     "confirmados": 362,
     "internados": 34,
@@ -1615,8 +1536,9 @@
     }
     ,
     {
+    "n_boletim": 97,
     "dia": "2020-06-20",
-    "n": 97,
+    "n_dia": 97,
     "descartados": 1501,
     "confirmados": 367,
     "internados": 34,
@@ -1630,8 +1552,9 @@
     }
     ,
     {
+    "n_boletim": 98,
     "dia": "2020-06-21",
-    "n": 98,
+    "n_dia": 98,
     "descartados": 1501,
     "confirmados": 368,
     "internados": 35,
@@ -1645,8 +1568,9 @@
     }
     ,
     {
+    "n_boletim": 99,
     "dia": "2020-06-22",
-    "n": 99,
+    "n_dia": 99,
     "descartados": 1555,
     "confirmados": 376,
     "internados": 40,
@@ -1660,8 +1584,9 @@
     }
     ,
     {
+    "n_boletim": 100,
     "dia": "2020-06-23",
-    "n": 100,
+    "n_dia": 100,
     "descartados": 1653,
     "confirmados": 418,
     "internados": 34,
@@ -1675,8 +1600,9 @@
     }
     ,
     {
+    "n_boletim": 101,
     "dia": "2020-06-24",
-    "n": 101,
+    "n_dia": 101,
     "descartados": 1724,
     "confirmados": 434,
     "internados": 27,
@@ -1690,8 +1616,9 @@
     }
     ,
     {
+    "n_boletim": 102,
     "dia": "2020-06-25",
-    "n": 102,
+    "n_dia": 102,
     "descartados": 1799,
     "confirmados": 455,
     "internados": 31,
@@ -1705,8 +1632,9 @@
     }
     ,
     {
+    "n_boletim": 103,
     "dia": "2020-06-26",
-    "n": 103,
+    "n_dia": 103,
     "descartados": 1859,
     "confirmados": 470,
     "internados": 27,
@@ -1720,8 +1648,9 @@
     }
     ,
     {
+    "n_boletim": 104,
     "dia": "2020-06-27",
-    "n": 104,
+    "n_dia": 104,
     "descartados": 1860,
     "confirmados": 501,
     "internados": 29,
@@ -1735,8 +1664,9 @@
     }
     ,
     {
+    "n_boletim": 105,
     "dia": "2020-06-28",
-    "n": 105,
+    "n_dia": 105,
     "descartados": 1860,
     "confirmados": 501,
     "internados": 27,
@@ -1750,8 +1680,9 @@
     }
     ,
     {
+    "n_boletim": 106,
     "dia": "2020-06-29",
-    "n": 106,
+    "n_dia": 106,
     "descartados": 1915,
     "confirmados": 509,
     "internados": 27,
@@ -1765,8 +1696,9 @@
     }
     ,
     {
+    "n_boletim": 107,
     "dia": "2020-06-30",
-    "n": 107,
+    "n_dia": 107,
     "descartados": 2015,
     "confirmados": 541,
     "internados": 35,
@@ -1780,8 +1712,9 @@
     }
     ,
     {
+    "n_boletim": 108,
     "dia": "2020-07-01",
-    "n": 108,
+    "n_dia": 108,
     "descartados": 2098,
     "confirmados": 563,
     "internados": 33,
@@ -1795,8 +1728,9 @@
     }
     ,
     {
+    "n_boletim": 109,
     "dia": "2020-07-02",
-    "n": 109,
+    "n_dia": 109,
     "descartados": 2158,
     "confirmados": 577,
     "internados": 33,
@@ -1810,8 +1744,9 @@
     }
     ,
     {
+    "n_boletim": 110,
     "dia": "2020-07-03",
-    "n": 110,
+    "n_dia": 110,
     "descartados": 2193,
     "confirmados": 601,
     "internados": 34,
@@ -1825,8 +1760,9 @@
     }
     ,
     {
+    "n_boletim": 111,
     "dia": "2020-07-04",
-    "n": 111,
+    "n_dia": 111,
     "descartados": 2203,
     "confirmados": 608,
     "internados": 32,
@@ -1840,8 +1776,9 @@
     }
     ,
     {
+    "n_boletim": 112,
     "dia": "2020-07-05",
-    "n": 112,
+    "n_dia": 112,
     "descartados": 2261,
     "confirmados": 633,
     "internados": 36,
@@ -1855,8 +1792,9 @@
     }
     ,
     {
+    "n_boletim": 113,
     "dia": "2020-07-06",
-    "n": 113,
+    "n_dia": 113,
     "descartados": 2274,
     "confirmados": 646,
     "internados": 30,
@@ -1870,8 +1808,9 @@
     }
     ,
     {
+    "n_boletim": 114,
     "dia": "2020-07-07",
-    "n": 114,
+    "n_dia": 114,
     "descartados": 2364,
     "confirmados": 692,
     "internados": 35,
@@ -1885,8 +1824,9 @@
     }
     ,
     {
+    "n_boletim": 115,
     "dia": "2020-07-08",
-    "n": 115,
+    "n_dia": 115,
     "descartados": 3469,
     "confirmados": 729,
     "internados": 34,
@@ -1900,8 +1840,9 @@
     }
     ,
     {
+    "n_boletim": 116,
     "dia": "2020-07-09",
-    "n": 116,
+    "n_dia": 116,
     "descartados": 3513,
     "confirmados": 751,
     "internados": 32,
@@ -1915,8 +1856,9 @@
     }
     ,
     {
+    "n_boletim": 117,
     "dia": "2020-07-10",
-    "n": 117,
+    "n_dia": 117,
     "descartados": 3575,
     "confirmados": 771,
     "internados": 39,
@@ -1930,8 +1872,9 @@
     }
     ,
     {
+    "n_boletim": 118,
     "dia": "2020-07-11",
-    "n": 118,
+    "n_dia": 118,
     "descartados": 3650,
     "confirmados": 800,
     "internados": 38,
@@ -1945,8 +1888,9 @@
     }
     ,
     {
+    "n_boletim": 119,
     "dia": "2020-07-12",
-    "n": 119,
+    "n_dia": 119,
     "descartados": 3682,
     "confirmados": 824,
     "internados": 34,
@@ -1960,8 +1904,9 @@
     }
     ,
     {
+    "n_boletim": 120,
     "dia": "2020-07-13",
-    "n": 120,
+    "n_dia": 120,
     "descartados": 3702,
     "confirmados": 842,
     "internados": 39,
@@ -1975,8 +1920,9 @@
     }
     ,
     {
+    "n_boletim": 121,
     "dia": "2020-07-14",
-    "n": 121,
+    "n_dia": 121,
     "descartados": 3793,
     "confirmados": 902,
     "internados": 36,
@@ -1990,8 +1936,9 @@
     }
     ,
     {
+    "n_boletim": 122,
     "dia": "2020-07-15",
-    "n": 122,
+    "n_dia": 122,
     "descartados": 3900,
     "confirmados": 937,
     "internados": 38,
@@ -2005,8 +1952,9 @@
     }
     ,
     {
+    "n_boletim": 123,
     "dia": "2020-07-16",
-    "n": 123,
+    "n_dia": 123,
     "descartados": 3990,
     "confirmados": 974,
     "internados": 38,
@@ -2020,8 +1968,9 @@
     }
     ,
     {
+    "n_boletim": 124,
     "dia": "2020-07-17",
-    "n": 124,
+    "n_dia": 124,
     "descartados": 4078,
     "confirmados": 997,
     "internados": 35,
@@ -2035,8 +1984,9 @@
     }
     ,
     {
+    "n_boletim": 125,
     "dia": "2020-07-18",
-    "n": 125,
+    "n_dia": 125,
     "descartados": 4172,
     "confirmados": 1028,
     "internados": 32,
@@ -2050,8 +2000,9 @@
     }
     ,
     {
+    "n_boletim": 126,
     "dia": "2020-07-19",
-    "n": 126,
+    "n_dia": 126,
     "descartados": 4176,
     "confirmados": 1029,
     "internados": 33,
@@ -2065,8 +2016,9 @@
     }
     ,
     {
+    "n_boletim": 127,
     "dia": "2020-07-20",
-    "n": 127,
+    "n_dia": 127,
     "descartados": 4191,
     "confirmados": 1055,
     "internados": 33,
@@ -2080,8 +2032,9 @@
     }
     ,
     {
+    "n_boletim": 128,
     "dia": "2020-07-21",
-    "n": 128,
+    "n_dia": 128,
     "descartados": 4247,
     "confirmados": 1084,
     "internados": 31,
@@ -2095,8 +2048,9 @@
     }
     ,
     {
+    "n_boletim": 129,
     "dia": "2020-07-22",
-    "n": 129,
+    "n_dia": 129,
     "descartados": 4336,
     "confirmados": 1128,
     "internados": 30,
@@ -2110,8 +2064,9 @@
     }
     ,
     {
+    "n_boletim": 130,
     "dia": "2020-07-23",
-    "n": 130,
+    "n_dia": 130,
     "descartados": 4439,
     "confirmados": 1166,
     "internados": 28,
@@ -2125,8 +2080,9 @@
     }
     ,
     {
+    "n_boletim": 131,
     "dia": "2020-07-24",
-    "n": 131,
+    "n_dia": 131,
     "descartados": 4544,
     "confirmados": 1185,
     "internados": 29,
@@ -2140,8 +2096,9 @@
     }
     ,
     {
+    "n_boletim": 132,
     "dia": "2020-07-25",
-    "n": 132,
+    "n_dia": 132,
     "descartados": 4635,
     "confirmados": 1219,
     "internados": 30,
@@ -2155,8 +2112,9 @@
     }
     ,
     {
+    "n_boletim": 133,
     "dia": "2020-07-26",
-    "n": 133,
+    "n_dia": 133,
     "descartados": 4697,
     "confirmados": 1233,
     "internados": 36,
@@ -2170,8 +2128,9 @@
     }
     ,
     {
+    "n_boletim": 134,
     "dia": "2020-07-27",
-    "n": 134,
+    "n_dia": 134,
     "descartados": 4697,
     "confirmados": 1239,
     "internados": 38,
@@ -2185,8 +2144,9 @@
     }
     ,
     {
+    "n_boletim": 135,
     "dia": "2020-07-28",
-    "n": 135,
+    "n_dia": 135,
     "descartados": 4843,
     "confirmados": 1274,
     "internados": 41,
@@ -2200,8 +2160,9 @@
     }
     ,
     {
+    "n_boletim": 136,
     "dia": "2020-07-29",
-    "n": 136,
+    "n_dia": 136,
     "descartados": 4925,
     "confirmados": 1294,
     "internados": 35,
@@ -2215,8 +2176,9 @@
     }
     ,
     {
+    "n_boletim": 137,
     "dia": "2020-07-30",
-    "n": 137,
+    "n_dia": 137,
     "descartados": 5025,
     "confirmados": 1337,
     "internados": 38,
@@ -2230,8 +2192,9 @@
     }
     ,
     {
+    "n_boletim": 138,
     "dia": "2020-07-31",
-    "n": 138,
+    "n_dia": 138,
     "descartados": 5198,
     "confirmados": 1387,
     "internados": 36,
@@ -2245,8 +2208,9 @@
     }
     ,
     {
+    "n_boletim": 139,
     "dia": "2020-08-01",
-    "n": 139,
+    "n_dia": 139,
     "descartados": 5256,
     "confirmados": 1406,
     "internados": 38,
@@ -2260,8 +2224,9 @@
     }
     ,
     {
+    "n_boletim": 140,
     "dia": "2020-08-02",
-    "n": 140,
+    "n_dia": 140,
     "descartados": 5286,
     "confirmados": 1419,
     "internados": 41,
@@ -2275,8 +2240,9 @@
     }
     ,
     {
+    "n_boletim": 141,
     "dia": "2020-08-03",
-    "n": 141,
+    "n_dia": 141,
     "descartados": 5326,
     "confirmados": 1433,
     "internados": 37,
@@ -2290,8 +2256,9 @@
     }
     ,
     {
+    "n_boletim": 142,
     "dia": "2020-08-04",
-    "n": 142,
+    "n_dia": 142,
     "descartados": 5404,
     "confirmados": 1448,
     "internados": 36,
@@ -2305,8 +2272,9 @@
     }
     ,
     {
+    "n_boletim": 143,
     "dia": "2020-08-05",
-    "n": 143,
+    "n_dia": 143,
     "descartados": 5530,
     "confirmados": 1487,
     "internados": 35,
@@ -2320,8 +2288,9 @@
     }
     ,
     {
+    "n_boletim": 144,
     "dia": "2020-08-06",
-    "n": 144,
+    "n_dia": 144,
     "descartados": 5606,
     "confirmados": 1516,
     "internados": 34,
@@ -2335,8 +2304,9 @@
     }
     ,
     {
+    "n_boletim": 145,
     "dia": "2020-08-07",
-    "n": 145,
+    "n_dia": 145,
     "descartados": 5698,
     "confirmados": 1548,
     "internados": 44,
@@ -2350,8 +2320,9 @@
     }
     ,
     {
+    "n_boletim": 146,
     "dia": "2020-08-08",
-    "n": 146,
+    "n_dia": 146,
     "descartados": 5850,
     "confirmados": 1613,
     "internados": 45,
@@ -2365,8 +2336,9 @@
     }
     ,
     {
+    "n_boletim": 147,
     "dia": "2020-08-09",
-    "n": 147,
+    "n_dia": 147,
     "descartados": 5850,
     "confirmados": 1613,
     "internados": 36,
@@ -2380,8 +2352,9 @@
     }
     ,
     {
+    "n_boletim": 148,
     "dia": "2020-08-10",
-    "n": 148,
+    "n_dia": 148,
     "descartados": 5856,
     "confirmados": 1621,
     "internados": 34,
@@ -2395,8 +2368,9 @@
     }
     ,
     {
+    "n_boletim": 149,
     "dia": "2020-08-11",
-    "n": 149,
+    "n_dia": 149,
     "descartados": 5961,
     "confirmados": 1636,
     "internados": 34,
@@ -2410,8 +2384,9 @@
     }
     ,
     {
+    "n_boletim": 150,
     "dia": "2020-08-12",
-    "n": 150,
+    "n_dia": 150,
     "descartados": 6073,
     "confirmados": 1671,
     "internados": 32,
@@ -2425,8 +2400,9 @@
     }
     ,
     {
+    "n_boletim": 151,
     "dia": "2020-08-13",
-    "n": 151,
+    "n_dia": 151,
     "descartados": 6235,
     "confirmados": 1712,
     "internados": 30,
@@ -2440,8 +2416,9 @@
     }
     ,
     {
+    "n_boletim": 152,
     "dia": "2020-08-14",
-    "n": 152,
+    "n_dia": 152,
     "descartados": 6352,
     "confirmados": 1739,
     "internados": 39,
@@ -2455,8 +2432,9 @@
     }
     ,
     {
+    "n_boletim": 153,
     "dia": "2020-08-15",
-    "n": 153,
+    "n_dia": 153,
     "descartados": 6430,
     "confirmados": 1769,
     "internados": 31,
@@ -2470,8 +2448,9 @@
     }
     ,
     {
+    "n_boletim": 154,
     "dia": "2020-08-16",
-    "n": 154,
+    "n_dia": 154,
     "descartados": 6430,
     "confirmados": 1771,
     "internados": 34,
@@ -2485,8 +2464,9 @@
     }
     ,
     {
+    "n_boletim": 155,
     "dia": "2020-08-17",
-    "n": 155,
+    "n_dia": 155,
     "descartados": 6498,
     "confirmados": 1790,
     "internados": 32,
@@ -2500,8 +2480,9 @@
     }
     ,
     {
+    "n_boletim": 156,
     "dia": "2020-08-18",
-    "n": 156,
+    "n_dia": 156,
     "descartados": 6613,
     "confirmados": 1854,
     "internados": 36,
@@ -2515,8 +2496,9 @@
     }
     ,
     {
+    "n_boletim": 157,
     "dia": "2020-08-19",
-    "n": 157,
+    "n_dia": 157,
     "descartados": 6790,
     "confirmados": 1884,
     "internados": 34,
@@ -2530,8 +2512,9 @@
     }
     ,
     {
+    "n_boletim": 158,
     "dia": "2020-08-20",
-    "n": 158,
+    "n_dia": 158,
     "descartados": 6790,
     "confirmados": 1884,
     "internados": 34,
@@ -2545,8 +2528,9 @@
     }
     ,
     {
+    "n_boletim": 159,
     "dia": "2020-08-21",
-    "n": 159,
+    "n_dia": 159,
     "descartados": 6963,
     "confirmados": 1952,
     "internados": 40,
@@ -2560,8 +2544,9 @@
     }
     ,
     {
+    "n_boletim": 160,
     "dia": "2020-08-22",
-    "n": 160,
+    "n_dia": 160,
     "descartados": 7025,
     "confirmados": 1976,
     "internados": 39,
@@ -2575,8 +2560,9 @@
     }
     ,
     {
+    "n_boletim": 161,
     "dia": "2020-08-23",
-    "n": 161,
+    "n_dia": 161,
     "descartados": 7025,
     "confirmados": 1983,
     "internados": 38,
@@ -2590,8 +2576,9 @@
     }
     ,
     {
+    "n_boletim": 162,
     "dia": "2020-08-24",
-    "n": 162,
+    "n_dia": 162,
     "descartados": 7041,
     "confirmados": 1984,
     "internados": 41,
@@ -2605,8 +2592,9 @@
     }
     ,
     {
+    "n_boletim": 163,
     "dia": "2020-08-25",
-    "n": 163,
+    "n_dia": 163,
     "descartados": 7156,
     "confirmados": 2006,
     "internados": 41,
@@ -2620,8 +2608,9 @@
     }
     ,
     {
+    "n_boletim": 164,
     "dia": "2020-08-26",
-    "n": 164,
+    "n_dia": 164,
     "descartados": 7189,
     "confirmados": 2037,
     "internados": 35,
@@ -2635,8 +2624,9 @@
     }
     ,
     {
+    "n_boletim": 165,
     "dia": "2020-08-27",
-    "n": 165,
+    "n_dia": 165,
     "descartados": 7254,
     "confirmados": 2069,
     "internados": 37,
@@ -2650,8 +2640,9 @@
     }
     ,
     {
+    "n_boletim": 166,
     "dia": "2020-08-28",
-    "n": 166,
+    "n_dia": 166,
     "descartados": 7326,
     "confirmados": 2110,
     "internados": 37,
@@ -2665,8 +2656,9 @@
     }
     ,
     {
+    "n_boletim": 167,
     "dia": "2020-08-29",
-    "n": 167,
+    "n_dia": 167,
     "descartados": 7408,
     "confirmados": 2131,
     "internados": 36,
@@ -2680,8 +2672,9 @@
     }
     ,
     {
+    "n_boletim": 168,
     "dia": "2020-08-30",
-    "n": 168,
+    "n_dia": 168,
     "descartados": 7408,
     "confirmados": 2131,
     "internados": 33,
@@ -2695,8 +2688,9 @@
     }
     ,
     {
+    "n_boletim": 169,
     "dia": "2020-08-31",
-    "n": 169,
+    "n_dia": 169,
     "descartados": 7414,
     "confirmados": 2150,
     "internados": 41,
@@ -2710,8 +2704,9 @@
     }
     ,
     {
+    "n_boletim": 170,
     "dia": "2020-09-01",
-    "n": 170,
+    "n_dia": 170,
     "descartados": 7546,
     "confirmados": 2194,
     "internados": 36,
@@ -2725,8 +2720,9 @@
     }
     ,
     {
+    "n_boletim": 171,
     "dia": "2020-09-02",
-    "n": 171,
+    "n_dia": 171,
     "descartados": 7640,
     "confirmados": 2238,
     "internados": 34,
@@ -2740,8 +2736,9 @@
     }
     ,
     {
+    "n_boletim": 172,
     "dia": "2020-09-03",
-    "n": 172,
+    "n_dia": 172,
     "descartados": 7711,
     "confirmados": 2265,
     "internados": 37,
@@ -2755,8 +2752,9 @@
     }
     ,
     {
+    "n_boletim": 173,
     "dia": "2020-09-04",
-    "n": 173,
+    "n_dia": 173,
     "descartados": 7790,
     "confirmados": 2292,
     "internados": 38,
@@ -2770,8 +2768,9 @@
     }
     ,
     {
+    "n_boletim": 174,
     "dia": "2020-09-05",
-    "n": 174,
+    "n_dia": 174,
     "descartados": 7869,
     "confirmados": 2316,
     "internados": 35,
@@ -2785,8 +2784,9 @@
     }
     ,
     {
+    "n_boletim": 175,
     "dia": "2020-09-08",
-    "n": 175,
+    "n_dia": 177,
     "descartados": 7869,
     "confirmados": 2373,
     "internados": 35,
@@ -2800,8 +2800,9 @@
     }
     ,
     {
+    "n_boletim": 176,
     "dia": "2020-09-09",
-    "n": 176,
+    "n_dia": 178,
     "descartados": 7972,
     "confirmados": 2424,
     "internados": 29,
@@ -2815,8 +2816,9 @@
     }
     ,
     {
+    "n_boletim": 177,
     "dia": "2020-09-10",
-    "n": 177,
+    "n_dia": 179,
     "descartados": 8045,
     "confirmados": 2478,
     "internados": 28,
@@ -2830,8 +2832,9 @@
     }
     ,
     {
+    "n_boletim": 178,
     "dia": "2020-09-11",
-    "n": 178,
+    "n_dia": 180,
     "descartados": 8097,
     "confirmados": 2505,
     "internados": 27,
@@ -2845,8 +2848,9 @@
     }
     ,
     {
+    "n_boletim": 179,
     "dia": "2020-09-12",
-    "n": 179,
+    "n_dia": 181,
     "descartados": 8149,
     "confirmados": 2525,
     "internados": 22,
@@ -2860,8 +2864,9 @@
     }
     ,
     {
+    "n_boletim": 180,
     "dia": "2020-09-14",
-    "n": 180,
+    "n_dia": 183,
     "descartados": 8149,
     "confirmados": 2528,
     "internados": 28,
@@ -2875,8 +2880,9 @@
     }
     ,
     {
+    "n_boletim": 181,
     "dia": "2020-09-15",
-    "n": 181,
+    "n_dia": 184,
     "descartados": 8330,
     "confirmados": 2533,
     "internados": 35,
@@ -2890,8 +2896,9 @@
     }
     ,
     {
+    "n_boletim": 182,
     "dia": "2020-09-16",
-    "n": 182,
+    "n_dia": 185,
     "descartados": 8425,
     "confirmados": 2540,
     "internados": 34,
@@ -2905,8 +2912,9 @@
     }
     ,
     {
+    "n_boletim": 183,
     "dia": "2020-09-17",
-    "n": 183,
+    "n_dia": 186,
     "descartados": 8483,
     "confirmados": 2577,
     "internados": 35,
@@ -2920,8 +2928,9 @@
     }
     ,
     {
+    "n_boletim": 184,
     "dia": "2020-09-18",
-    "n": 184,
+    "n_dia": 187,
     "descartados": 8483,
     "confirmados": 2604,
     "internados": 40,
@@ -2935,8 +2944,9 @@
     }
     ,
     {
+    "n_boletim": 185,
     "dia": "2020-09-19",
-    "n": 185,
+    "n_dia": 188,
     "descartados": 8537,
     "confirmados": 2644,
     "internados": 40,
@@ -2950,8 +2960,9 @@
     }
     ,
     {
+    "n_boletim": 186,
     "dia": "2020-09-21",
-    "n": 186,
+    "n_dia": 190,
     "descartados": 8568,
     "confirmados": 2660,
     "internados": 37,
@@ -2965,8 +2976,9 @@
     }
     ,
     {
+    "n_boletim": 187,
     "dia": "2020-09-22",
-    "n": 187,
+    "n_dia": 191,
     "descartados": 8655,
     "confirmados": 2689,
     "internados": 40,
@@ -2980,8 +2992,9 @@
     }
     ,
     {
+    "n_boletim": 188,
     "dia": "2020-09-23",
-    "n": 188,
+    "n_dia": 192,
     "descartados": 12431,
     "confirmados": 2788,
     "internados": 39,
@@ -2995,8 +3008,9 @@
     }
     ,
     {
+    "n_boletim": 189,
     "dia": "2020-09-24",
-    "n": 189,
+    "n_dia": 193,
     "descartados": 12493,
     "confirmados": 2826,
     "internados": 36,
@@ -3010,8 +3024,9 @@
     }
     ,
     {
+    "n_boletim": 190,
     "dia": "2020-09-25",
-    "n": 190,
+    "n_dia": 194,
     "descartados": 12612,
     "confirmados": 2847,
     "internados": 36,
@@ -3025,8 +3040,9 @@
     }
     ,
     {
+    "n_boletim": 191,
     "dia": "2020-09-26",
-    "n": 191,
+    "n_dia": 195,
     "descartados": 12695,
     "confirmados": 2867,
     "internados": 38,
@@ -3040,8 +3056,9 @@
     }
     ,
     {
+    "n_boletim": 192,
     "dia": "2020-09-29",
-    "n": 192,
+    "n_dia": 198,
     "descartados": 12703,
     "confirmados": 2872,
     "internados": 42,
@@ -3055,8 +3072,9 @@
     }
     ,
     {
+    "n_boletim": 193,
     "dia": "2020-09-30",
-    "n": 193,
+    "n_dia": 199,
     "descartados": 12812,
     "confirmados": 2896,
     "internados": 43,
@@ -3070,8 +3088,9 @@
     }
     ,
     {
+    "n_boletim": 194,
     "dia": "2020-10-01",
-    "n": 194,
+    "n_dia": 200,
     "descartados": 12877,
     "confirmados": 2965,
     "internados": 40,
@@ -3085,8 +3104,9 @@
     }
     ,
     {
+    "n_boletim": 195,
     "dia": "2020-10-02",
-    "n": 195,
+    "n_dia": 201,
     "descartados": 12877,
     "confirmados": 2983,
     "internados": 40,
@@ -3100,8 +3120,9 @@
     }
     ,
     {
+    "n_boletim": 196,
     "dia": "2020-10-03",
-    "n": 196,
+    "n_dia": 202,
     "descartados": 12895,
     "confirmados": 2999,
     "internados": 40,
@@ -3115,8 +3136,9 @@
     }
     ,
     {
+    "n_boletim": 197,
     "dia": "2020-10-05",
-    "n": 197,
+    "n_dia": 204,
     "descartados": 12944,
     "confirmados": 3056,
     "internados": 37,
@@ -3130,8 +3152,9 @@
     }
     ,
     {
+    "n_boletim": 198,
     "dia": "2020-10-06",
-    "n": 198,
+    "n_dia": 205,
     "descartados": 12950,
     "confirmados": 3062,
     "internados": 47,
@@ -3145,8 +3168,9 @@
     }
     ,
     {
+    "n_boletim": 199,
     "dia": "2020-10-07",
-    "n": 199,
+    "n_dia": 206,
     "descartados": 13007,
     "confirmados": 3085,
     "internados": 40,
@@ -3160,8 +3184,9 @@
     }
     ,
     {
+    "n_boletim": 200,
     "dia": "2020-10-08",
-    "n": 200,
+    "n_dia": 207,
     "descartados": 13150,
     "confirmados": 3128,
     "internados": 46,
@@ -3175,8 +3200,9 @@
     }
     ,
     {
+    "n_boletim": 201,
     "dia": "2020-10-09",
-    "n": 201,
+    "n_dia": 208,
     "descartados": 13175,
     "confirmados": 3150,
     "internados": 43,
@@ -3190,8 +3216,9 @@
     }
     ,
     {
+    "n_boletim": 202,
     "dia": "2020-10-10",
-    "n": 202,
+    "n_dia": 209,
     "descartados": 13209,
     "confirmados": 3185,
     "internados": 38,
@@ -3205,8 +3232,9 @@
     }
     ,
     {
+    "n_boletim": 203,
     "dia": "2020-10-13",
-    "n": 203,
+    "n_dia": 212,
     "descartados": 13263,
     "confirmados": 3223,
     "internados": 37,
@@ -3220,8 +3248,9 @@
     }
     ,
     {
+    "n_boletim": 205,
     "dia": "2020-10-15",
-    "n": 205,
+    "n_dia": 214,
     "descartados": 13423,
     "confirmados": 3280,
     "internados": 33,
@@ -3235,8 +3264,9 @@
     }
     ,
     {
+    "n_boletim": 206,
     "dia": "2020-10-16",
-    "n": 206,
+    "n_dia": 215,
     "descartados": 13468,
     "confirmados": 3292,
     "internados": 35,
@@ -3250,8 +3280,9 @@
     }
     ,
     {
+    "n_boletim": 207,
     "dia": "2020-10-17",
-    "n": 207,
+    "n_dia": 216,
     "descartados": 13512,
     "confirmados": 3302,
     "internados": 32,
@@ -3265,8 +3296,9 @@
     }
     ,
     {
+    "n_boletim": 208,
     "dia": "2020-10-19",
-    "n": 208,
+    "n_dia": 218,
     "descartados": 13517,
     "confirmados": 3304,
     "internados": 31,
@@ -3280,8 +3312,9 @@
     }
     ,
     {
+    "n_boletim": 209,
     "dia": "2020-10-20",
-    "n": 209,
+    "n_dia": 219,
     "descartados": 13810,
     "confirmados": 3337,
     "internados": 38,
@@ -3295,8 +3328,9 @@
     }
     ,
     {
+    "n_boletim": 210,
     "dia": "2020-10-21",
-    "n": 210,
+    "n_dia": 220,
     "descartados": 13837,
     "confirmados": 3351,
     "internados": 35,
@@ -3310,8 +3344,9 @@
     }
     ,
     {
+    "n_boletim": 211,
     "dia": "2020-10-22",
-    "n": 211,
+    "n_dia": 221,
     "descartados": 13930,
     "confirmados": 3374,
     "internados": 34,
@@ -3325,8 +3360,9 @@
     }
     ,
     {
+    "n_boletim": 212,
     "dia": "2020-10-23",
-    "n": 212,
+    "n_dia": 222,
     "descartados": 13986,
     "confirmados": 3399,
     "internados": 31,
@@ -3340,8 +3376,9 @@
     }
     ,
     {
+    "n_boletim": 213,
     "dia": "2020-10-26",
-    "n": 213,
+    "n_dia": 225,
     "descartados": 14068,
     "confirmados": 3421,
     "internados": 30,
@@ -3355,8 +3392,9 @@
     }
     ,
     {
+    "n_boletim": 214,
     "dia": "2020-10-27",
-    "n": 214,
+    "n_dia": 226,
     "descartados": 14157,
     "confirmados": 3437,
     "internados": 35,
@@ -3370,8 +3408,9 @@
     }
     ,
     {
+    "n_boletim": 215,
     "dia": "2020-10-28",
-    "n": 215,
+    "n_dia": 227,
     "descartados": 14219,
     "confirmados": 3480,
     "internados": 34,
@@ -3385,8 +3424,9 @@
     }
     ,
     {
+    "n_boletim": 216,
     "dia": "2020-10-29",
-    "n": 216,
+    "n_dia": 228,
     "descartados": 14208,
     "confirmados": 3521,
     "internados": 32,
@@ -3400,8 +3440,9 @@
     }
     ,
     {
+    "n_boletim": 217,
     "dia": "2020-10-30",
-    "n": 217,
+    "n_dia": 229,
     "descartados": 14280,
     "confirmados": 3551,
     "internados": 30,
@@ -3415,8 +3456,9 @@
     }
     ,
     {
+    "n_boletim": 218,
     "dia": "2020-10-31",
-    "n": 218,
+    "n_dia": 230,
     "descartados": 14370,
     "confirmados": 3585,
     "internados": 30,
@@ -3430,8 +3472,9 @@
     }
     ,
     {
+    "n_boletim": 219,
     "dia": "2020-11-03",
-    "n": 219,
+    "n_dia": 233,
     "descartados": 14375,
     "confirmados": 3585,
     "internados": 27,
@@ -3445,8 +3488,9 @@
     }
     ,
     {
+    "n_boletim": 220,
     "dia": "2020-11-05",
-    "n": 220,
+    "n_dia": 235,
     "descartados": 14455,
     "confirmados": 3624,
     "internados": 29,
@@ -3460,8 +3504,9 @@
     }
     ,
     {
+    "n_boletim": 221,
     "dia": "2020-11-06",
-    "n": 221,
+    "n_dia": 236,
     "descartados": 14552,
     "confirmados": 3646,
     "internados": 31,
@@ -3475,8 +3520,9 @@
     }
     ,
     {
+    "n_boletim": 222,
     "dia": "2020-11-09",
-    "n": 222,
+    "n_dia": 239,
     "descartados": 14691,
     "confirmados": 3709,
     "internados": 33,
@@ -3490,8 +3536,9 @@
     }
     ,
     {
+    "n_boletim": 223,
     "dia": "2020-11-10",
-    "n": 223,
+    "n_dia": 240,
     "descartados": 14816,
     "confirmados": 3746,
     "internados": 34,
@@ -3505,8 +3552,9 @@
     }
     ,
     {
+    "n_boletim": 224,
     "dia": "2020-11-11",
-    "n": 224,
+    "n_dia": 241,
     "descartados": 15002,
     "confirmados": 3786,
     "internados": 39,
@@ -3520,8 +3568,9 @@
     }
     ,
     {
+    "n_boletim": 225,
     "dia": "2020-11-12",
-    "n": 225,
+    "n_dia": 242,
     "descartados": 15074,
     "confirmados": 3811,
     "internados": 35,
@@ -3535,8 +3584,9 @@
     }
     ,
     {
+    "n_boletim": 226,
     "dia": "2020-11-13",
-    "n": 226,
+    "n_dia": 243,
     "descartados": 15189,
     "confirmados": 3839,
     "internados": 36,
@@ -3550,8 +3600,9 @@
     }
     ,
     {
+    "n_boletim": 227,
     "dia": "2020-11-16",
-    "n": 227,
+    "n_dia": 246,
     "descartados": 15278,
     "confirmados": 3856,
     "internados": 32,
@@ -3565,8 +3616,9 @@
     }
     ,
     {
+    "n_boletim": 228,
     "dia": "2020-11-17",
-    "n": 228,
+    "n_dia": 247,
     "descartados": 15403,
     "confirmados": 3892,
     "internados": 34,
@@ -3580,8 +3632,9 @@
     }
     ,
     {
+    "n_boletim": 229,
     "dia": "2020-11-18",
-    "n": 229,
+    "n_dia": 248,
     "descartados": 15486,
     "confirmados": 3937,
     "internados": 37,
@@ -3595,8 +3648,9 @@
     }
     ,
     {
+    "n_boletim": 230,
     "dia": "2020-11-19",
-    "n": 230,
+    "n_dia": 249,
     "descartados": 15623,
     "confirmados": 3980,
     "internados": 34,
@@ -3610,8 +3664,9 @@
     }
     ,
     {
+    "n_boletim": 231,
     "dia": "2020-11-20",
-    "n": 231,
+    "n_dia": 250,
     "descartados": 15691,
     "confirmados": 4008,
     "internados": 39,
@@ -3625,8 +3680,9 @@
     }
     ,
     {
+    "n_boletim": 232,
     "dia": "2020-11-23",
-    "n": 232,
+    "n_dia": 253,
     "descartados": 15892,
     "confirmados": 4077,
     "internados": 44,
@@ -3640,8 +3696,9 @@
     }
     ,
     {
+    "n_boletim": 233,
     "dia": "2020-11-24",
-    "n": 233,
+    "n_dia": 254,
     "descartados": 16013,
     "confirmados": 4120,
     "internados": 46,
@@ -3655,8 +3712,9 @@
     }
     ,
     {
+    "n_boletim": 234,
     "dia": "2020-11-25",
-    "n": 234,
+    "n_dia": 255,
     "descartados": 16196,
     "confirmados": 4160,
     "internados": 44,
@@ -3670,8 +3728,9 @@
     }
     ,
     {
+    "n_boletim": 235,
     "dia": "2020-11-26",
-    "n": 235,
+    "n_dia": 256,
     "descartados": 16307,
     "confirmados": 4199,
     "internados": 45,
@@ -3685,8 +3744,9 @@
     }
     ,
     {
+    "n_boletim": 236,
     "dia": "2020-11-27",
-    "n": 236,
+    "n_dia": 257,
     "descartados": 16458,
     "confirmados": 4232,
     "internados": 42,
@@ -3700,8 +3760,9 @@
     }
     ,
     {
+    "n_boletim": 237,
     "dia": "2020-11-30",
-    "n": 237,
+    "n_dia": 260,
     "descartados": 16698,
     "confirmados": 4300,
     "internados": 44,
@@ -3715,8 +3776,9 @@
     }
     ,
     {
+    "n_boletim": 238,
     "dia": "2020-12-01",
-    "n": 238,
+    "n_dia": 261,
     "descartados": 16942,
     "confirmados": 4392,
     "internados": 41,
@@ -3730,8 +3792,9 @@
     }
     ,
     {
+    "n_boletim": 239,
     "dia": "2020-12-02",
-    "n": 239,
+    "n_dia": 262,
     "descartados": 17056,
     "confirmados": 4454,
     "internados": 42,
@@ -3745,8 +3808,9 @@
     }
     ,
     {
+    "n_boletim": 240,
     "dia": "2020-12-03",
-    "n": 240,
+    "n_dia": 263,
     "descartados": 17207,
     "confirmados": 4516,
     "internados": 36,
@@ -3760,8 +3824,9 @@
     }
     ,
     {
+    "n_boletim": 241,
     "dia": "2020-12-04",
-    "n": 241,
+    "n_dia": 264,
     "descartados": 17329,
     "confirmados": 4564,
     "internados": 40,
@@ -3775,8 +3840,9 @@
     }
     ,
     {
+    "n_boletim": 242,
     "dia": "2020-12-07",
-    "n": 242,
+    "n_dia": 267,
     "descartados": 17497,
     "confirmados": 4625,
     "internados": 43,
@@ -3790,8 +3856,9 @@
     }
     ,
     {
+    "n_boletim": 243,
     "dia": "2020-12-08",
-    "n": 243,
+    "n_dia": 268,
     "descartados": 17653,
     "confirmados": 4727,
     "internados": 37,
@@ -3805,8 +3872,9 @@
     }
     ,
     {
+    "n_boletim": 244,
     "dia": "2020-12-09",
-    "n": 244,
+    "n_dia": 269,
     "descartados": 17809,
     "confirmados": 4808,
     "internados": 32,
@@ -3820,8 +3888,9 @@
     }
     ,
     {
+    "n_boletim": 245,
     "dia": "2020-12-10",
-    "n": 245,
+    "n_dia": 270,
     "descartados": 17902,
     "confirmados": 4865,
     "internados": 34,
@@ -3835,8 +3904,9 @@
     }
     ,
     {
+    "n_boletim": 246,
     "dia": "2020-12-11",
-    "n": 246,
+    "n_dia": 271,
     "descartados": 18038,
     "confirmados": 4919,
     "internados": 38,
@@ -3850,8 +3920,9 @@
     }
     ,
     {
+    "n_boletim": 247,
     "dia": "2020-12-14",
-    "n": 247,
+    "n_dia": 274,
     "descartados": 18250,
     "confirmados": 5002,
     "internados": 44,
@@ -3865,8 +3936,9 @@
     }
     ,
     {
+    "n_boletim": 248,
     "dia": "2020-12-15",
-    "n": 248,
+    "n_dia": 275,
     "descartados": 18388,
     "confirmados": 5088,
     "internados": 39,
@@ -3880,8 +3952,9 @@
     }
     ,
     {
+    "n_boletim": 249,
     "dia": "2020-12-16",
-    "n": 249,
+    "n_dia": 276,
     "descartados": 18538,
     "confirmados": 5141,
     "internados": 39,
@@ -3895,8 +3968,9 @@
     }
     ,
     {
+    "n_boletim": 250,
     "dia": "2020-12-17",
-    "n": 250,
+    "n_dia": 277,
     "descartados": 18692,
     "confirmados": 5227,
     "internados": 42,
@@ -3910,8 +3984,9 @@
     }
     ,
     {
+    "n_boletim": 251,
     "dia": "2020-12-18",
-    "n": 251,
+    "n_dia": 278,
     "descartados": 18852,
     "confirmados": 5310,
     "internados": 43,
@@ -3925,8 +4000,9 @@
     }
     ,
     {
+    "n_boletim": 252,
     "dia": "2020-12-21",
-    "n": 252,
+    "n_dia": 281,
     "descartados": 19019,
     "confirmados": 5412,
     "internados": 47,
@@ -3940,8 +4016,9 @@
     }
     ,
     {
+    "n_boletim": 253,
     "dia": "2020-12-22",
-    "n": 253,
+    "n_dia": 282,
     "descartados": 19238,
     "confirmados": 5561,
     "internados": 45,
@@ -3955,8 +4032,9 @@
     }
     ,
     {
+    "n_boletim": 254,
     "dia": "2020-12-23",
-    "n": 254,
+    "n_dia": 283,
     "descartados": 19408,
     "confirmados": 5630,
     "internados": 47,
@@ -3970,8 +4048,9 @@
     }
     ,
     {
+    "n_boletim": 255,
     "dia": "2020-12-26",
-    "n": 255,
+    "n_dia": 286,
     "descartados": 19800,
     "confirmados": 5782,
     "internados": 44,
@@ -3985,8 +4064,9 @@
     }
     ,
     {
+    "n_boletim": 256,
     "dia": "2020-12-28",
-    "n": 256,
+    "n_dia": 288,
     "descartados": 19950,
     "confirmados": 5840,
     "internados": 44,
@@ -4000,8 +4080,9 @@
     }
     ,
     {
+    "n_boletim": 257,
     "dia": "2020-12-29",
-    "n": 257,
+    "n_dia": 289,
     "descartados": 20107,
     "confirmados": 5916,
     "internados": 44,
@@ -4015,8 +4096,9 @@
     }
     ,
     {
+    "n_boletim": 258,
     "dia": "2020-12-30",
-    "n": 258,
+    "n_dia": 290,
     "descartados": 20231,
     "confirmados": 6021,
     "internados": 40,
@@ -4030,8 +4112,9 @@
     }
     ,
     {
+    "n_boletim": 259,
     "dia": "2021-01-02",
-    "n": 259,
+    "n_dia": 293,
     "descartados": 20446,
     "confirmados": 6179,
     "internados": 33,
@@ -4045,8 +4128,9 @@
     }
     ,
     {
+    "n_boletim": 260,
     "dia": "2021-01-04",
-    "n": 260,
+    "n_dia": 295,
     "descartados": 20562,
     "confirmados": 6225,
     "internados": 43,
@@ -4060,8 +4144,9 @@
     }
     ,
     {
+    "n_boletim": 261,
     "dia": "2021-01-05",
-    "n": 261,
+    "n_dia": 296,
     "descartados": 20700,
     "confirmados": 6315,
     "internados": 40,
@@ -4075,8 +4160,9 @@
     }
     ,
     {
+    "n_boletim": 262,
     "dia": "2021-01-06",
-    "n": 262,
+    "n_dia": 297,
     "descartados": 20876,
     "confirmados": 6423,
     "internados": 41,
@@ -4090,8 +4176,9 @@
     }
     ,
     {
+    "n_boletim": 263,
     "dia": "2021-01-07",
-    "n": 263,
+    "n_dia": 298,
     "descartados": 21032,
     "confirmados": 6510,
     "internados": 48,
@@ -4105,8 +4192,9 @@
     }
     ,
     {
+    "n_boletim": 264,
     "dia": "2021-01-08",
-    "n": 264,
+    "n_dia": 299,
     "descartados": 21140,
     "confirmados": 6574,
     "internados": 47,
@@ -4120,8 +4208,9 @@
     }
     ,
     {
+    "n_boletim": 265,
     "dia": "2021-01-11",
-    "n": 265,
+    "n_dia": 302,
     "descartados": 21465,
     "confirmados": 6699,
     "internados": 47,
@@ -4135,8 +4224,9 @@
     }
     ,
     {
+    "n_boletim": 266,
     "dia": "2021-01-12",
-    "n": 266,
+    "n_dia": 303,
     "descartados": 21719,
     "confirmados": 6824,
     "internados": 44,
@@ -4150,8 +4240,9 @@
     }
     ,
     {
+    "n_boletim": 267,
     "dia": "2021-01-13",
-    "n": 267,
+    "n_dia": 304,
     "descartados": 21878,
     "confirmados": 6931,
     "internados": 53,
@@ -4165,8 +4256,9 @@
     }
     ,
     {
+    "n_boletim": 268,
     "dia": "2021-01-14",
-    "n": 268,
+    "n_dia": 305,
     "descartados": 22009,
     "confirmados": 6987,
     "internados": 51,
@@ -4180,8 +4272,9 @@
     }
     ,
     {
+    "n_boletim": 269,
     "dia": "2021-01-15",
-    "n": 269,
+    "n_dia": 306,
     "descartados": 22209,
     "confirmados": 7094,
     "internados": 46,
@@ -4195,8 +4288,9 @@
     }
     ,
     {
+    "n_boletim": 270,
     "dia": "2021-01-18",
-    "n": 270,
+    "n_dia": 309,
     "descartados": 22401,
     "confirmados": 7189,
     "internados": 54,
@@ -4210,8 +4304,9 @@
     }
     ,
     {
+    "n_boletim": 271,
     "dia": "2021-01-19",
-    "n": 271,
+    "n_dia": 310,
     "descartados": 22578,
     "confirmados": 7293,
     "internados": 60,
@@ -4225,8 +4320,9 @@
     }
     ,
     {
+    "n_boletim": 272,
     "dia": "2021-01-20",
-    "n": 272,
+    "n_dia": 311,
     "descartados": 22779,
     "confirmados": 7484,
     "internados": 59,
@@ -4240,8 +4336,9 @@
     }
     ,
     {
+    "n_boletim": 273,
     "dia": "2021-01-21",
-    "n": 273,
+    "n_dia": 312,
     "descartados": 22935,
     "confirmados": 7681,
     "internados": 66,
@@ -4255,8 +4352,9 @@
     }
     ,
     {
+    "n_boletim": 274,
     "dia": "2021-01-22",
-    "n": 274,
+    "n_dia": 313,
     "descartados": 23147,
     "confirmados": 7870,
     "internados": 64,
@@ -4270,8 +4368,9 @@
     }
     ,
     {
+    "n_boletim": 275,
     "dia": "2021-01-25",
-    "n": 275,
+    "n_dia": 316,
     "descartados": 23333,
     "confirmados": 8061,
     "internados": 71,
@@ -4285,8 +4384,9 @@
     }
     ,
     {
+    "n_boletim": 276,
     "dia": "2021-01-26",
-    "n": 276,
+    "n_dia": 317,
     "descartados": 23490,
     "confirmados": 8162,
     "internados": 68,
@@ -4300,8 +4400,9 @@
     }
     ,
     {
+    "n_boletim": 277,
     "dia": "2021-01-27",
-    "n": 277,
+    "n_dia": 318,
     "descartados": 23685,
     "confirmados": 8261,
     "internados": 74,
@@ -4315,8 +4416,9 @@
     }
     ,
     {
+    "n_boletim": 278,
     "dia": "2021-01-28",
-    "n": 278,
+    "n_dia": 319,
     "descartados": 23885,
     "confirmados": 8397,
     "internados": 78,
@@ -4330,8 +4432,9 @@
     }
     ,
     {
+    "n_boletim": 279,
     "dia": "2021-01-29",
-    "n": 279,
+    "n_dia": 320,
     "descartados": 24023,
     "confirmados": 8549,
     "internados": 67,
@@ -4345,8 +4448,9 @@
     }
     ,
     {
+    "n_boletim": 280,
     "dia": "2021-02-01",
-    "n": 280,
+    "n_dia": 323,
     "descartados": 24372,
     "confirmados": 8611,
     "internados": 73,
@@ -4360,8 +4464,9 @@
     }
     ,
     {
+    "n_boletim": 281,
     "dia": "2021-02-02",
-    "n": 281,
+    "n_dia": 324,
     "descartados": 24489,
     "confirmados": 8649,
     "internados": 70,
@@ -4375,8 +4480,9 @@
     }
     ,
     {
+    "n_boletim": 282,
     "dia": "2021-02-03",
-    "n": 282,
+    "n_dia": 325,
     "descartados": 24676,
     "confirmados": 8707,
     "internados": 71,
@@ -4390,8 +4496,9 @@
     }
     ,
     {
+    "n_boletim": 283,
     "dia": "2021-02-04",
-    "n": 283,
+    "n_dia": 326,
     "descartados": 24813,
     "confirmados": 8837,
     "internados": 69,
@@ -4405,8 +4512,9 @@
     }
     ,
     {
+    "n_boletim": 284,
     "dia": "2021-02-05",
-    "n": 284,
+    "n_dia": 327,
     "descartados": 24953,
     "confirmados": 8867,
     "internados": 68,
@@ -4420,8 +4528,9 @@
     }
     ,
     {
+    "n_boletim": 285,
     "dia": "2021-02-08",
-    "n": 285,
+    "n_dia": 330,
     "descartados": 25185,
     "confirmados": 8922,
     "internados": 81,
@@ -4435,8 +4544,9 @@
     }
     ,
     {
+    "n_boletim": 286,
     "dia": "2021-02-09",
-    "n": 286,
+    "n_dia": 331,
     "descartados": 25292,
     "confirmados": 8990,
     "internados": 81,
@@ -4450,8 +4560,9 @@
     }
     ,
     {
+    "n_boletim": 287,
     "dia": "2021-02-10",
-    "n": 287,
+    "n_dia": 332,
     "descartados": 25459,
     "confirmados": 9056,
     "internados": 77,
@@ -4460,13 +4571,14 @@
     "obitosConfirmados": 113,
     "sindromeGripalAc": 40912,
     "sindromeGripalIns": 2346,
-    "sindromeGripalAcMediaMovel_7_Dias": 40643,
-    "sindromeGripalInsMediaMovel_7_Dias": 2665
+    "sindromeGripalAcMediaMovel_7_Dias": 40863,
+    "sindromeGripalInsMediaMovel_7_Dias": 2495
     }
     ,
     {
+    "n_boletim": 288,
     "dia": "2021-02-11",
-    "n": 288,
+    "n_dia": 333,
     "descartados": 25591,
     "confirmados": 9092,
     "internados": 76,
@@ -4475,87 +4587,1447 @@
     "obitosConfirmados": 117,
     "sindromeGripalAc": 41099,
     "sindromeGripalIns": 2312,
-    "sindromeGripalAcMediaMovel_7_Dias": 40643,
-    "sindromeGripalInsMediaMovel_7_Dias": 2665
+    "sindromeGripalAcMediaMovel_7_Dias": 41086,
+    "sindromeGripalInsMediaMovel_7_Dias": 2354
     }
     ,
     {
+    "n_boletim": 289,
     "dia": "2021-02-12",
-    "n": 289,
+    "n_dia": 334,
     "descartados": 25734,
     "confirmados": 9172,
     "internados": 69,
-    "internadosMediaMovel": 74,
+    "internadosMediaMovel": 72,
     "obitosEmInvestigacao": 0,
     "obitosConfirmados": 118,
     "sindromeGripalAc": 41265,
     "sindromeGripalIns": 2314,
-    "sindromeGripalAcMediaMovel_7_Dias": 40643,
-    "sindromeGripalInsMediaMovel_7_Dias": 2665
+    "sindromeGripalAcMediaMovel_7_Dias": 41282,
+    "sindromeGripalInsMediaMovel_7_Dias": 2276
     }
-
+    ,
+    {
+    "n_boletim": 290,
+    "dia": "2021-02-15",
+    "n_dia": 337,
+    "descartados": 25885,
+    "confirmados": 9314,
+    "internados": 68,
+    "internadosMediaMovel": 71,
+    "obitosEmInvestigacao": 1,
+    "obitosConfirmados": 121,
+    "sindromeGripalAc": 41561,
+    "sindromeGripalIns": 2108,
+    "sindromeGripalAcMediaMovel_7_Dias": 41501,
+    "sindromeGripalInsMediaMovel_7_Dias": 2207
+    }
+    ,
+    {
+    "n_boletim": 291,
+    "dia": "2021-02-16",
+    "n_dia": 338,
+    "descartados": 26104,
+    "confirmados": 9443,
+    "internados": 69,
+    "internadosMediaMovel": 70,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 124,
+    "sindromeGripalAc": 41747,
+    "sindromeGripalIns": 2163,
+    "sindromeGripalAcMediaMovel_7_Dias": 41687,
+    "sindromeGripalInsMediaMovel_7_Dias": 2189
+    }
+    ,
+    {
+    "n_boletim": 292,
+    "dia": "2021-02-17",
+    "n_dia": 339,
+    "descartados": 26238,
+    "confirmados": 9485,
+    "internados": 67,
+    "internadosMediaMovel": 70,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 125,
+    "sindromeGripalAc": 41877,
+    "sindromeGripalIns": 2073,
+    "sindromeGripalAcMediaMovel_7_Dias": 41909,
+    "sindromeGripalInsMediaMovel_7_Dias": 2175
+    }
+    ,
+    {
+    "n_boletim": 293,
+    "dia": "2021-02-18",
+    "n_dia": 340,
+    "descartados": 26348,
+    "confirmados": 9559,
+    "internados": 70,
+    "internadosMediaMovel": 71,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 125,
+    "sindromeGripalAc": 42043,
+    "sindromeGripalIns": 2133,
+    "sindromeGripalAcMediaMovel_7_Dias": 42132,
+    "sindromeGripalInsMediaMovel_7_Dias": 2163
+    }
+    ,
+    {
+    "n_boletim": 294,
+    "dia": "2021-02-19",
+    "n_dia": 341,
+    "descartados": 26485,
+    "confirmados": 9639,
+    "internados": 70,
+    "internadosMediaMovel": 73,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 128,
+    "sindromeGripalAc": 42217,
+    "sindromeGripalIns": 2223,
+    "sindromeGripalAcMediaMovel_7_Dias": 42341,
+    "sindromeGripalInsMediaMovel_7_Dias": 2186
+    }
+    ,
+    {
+    "n_boletim": 295,
+    "dia": "2021-02-22",
+    "n_dia": 344,
+    "descartados": 26705,
+    "confirmados": 9869,
+    "internados": 78,
+    "internadosMediaMovel": 73,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 133,
+    "sindromeGripalAc": 42653,
+    "sindromeGripalIns": 2211,
+    "sindromeGripalAcMediaMovel_7_Dias": 42550,
+    "sindromeGripalInsMediaMovel_7_Dias": 2211
+    }
+    ,
+    {
+    "n_boletim": 296,
+    "dia": "2021-02-23",
+    "n_dia": 345,
+    "descartados": 26928,
+    "confirmados": 9999,
+    "internados": 78,
+    "internadosMediaMovel": 75,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 133,
+    "sindromeGripalAc": 42825,
+    "sindromeGripalIns": 2233,
+    "sindromeGripalAcMediaMovel_7_Dias": 42761,
+    "sindromeGripalInsMediaMovel_7_Dias": 2251
+    }
+    ,
+    {
+    "n_boletim": 297,
+    "dia": "2021-02-24",
+    "n_dia": 346,
+    "descartados": 27041,
+    "confirmados": 10105,
+    "internados": 77,
+    "internadosMediaMovel": 78,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 135,
+    "sindromeGripalAc": 43024,
+    "sindromeGripalIns": 2269,
+    "sindromeGripalAcMediaMovel_7_Dias": 43351,
+    "sindromeGripalInsMediaMovel_7_Dias": 2394
+    }
+    ,
+    {
+    "n_boletim": 298,
+    "dia": "2021-02-25",
+    "n_dia": 347,
+    "descartados": 27183,
+    "confirmados": 10163,
+    "internados": 73,
+    "internadosMediaMovel": 79,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 135,
+    "sindromeGripalAc": 43214,
+    "sindromeGripalIns": 2337,
+    "sindromeGripalAcMediaMovel_7_Dias": 43942,
+    "sindromeGripalInsMediaMovel_7_Dias": 2524
+    }
+    ,
+    {
+    "n_boletim": 299,
+    "dia": "2021-02-26",
+    "n_dia": 348,
+    "descartados": 27327,
+    "confirmados": 10238,
+    "internados": 76,
+    "internadosMediaMovel": 79,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 137,
+    "sindromeGripalAc": 43348,
+    "sindromeGripalIns": 2351,
+    "sindromeGripalAcMediaMovel_7_Dias": 44493,
+    "sindromeGripalInsMediaMovel_7_Dias": 2639
+    }
+    ,
+    {
+    "n_boletim": 300,
+    "dia": "2021-03-01",
+    "n_dia": 351,
+    "descartados": 27556,
+    "confirmados": 10372,
+    "internados": 91,
+    "internadosMediaMovel": 80,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 137,
+    "sindromeGripalAc": 46173,
+    "sindromeGripalIns": 3135,
+    "sindromeGripalAcMediaMovel_7_Dias": 45060,
+    "sindromeGripalInsMediaMovel_7_Dias": 2761
+    }
+    ,
+    {
+    "n_boletim": 301,
+    "dia": "2021-03-02",
+    "n_dia": 352,
+    "descartados": 27670,
+    "confirmados": 10461,
+    "internados": 77,
+    "internadosMediaMovel": 82,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 141,
+    "sindromeGripalAc": 46359,
+    "sindromeGripalIns": 3134,
+    "sindromeGripalAcMediaMovel_7_Dias": 45618,
+    "sindromeGripalInsMediaMovel_7_Dias": 2864
+    }
+    ,
+    {
+    "n_boletim": 302,
+    "dia": "2021-03-03",
+    "n_dia": 353,
+    "descartados": 27802,
+    "confirmados": 10545,
+    "internados": 78,
+    "internadosMediaMovel": 85,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 142,
+    "sindromeGripalAc": 46511,
+    "sindromeGripalIns": 3014,
+    "sindromeGripalAcMediaMovel_7_Dias": 46248,
+    "sindromeGripalInsMediaMovel_7_Dias": 2954
+    }
+    ,
+    {
+    "n_boletim": 303,
+    "dia": "2021-03-04",
+    "n_dia": 354,
+    "descartados": 27864,
+    "confirmados": 10584,
+    "internados": 91,
+    "internadosMediaMovel": 88,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 143,
+    "sindromeGripalAc": 46792,
+    "sindromeGripalIns": 3085,
+    "sindromeGripalAcMediaMovel_7_Dias": 46886,
+    "sindromeGripalInsMediaMovel_7_Dias": 3043
+    }
+    ,
+    {
+    "n_boletim": 304,
+    "dia": "2021-03-05",
+    "n_dia": 355,
+    "descartados": 28067,
+    "confirmados": 10733,
+    "internados": 91,
+    "internadosMediaMovel": 89,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 143,
+    "sindromeGripalAc": 46927,
+    "sindromeGripalIns": 2995,
+    "sindromeGripalAcMediaMovel_7_Dias": 47155,
+    "sindromeGripalInsMediaMovel_7_Dias": 3010
+    }
+    ,
+    {
+    "n_boletim": 305,
+    "dia": "2021-03-08",
+    "n_dia": 358,
+    "descartados": 28208,
+    "confirmados": 10824,
+    "internados": 93,
+    "internadosMediaMovel": 91,
+    "obitosEmInvestigacao": 1,
+    "obitosConfirmados": 152,
+    "sindromeGripalAc": 47626,
+    "sindromeGripalIns": 2962,
+    "sindromeGripalAcMediaMovel_7_Dias": 47427,
+    "sindromeGripalInsMediaMovel_7_Dias": 2972
+    }
+    ,
+    {
+    "n_boletim": 306,
+    "dia": "2021-03-09",
+    "n_dia": 359,
+    "descartados": 28329,
+    "confirmados": 10985,
+    "internados": 96,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 2,
+    "obitosConfirmados": 153,
+    "sindromeGripalAc": 47816,
+    "sindromeGripalIns": 2973,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
+    ,
+    {
+    "n_boletim": 307,
+    "dia": "2021-03-10",
+    "n_dia": 360,
+    "descartados": 28485,
+    "confirmados": 11191,
+    "internados": 100,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 156,
+    "sindromeGripalAc": 48051,
+    "sindromeGripalIns": 2910,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
+    ,
+    {
+    "n_boletim": 308,
+    "dia": "2021-03-11",
+    "n_dia": 361,
+    "descartados": 28621,
+    "confirmados": 11372,
+    "internados": 90,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 161,
+    "sindromeGripalAc": 48263,
+    "sindromeGripalIns": 2868,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
+    ,
+    {
+    "n_boletim": 309,
+    "dia": "2021-03-12",
+    "n_dia": 362,
+    "descartados": 28777,
+    "confirmados": 11522,
+    "internados": 100,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 163,
+    "sindromeGripalAc": 49101,
+    "sindromeGripalIns": 3494,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
+    ,
+    {
+    "n_boletim": 310,
+    "dia": "2021-03-15",
+    "n_dia": 362,
+    "descartados": 28968,
+    "confirmados": 11853,
+    "internados": 110,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 0,
+    "obitosConfirmados": 166,
+    "sindromeGripalAc": 49642,
+    "sindromeGripalIns": 1895,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
+    ,
+    {
+    "n_boletim": 311,
+    "dia": "2021-03-16",
+    "n_dia": 362,
+    "descartados": 29205,
+    "confirmados": 12186,
+    "internados": 113,
+    "internadosMediaMovel": 94,
+    "obitosEmInvestigacao": 2,
+    "obitosConfirmados": 168,
+    "sindromeGripalAc": 49918,
+    "sindromeGripalIns": 1964,
+    "sindromeGripalAcMediaMovel_7_Dias": 47797,
+    "sindromeGripalInsMediaMovel_7_Dias": 3041
+    }
 ]
-    const descartados_ = ['Descartados'].concat(data_array.map(el => el.descartados))
-    const confirmados_ = ['Confirmados'].concat(data_array.map(el => el.confirmados))
-    const internados_ = ['Internados'].concat(data_array.map(el => el.internados))
-    const internadosMediaMovel_ = ['Média móvel (7 dias) Internados'].concat(data_array.map(el => el.internadosMediaMovel))
-    const obitosEmInvestigacao_ = ['Óbitos em Investigação'].concat(data_array.map(el => el.obitosEmInvestigacao))
-    const obitosConfirmados_ = ['Óbitos Confirmados'].concat(data_array.map(el => el.obitosConfirmados))
-    const sindromeGripalAc_ = ['Síndrome gripal notificadas'].concat(data_array.map(el => el.sindromeGripalAc))
-    const sindromeGripalIns_ = ['Síndrome gripal ainda em isolamento'].concat(data_array.map(el => el.sindromeGripalIns))
-    const sindromeGripalAcMediaMovel_7_Dias_ = ['Média móvel (7 dias) Síndrome gripal notificadas'].concat(data_array.map(el => el.sindromeGripalAcMediaMovel_7_Dias))
-    const sindromeGripalInsMediaMovel_7_Dias_ = ['Média móvel (7 dias) Síndrome gripal ainda em isolamento'].concat(data_array.map(el => el.sindromeGripalInsMediaMovel_7_Dias))
-    const dia_ = ['x'].concat(data_array.map(el => el.dia))
+
+const a_d = [
+"2020-03-01",
+"2020-03-02",
+"2020-03-03",
+"2020-03-04",
+"2020-03-05",
+"2020-03-06",
+"2020-03-07",
+"2020-03-08",
+"2020-03-09",
+"2020-03-10",
+"2020-03-11",
+"2020-03-12",
+"2020-03-13",
+"2020-03-14",
+"2020-03-15",
+"2020-03-16",
+"2020-03-17",
+"2020-03-18",
+"2020-03-19",
+"2020-03-20",
+"2020-03-21",
+"2020-03-22",
+"2020-03-23",
+"2020-03-24",
+"2020-03-25",
+"2020-03-26",
+"2020-03-27",
+"2020-03-28",
+"2020-03-29",
+"2020-03-30",
+"2020-03-31",
+"2020-04-01",
+"2020-04-02",
+"2020-04-03",
+"2020-04-04",
+"2020-04-05",
+"2020-04-06",
+"2020-04-07",
+"2020-04-08",
+"2020-04-09",
+"2020-04-10",
+"2020-04-11",
+"2020-04-12",
+"2020-04-13",
+"2020-04-14",
+"2020-04-15",
+"2020-04-16",
+"2020-04-17",
+"2020-04-18",
+"2020-04-19",
+"2020-04-20",
+"2020-04-21",
+"2020-04-22",
+"2020-04-23",
+"2020-04-24",
+"2020-04-25",
+"2020-04-26",
+"2020-04-27",
+"2020-04-28",
+"2020-04-29",
+"2020-04-30",
+"2020-05-01",
+"2020-05-02",
+"2020-05-03",
+"2020-05-04",
+"2020-05-05",
+"2020-05-06",
+"2020-05-07",
+"2020-05-08",
+"2020-05-09",
+"2020-05-10",
+"2020-05-11",
+"2020-05-12",
+"2020-05-13",
+"2020-05-14",
+"2020-05-15",
+"2020-05-16",
+"2020-05-17",
+"2020-05-18",
+"2020-05-19",
+"2020-05-20",
+"2020-05-21",
+"2020-05-22",
+"2020-05-23",
+"2020-05-24",
+"2020-05-25",
+"2020-05-26",
+"2020-05-27",
+"2020-05-28",
+"2020-05-29",
+"2020-05-30",
+"2020-05-31",
+"2020-06-01",
+"2020-06-02",
+"2020-06-03",
+"2020-06-04",
+"2020-06-05",
+"2020-06-06",
+"2020-06-07",
+"2020-06-08",
+"2020-06-09",
+"2020-06-10",
+"2020-06-11",
+"2020-06-12",
+"2020-06-13",
+"2020-06-14",
+"2020-06-15",
+"2020-06-16",
+"2020-06-17",
+"2020-06-18",
+"2020-06-19",
+"2020-06-20",
+"2020-06-21",
+"2020-06-22",
+"2020-06-23",
+"2020-06-24",
+"2020-06-25",
+"2020-06-26",
+"2020-06-27",
+"2020-06-28",
+"2020-06-29",
+"2020-06-30",
+"2020-07-01",
+"2020-07-02",
+"2020-07-03",
+"2020-07-04",
+"2020-07-05",
+"2020-07-06",
+"2020-07-07",
+"2020-07-08",
+"2020-07-09",
+"2020-07-10",
+"2020-07-11",
+"2020-07-12",
+"2020-07-13",
+"2020-07-14",
+"2020-07-15",
+"2020-07-16",
+"2020-07-17",
+"2020-07-18",
+"2020-07-19",
+"2020-07-20",
+"2020-07-21",
+"2020-07-22",
+"2020-07-23",
+"2020-07-24",
+"2020-07-25",
+"2020-07-26",
+"2020-07-27",
+"2020-07-28",
+"2020-07-29",
+"2020-07-30",
+"2020-07-31",
+"2020-08-01",
+"2020-08-02",
+"2020-08-03",
+"2020-08-04",
+"2020-08-05",
+"2020-08-06",
+"2020-08-07",
+"2020-08-08",
+"2020-08-09",
+"2020-08-10",
+"2020-08-11",
+"2020-08-12",
+"2020-08-13",
+"2020-08-14",
+"2020-08-15",
+"2020-08-16",
+"2020-08-17",
+"2020-08-18",
+"2020-08-19",
+"2020-08-20",
+"2020-08-21",
+"2020-08-22",
+"2020-08-23",
+"2020-08-24",
+"2020-08-25",
+"2020-08-26",
+"2020-08-27",
+"2020-08-28",
+"2020-08-29",
+"2020-08-30",
+"2020-08-31",
+"2020-09-01",
+"2020-09-02",
+"2020-09-03",
+"2020-09-04",
+"2020-09-05",
+"2020-09-06",
+"2020-09-07",
+"2020-09-08",
+"2020-09-09",
+"2020-09-10",
+"2020-09-11",
+"2020-09-12",
+"2020-09-13",
+"2020-09-14",
+"2020-09-15",
+"2020-09-16",
+"2020-09-17",
+"2020-09-18",
+"2020-09-19",
+"2020-09-20",
+"2020-09-21",
+"2020-09-22",
+"2020-09-23",
+"2020-09-24",
+"2020-09-25",
+"2020-09-26",
+"2020-09-27",
+"2020-09-28",
+"2020-09-29",
+"2020-09-30",
+"2020-10-01",
+"2020-10-02",
+"2020-10-03",
+"2020-10-04",
+"2020-10-05",
+"2020-10-06",
+"2020-10-07",
+"2020-10-08",
+"2020-10-09",
+"2020-10-10",
+"2020-10-11",
+"2020-10-12",
+"2020-10-13",
+"2020-10-14",
+"2020-10-15",
+"2020-10-16",
+"2020-10-17",
+"2020-10-18",
+"2020-10-19",
+"2020-10-20",
+"2020-10-21",
+"2020-10-22",
+"2020-10-23",
+"2020-10-24",
+"2020-10-25",
+"2020-10-26",
+"2020-10-27",
+"2020-10-28",
+"2020-10-29",
+"2020-10-30",
+"2020-10-31",
+"2020-11-01",
+"2020-11-02",
+"2020-11-03",
+"2020-11-04",
+"2020-11-05",
+"2020-11-06",
+"2020-11-07",
+"2020-11-08",
+"2020-11-09",
+"2020-11-10",
+"2020-11-11",
+"2020-11-12",
+"2020-11-13",
+"2020-11-14",
+"2020-11-15",
+"2020-11-16",
+"2020-11-17",
+"2020-11-18",
+"2020-11-19",
+"2020-11-20",
+"2020-11-21",
+"2020-11-22",
+"2020-11-23",
+"2020-11-24",
+"2020-11-25",
+"2020-11-26",
+"2020-11-27",
+"2020-11-28",
+"2020-11-29",
+"2020-11-30",
+"2020-12-01",
+"2020-12-02",
+"2020-12-03",
+"2020-12-04",
+"2020-12-05",
+"2020-12-06",
+"2020-12-07",
+"2020-12-08",
+"2020-12-09",
+"2020-12-10",
+"2020-12-11",
+"2020-12-12",
+"2020-12-13",
+"2020-12-14",
+"2020-12-15",
+"2020-12-16",
+"2020-12-17",
+"2020-12-18",
+"2020-12-19",
+"2020-12-20",
+"2020-12-21",
+"2020-12-22",
+"2020-12-23",
+"2020-12-24",
+"2020-12-25",
+"2020-12-26",
+"2020-12-27",
+"2020-12-28",
+"2020-12-29",
+"2020-12-30",
+"2020-12-31",
+"2021-01-01",
+"2021-01-02",
+"2021-01-03",
+"2021-01-04",
+"2021-01-05",
+"2021-01-06",
+"2021-01-07",
+"2021-01-08",
+"2021-01-09",
+"2021-01-10",
+"2021-01-11",
+"2021-01-12",
+"2021-01-13",
+"2021-01-14",
+"2021-01-15",
+"2021-01-16",
+"2021-01-17",
+"2021-01-18",
+"2021-01-19",
+"2021-01-20",
+"2021-01-21",
+"2021-01-22",
+"2021-01-23",
+"2021-01-24",
+"2021-01-25",
+"2021-01-26",
+"2021-01-27",
+"2021-01-28",
+"2021-01-29",
+"2021-01-30",
+"2021-01-31",
+"2021-02-01",
+"2021-02-02",
+"2021-02-03",
+"2021-02-04",
+"2021-02-05",
+"2021-02-06",
+"2021-02-07",
+"2021-02-08",
+"2021-02-09",
+"2021-02-10",
+"2021-02-11",
+"2021-02-12",
+"2021-02-13",
+"2021-02-14",
+"2021-02-15",
+"2021-02-16",
+"2021-02-17",
+"2021-02-18",
+"2021-02-19",
+"2021-02-20",
+"2021-02-21",
+"2021-02-22",
+"2021-02-23",
+"2021-02-24",
+"2021-02-25",
+"2021-02-26",
+"2021-02-27",
+"2021-02-28",
+"2021-03-01",
+"2021-03-02",
+"2021-03-03",
+"2021-03-04",
+"2021-03-05",
+"2021-03-06",
+"2021-03-07",
+"2021-03-08",
+"2021-03-09",
+"2021-03-10",
+"2021-03-11",
+"2021-03-12",
+"2021-03-13",
+"2021-03-14",
+"2021-03-15",
+"2021-03-16",
+"2021-03-17",
+"2021-03-18",
+"2021-03-19",
+"2021-03-20",
+"2021-03-21",
+"2021-03-22",
+"2021-03-23",
+"2021-03-24",
+"2021-03-25",
+"2021-03-26",
+"2021-03-27",
+"2021-03-28",
+"2021-03-29",
+"2021-03-30",
+"2021-03-31",
+"2021-04-01",
+"2021-04-02",
+"2021-04-03",
+"2021-04-04",
+"2021-04-05",
+"2021-04-06",
+"2021-04-07",
+"2021-04-08",
+"2021-04-09",
+"2021-04-10",
+"2021-04-11",
+"2021-04-12",
+"2021-04-13",
+"2021-04-14",
+"2021-04-15",
+"2021-04-16",
+"2021-04-17",
+"2021-04-18",
+"2021-04-19",
+"2021-04-20",
+"2021-04-21",
+"2021-04-22",
+"2021-04-23",
+"2021-04-24",
+"2021-04-25",
+"2021-04-26",
+"2021-04-27",
+"2021-04-28",
+"2021-04-29",
+"2021-04-30",
+"2021-05-01",
+"2021-05-02",
+"2021-05-03",
+"2021-05-04",
+"2021-05-05",
+"2021-05-06",
+"2021-05-07",
+"2021-05-08",
+"2021-05-09",
+"2021-05-10",
+"2021-05-11",
+"2021-05-12",
+"2021-05-13",
+"2021-05-14",
+"2021-05-15",
+"2021-05-16",
+"2021-05-17",
+"2021-05-18",
+"2021-05-19",
+"2021-05-20",
+"2021-05-21",
+"2021-05-22",
+"2021-05-23",
+"2021-05-24",
+"2021-05-25",
+"2021-05-26",
+"2021-05-27",
+"2021-05-28",
+"2021-05-29",
+"2021-05-30",
+"2021-05-31",
+"2021-06-01",
+"2021-06-02",
+"2021-06-03",
+"2021-06-04",
+"2021-06-05",
+"2021-06-06",
+"2021-06-07",
+"2021-06-08",
+"2021-06-09",
+"2021-06-10",
+"2021-06-11",
+"2021-06-12",
+"2021-06-13",
+"2021-06-14",
+"2021-06-15",
+"2021-06-16",
+"2021-06-17",
+"2021-06-18",
+"2021-06-19",
+"2021-06-20",
+"2021-06-21",
+"2021-06-22",
+"2021-06-23",
+"2021-06-24",
+"2021-06-25",
+"2021-06-26",
+"2021-06-27",
+"2021-06-28",
+"2021-06-29",
+"2021-06-30",
+"2021-07-01",
+"2021-07-02",
+"2021-07-03",
+"2021-07-04",
+"2021-07-05",
+"2021-07-06",
+"2021-07-07",
+"2021-07-08",
+"2021-07-09",
+"2021-07-10",
+"2021-07-11",
+"2021-07-12",
+"2021-07-13",
+"2021-07-14",
+"2021-07-15",
+"2021-07-16",
+"2021-07-17",
+"2021-07-18",
+"2021-07-19",
+"2021-07-20",
+"2021-07-21",
+"2021-07-22",
+"2021-07-23",
+"2021-07-24",
+"2021-07-25",
+"2021-07-26",
+"2021-07-27",
+"2021-07-28",
+"2021-07-29",
+"2021-07-30",
+"2021-07-31",
+"2021-08-01",
+"2021-08-02",
+"2021-08-03",
+"2021-08-04",
+"2021-08-05",
+"2021-08-06",
+"2021-08-07",
+"2021-08-08",
+"2021-08-09",
+"2021-08-10",
+"2021-08-11",
+"2021-08-12",
+"2021-08-13",
+"2021-08-14",
+"2021-08-15",
+"2021-08-16",
+"2021-08-17",
+"2021-08-18",
+"2021-08-19",
+"2021-08-20",
+"2021-08-21",
+"2021-08-22",
+"2021-08-23",
+"2021-08-24",
+"2021-08-25",
+"2021-08-26",
+"2021-08-27",
+"2021-08-28",
+"2021-08-29",
+"2021-08-30",
+"2021-08-31",
+"2021-09-01",
+"2021-09-02",
+"2021-09-03",
+"2021-09-04",
+"2021-09-05",
+"2021-09-06",
+"2021-09-07",
+"2021-09-08",
+"2021-09-09",
+"2021-09-10",
+"2021-09-11",
+"2021-09-12",
+"2021-09-13",
+"2021-09-14",
+"2021-09-15",
+"2021-09-16",
+"2021-09-17",
+"2021-09-18",
+"2021-09-19",
+"2021-09-20",
+"2021-09-21",
+"2021-09-22",
+"2021-09-23",
+"2021-09-24",
+"2021-09-25",
+"2021-09-26",
+"2021-09-27",
+"2021-09-28",
+"2021-09-29",
+"2021-09-30",
+"2021-10-01",
+"2021-10-02",
+"2021-10-03",
+"2021-10-04",
+"2021-10-05",
+"2021-10-06",
+"2021-10-07",
+"2021-10-08",
+"2021-10-09",
+"2021-10-10",
+"2021-10-11",
+"2021-10-12",
+"2021-10-13",
+"2021-10-14",
+"2021-10-15",
+"2021-10-16",
+"2021-10-17",
+"2021-10-18",
+"2021-10-19",
+"2021-10-20",
+"2021-10-21",
+"2021-10-22",
+"2021-10-23",
+"2021-10-24",
+"2021-10-25",
+"2021-10-26",
+"2021-10-27",
+"2021-10-28",
+"2021-10-29",
+"2021-10-30",
+"2021-10-31",
+"2021-11-01",
+"2021-11-02",
+"2021-11-03",
+"2021-11-04",
+"2021-11-05",
+"2021-11-06",
+"2021-11-07",
+"2021-11-08",
+"2021-11-09",
+"2021-11-10",
+"2021-11-11",
+"2021-11-12",
+"2021-11-13",
+"2021-11-14",
+"2021-11-15",
+"2021-11-16",
+"2021-11-17",
+"2021-11-18",
+"2021-11-19",
+"2021-11-20",
+"2021-11-21",
+"2021-11-22",
+"2021-11-23",
+"2021-11-24",
+"2021-11-25",
+"2021-11-26",
+"2021-11-27",
+"2021-11-28",
+"2021-11-29",
+"2021-11-30",
+"2021-12-01",
+"2021-12-02",
+"2021-12-03",
+"2021-12-04",
+"2021-12-05",
+"2021-12-06",
+"2021-12-07",
+"2021-12-08",
+"2021-12-09",
+"2021-12-10",
+"2021-12-11",
+"2021-12-12",
+"2021-12-13",
+"2021-12-14",
+"2021-12-15",
+"2021-12-16",
+"2021-12-17",
+"2021-12-18",
+"2021-12-19",
+"2021-12-20",
+"2021-12-21",
+"2021-12-22",
+"2021-12-23",
+"2021-12-24",
+"2021-12-25",
+"2021-12-26",
+"2021-12-27",
+"2021-12-28",
+"2021-12-29",
+"2021-12-30",
+"2021-12-31",
+"2022-01-01",
+"2022-01-02",
+"2022-01-03",
+"2022-01-04",
+"2022-01-05",
+"2022-01-06",
+"2022-01-07",
+"2022-01-08",
+"2022-01-09",
+"2022-01-10",
+"2022-01-11",
+"2022-01-12",
+"2022-01-13",
+"2022-01-14",
+"2022-01-15",
+"2022-01-16",
+"2022-01-17",
+"2022-01-18",
+"2022-01-19",
+"2022-01-20",
+"2022-01-21",
+"2022-01-22",
+"2022-01-23",
+"2022-01-24",
+"2022-01-25",
+"2022-01-26",
+"2022-01-27",
+"2022-01-28",
+"2022-01-29",
+"2022-01-30",
+"2022-01-31",
+"2022-02-01",
+"2022-02-02",
+"2022-02-03",
+"2022-02-04",
+"2022-02-05",
+"2022-02-06",
+"2022-02-07",
+"2022-02-08",
+"2022-02-09",
+"2022-02-10",
+"2022-02-11",
+"2022-02-12",
+"2022-02-13",
+"2022-02-14",
+"2022-02-15",
+"2022-02-16",
+"2022-02-17",
+"2022-02-18",
+"2022-02-19",
+"2022-02-20",
+"2022-02-21",
+"2022-02-22",
+"2022-02-23",
+"2022-02-24",
+"2022-02-25",
+"2022-02-26",
+"2022-02-27",
+"2022-02-28",
+"2023-03-01",
+"2023-03-02",
+"2023-03-03",
+"2023-03-04",
+"2023-03-05",
+"2023-03-06",
+"2023-03-07",
+"2023-03-08",
+"2023-03-09",
+"2023-03-10",
+"2023-03-11",
+"2023-03-12",
+"2023-03-13",
+"2023-03-14",
+"2023-03-15",
+"2023-03-16",
+"2023-03-17",
+"2023-03-18",
+"2023-03-19",
+"2023-03-20",
+"2023-03-21",
+"2023-03-22",
+"2023-03-23",
+"2023-03-24",
+"2023-03-25",
+"2023-03-26",
+"2023-03-27",
+"2023-03-28",
+"2023-03-29",
+"2023-03-30",
+"2023-03-31",
+]
+
+const array_of_days = 
+    a_d.slice(
+        a_d.findIndex(el => el == array[0].dia),
+        a_d.findIndex(el => el == array[array.length-1].dia)+1
+    )
+
+ 
+
+function clone(obj) {
+    if (obj === null || typeof (obj) !== 'object' || 'isActiveClone' in obj)
+        return obj;
+
+    if (obj instanceof Date)
+        var temp = new obj.constructor(); //or new Date(obj);
+    else
+        var temp = obj.constructor();
+
+    for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            obj['isActiveClone'] = null;
+            temp[key] = clone(obj[key]);
+            delete obj['isActiveClone'];
+        }
+    }
+    return temp;
+}   
+function dif_date(date_1,date_2){
+    return Math.round(Math.abs((new Date(date_2).getTime()-new Date(date_1).getTime())/86400000))
+}
+
+
+
+const dia_inicial = "2020-03-16"
+
+const internados = array.map( el => el.internados)
+const obitosConfirmados = array.map( el => el.obitosConfirmados)
+const notificacoesDeSindromeGripalAcumulada = array.map( el => el.sindromeGripalAc)
+const confirmados = array.map( el => el.confirmados)
+
+function mediaMovel(a, countBefore, countAfter) {
+    const array = a.map( el => isNaN(el)?0:parseFloat(el))
+    if (countAfter == undefined) countAfter = 0;
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+      const subArr = array.slice(Math.max(i - countBefore, 0), Math.min(i + countAfter + 1, array.length));
+      const avg = subArr.reduce((a, b) => a + (isNaN(b) ? 0 : b), 0) / subArr.length;
+      result.push(avg);
+    }
+    return result.map( el => parseInt(el));
+}
+
+const taxa_de_crescimento = (array,range,aprox = 0) => 
+    array.map( (el, index, arr) => {
+        if(index-range>0){
+            return parseFloat(((arr[index]-arr[index-range])/range).toFixed(aprox))
+        }else{
+            return parseFloat(((arr[index]-arr[0])/range).toFixed(aprox))
+        }
+})
     
-        var chart2 = c3.generate({
-                bindto: '#chart2',
-                size: { height: height * 0.75 },
+function printArray(array , name = ''){
+    var string = ''
+    if(name != ''){
+        string += `const ${name} = [`
+    }else{
+        string += `[`
+    }
+    array.forEach( ( el , index , arr ) => {
+        if (index == arr.length - 1){
+            string+=`${el}`
+        }else{
+            string += `${el},`
+        }
+    })
+    string += ']'
+    console.log(string)
+}
 
-                data: {
-                    x: 'x',
-                    columns: [                        
-                    dia_,sindromeGripalAc_,sindromeGripalAcMediaMovel_7_Dias_,sindromeGripalIns_,sindromeGripalInsMediaMovel_7_Dias_
-                ],
-                    colors: {
-                        'Síndrome gripal notificadas': '#ff0000',
-                        'Média móvel (7 dias) Síndrome gripal notificadas': 'black',
-                        'Média móvel (7 dias) Síndrome gripal ainda em isolamento': 'green',
-                        'Síndrome gripal ainda em isolamento': '#0F36F9',
-                    }
-                },
-                axis: {
-                    y: {
-                        label: {
-                            text: 'Número de casos',
-                            position: 'outer-middle'
-                        }
-                    },
-                    x: {
-                        type: 'timeseries',
-                        tick: {
-                            format: function (x) {
-                                var aux = ''
 
-                                aux += x.getDate()
-                                if (aux.length == 1) {
-                                    aux = '0' + aux
-                                }
-                                var aux2 = ''
-                                aux2 += (x.getMonth() + 1)
-                                if (aux2.length == 1) {
-                                    aux2 = '0' + aux2
-                                }
-                                return aux + '/' + aux2;
-                            }
-                            //format: '%Y' // format string is also available for timeseries data
-                        }
-                    }
-                },
-                title: {
-                    text: 'Número de casos de síndrome gripal notificadas e de síndrome gripal ainda em isolamento do dia dia 27/03/20 até 12/02/21'
+
+
+// const derivada_obitos_confirmados = taxa_de_crescimento(obitosConfirmados, 30)
+
+const MM_derivada_sindrome_gripal = mediaMovel(taxa_de_crescimento(notificacoesDeSindromeGripalAcumulada, 30),7,7).map(el => el==0?null:el)
+const MM_derivada_confirmados = mediaMovel(taxa_de_crescimento(confirmados, 30),7,7).map(el => el==0?null:el)
+
+const derivada_sindrome_gripal = taxa_de_crescimento(notificacoesDeSindromeGripalAcumulada, 30)
+const derivada_confirmados = taxa_de_crescimento(confirmados, 30)
+
+
+const media_movel_internados = mediaMovel(internados, 7,7)
+const media_movel_confirmados = mediaMovel(confirmados, 7,7)
+const media_movel_sindrome_gripal = mediaMovel(notificacoesDeSindromeGripalAcumulada, 7,7).map(el => el==0?null:el)
+const media_movel_obitos_confirmados = mediaMovel(obitosConfirmados, 7,7)
+
+array.map( (el,index) => {
+    // el.TC_30D_obitosConfirmados = derivada_obitos_confirmados[index]
+    el.TC_30D_SG_Ac = derivada_sindrome_gripal[index]
+    el.TC_30D_confirmados = derivada_confirmados[index]
+
+    el.TC_30D_e_MM_14D_confirmados = MM_derivada_confirmados[index]
+    el.TC_30D_e_MM_14D_SG_Ac = MM_derivada_sindrome_gripal[index]
+
+    el.MM_14D_internados = media_movel_internados[index]
+    el.MM_14D_SG_Ac = media_movel_sindrome_gripal[index]
+    el.MM_14D_confirmados = media_movel_confirmados[index]
+    el.MM_14D_obitosConfirmados = media_movel_obitos_confirmados[index]
+
+    if(el.TC_30D_SG_Ac == 0){
+        el.TC_30D_SG_Ac = null
+    }
+    if(el.TC_30D_confirmados == 0){
+        el.TC_30D_confirmados = null
+    }
+    if(el.MM_14D_SG_Ac == 0){
+        el.MM_14D_SG_Ac = null
+    }
+    if(el.MM_14D_SG_Ac == 0){
+        el.MM_14D_SG_Ac = null
+    }
+    if(el.MM_14D_SG_Ac == 0){
+        el.MM_14D_SG_Ac = null
+    }
+})
+
+
+console.log('/////////')
+console.log()
+console.log()
+console.log('const data_array_lacking_days = [')
+array.forEach(({ 
+    descartados, 
+    confirmados, 
+    internados,
+    obitosEmInvestigacao, 
+    obitosConfirmados, 
+    sindromeGripalAc, 
+    sindromeGripalIns,
+    n_boletim, dia,
+    TC_30D_confirmados,TC_30D_SG_Ac,
+    TC_30D_e_MM_14D_confirmados,TC_30D_e_MM_14D_SG_Ac,
+    MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados
+    },index,arr) => {
+    console.log('{')
+    console.log(`"n_boletim": ${n_boletim},`)
+    console.log(`"dia": "${dia}",`) 
+    console.log(`"n_dia": ${dif_date(dia_inicial,dia)+1},`)
+    console.log(`"descartados": ${descartados},`)
+    console.log(`"confirmados": ${confirmados},`)
+    console.log(`"internados": ${internados},`)
+    console.log(`"sindromeGripalAc": ${sindromeGripalAc},`)
+    console.log(`"sindromeGripalIns": ${sindromeGripalIns},`)
+    console.log(`"obitosEmInvestigacao": ${obitosEmInvestigacao},`)
+    console.log(`"obitosConfirmados": ${obitosConfirmados},`)
+    console.log(`"TC_30D_confirmados": ${TC_30D_confirmados},`)
+    console.log(`"TC_30D_SG_Ac": ${TC_30D_SG_Ac},`)  
+    console.log(`"TC_30D_e_MM_14D_confirmados": ${TC_30D_e_MM_14D_confirmados},`)
+    console.log(`"TC_30D_e_MM_14D_SG_Ac": ${TC_30D_e_MM_14D_SG_Ac},`) 
+    console.log(`"MM_14D_obitosConfirmados": ${MM_14D_obitosConfirmados},`)      
+    console.log(`"MM_14D_confirmados": ${MM_14D_confirmados},`)      
+    console.log(`"MM_14D_SG_Ac": ${MM_14D_SG_Ac},`)      
+    console.log(`"MM_14D_internados": ${MM_14D_internados}`)           
+    console.log('}')
+    if(index != arr.length-1){
+        console.log(',')
+    }
+})
+console.log(']')
+
+console.log()
+console.log('/////////')
+console.log()
+
+//////////////////////
+
+function sum_media_proprieties(obj1,obj2,dif,j){
+    
+    const list_of_proprieties = 
+        ["descartados","confirmados","internados",
+        "sindromeGripalAc","sindromeGripalIns","obitosEmInvestigacao",
+        "obitosConfirmados","TC_30D_confirmados","TC_30D_SG_Ac",
+        "TC_30D_e_MM_14D_confirmados","TC_30D_e_MM_14D_SG_Ac",
+        "MM_14D_obitosConfirmados","MM_14D_confirmados",
+        "MM_14D_SG_Ac","MM_14D_internados"
+        ]
+    const new_obj = clone(obj1)
+    for(let prop of list_of_proprieties){
+        let p1 = obj1[prop]==null?0:parseFloat(obj1[prop])
+        let p2 = obj2[prop]==null?0:parseFloat(obj2[prop])
+
+        new_obj[prop] = parseInt(p1+(p2-p1)*j/dif)
+    }
+    let p1 = obj1['n_boletim']==null?0:parseFloat(obj1['n_boletim'])
+    let p2 = obj2['n_boletim']==null?0:parseFloat(obj2['n_boletim'])
+
+    new_obj['n_boletim'] = parseFloat(p1+(p2-p1)*j/dif).toFixed(1)
+    return new_obj    
+}
+
+array.forEach(el =>{
+    el.dados_medidos = true
+})
+
+let new_array = []
+let index_tracker = 0
+let date_done = []
+for(let i in array_of_days){
+    let index_of_item_in_array = array.findIndex( ({dia}) => dia == array_of_days[i])
+    if(index_of_item_in_array != -1){
+        new_array.push(array[index_of_item_in_array])
+        index_tracker = index_of_item_in_array
+    }else{
+        const dia1 = array[index_tracker].dia
+        const dia2 = array[index_tracker+1].dia
+        const obj1 = array[index_tracker]
+        const obj2 = array[index_tracker+1]
+        const dif = dif_date(dia1,dia2)
+        if(date_done.indexOf(dia1) == -1 ){
+            // console.log(dia1,dia2,dif)
+            if(dif != 1){
+                for(let j = 1; j < dif; j++){
+                    const obj_to_be_pushed = sum_media_proprieties(obj1,obj2,dif,j)
+                    obj_to_be_pushed.dia = array_of_days[parseInt(i)+parseInt(j)-1]
+                    obj_to_be_pushed.dados_medidos = false
+                    new_array.push(obj_to_be_pushed)
                 }
-            });
-    </script>
-</body>
+            }else{
+                const obj_to_be_pushed = sum_media_proprieties(obj1,obj2,2,1)
+                obj_to_be_pushed.dia = array_of_days[parseInt(i)+parseInt(1)-1]
+                obj_to_be_pushed.dados_medidos = false
+                new_array.push(obj_to_be_pushed)
+            }
+        }
+        date_done.push(dia1)
+    }
+}
+console.log('const data_array = [')
+new_array.forEach(({ 
+    descartados, 
+    confirmados, 
+    internados,
+    obitosEmInvestigacao, 
+    obitosConfirmados, 
+    sindromeGripalAc, 
+    sindromeGripalIns,
+    n_boletim, dia, dados_medidos,
+    TC_30D_confirmados,TC_30D_SG_Ac,
+    TC_30D_e_MM_14D_confirmados,TC_30D_e_MM_14D_SG_Ac,
+    MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados
+    },index,arr) => {
+    console.log('{')
+    console.log(`"n_boletim": ${n_boletim},`)
+    console.log(`"dados_medidos": ${dados_medidos},`)
+    console.log(`"dia": "${dia}",`) 
+    console.log(`"n_dia": ${dif_date(dia_inicial,dia)+1},`)
+    console.log(`"descartados": ${descartados},`)
+    console.log(`"confirmados": ${confirmados},`)
+    console.log(`"internados": ${internados},`)
+    console.log(`"sindromeGripalAc": ${sindromeGripalAc},`)
+    console.log(`"sindromeGripalIns": ${sindromeGripalIns},`)
+    console.log(`"obitosEmInvestigacao": ${obitosEmInvestigacao},`)
+    console.log(`"obitosConfirmados": ${obitosConfirmados},`)
+    console.log(`"TC_30D_confirmados": ${TC_30D_confirmados},`)
+    console.log(`"TC_30D_SG_Ac": ${TC_30D_SG_Ac},`)  
+    console.log(`"TC_30D_e_MM_14D_confirmados": ${TC_30D_e_MM_14D_confirmados},`)
+    console.log(`"TC_30D_e_MM_14D_SG_Ac": ${TC_30D_e_MM_14D_SG_Ac},`) 
+    console.log(`"MM_14D_obitosConfirmados": ${MM_14D_obitosConfirmados},`)      
+    console.log(`"MM_14D_confirmados": ${MM_14D_confirmados},`)      
+    console.log(`"MM_14D_SG_Ac": ${MM_14D_SG_Ac},`)      
+    console.log(`"MM_14D_internados": ${MM_14D_internados}`)           
+    console.log('}')
+    if(index != arr.length-1){
+        console.log(',')
+    }
+})
+console.log(']')
+console.log()
+console.log()
+console.log()
+console.log()
 
-</html>
+console.log('/////////')
+
+
+
+// const mediaMovel = (array, range, aprox = 0) => array
+//         .map(i => i==null?0:i)
+//         .map( (el , index, ar) => {
+//         if( index - range >= 0 && index + range < array.length){
+//             const media = (ar
+//                 .slice(index - range, index + range + 1)
+//                 .reduce((acc, el) => acc + el, 0)) / (2 * range + 1)
+//             return parseFloat(media.toFixed(aprox))
+//         }else 
+//         if( index - range < 0){
+//             const media = (ar
+//                 .slice(0, 2*range + 1)
+//                 .reduce((acc, el) => acc + el, 0)) / (2 * range + 1)
+//             return parseFloat(media.toFixed(aprox))
+//         } else 
+//         if (index + range >= array.length) {
+//             const media = (ar
+//                 .slice(array.length - 1 - 2 * range)
+//                 .reduce((acc, el) => acc + el, 0)) / (2 * range + 1)
+//             return parseFloat(media.toFixed(aprox))
+//         }
+// })

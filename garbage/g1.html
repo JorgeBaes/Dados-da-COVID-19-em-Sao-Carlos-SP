@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/image.jpg">
+    <title>Gráficos da COVID-19 em São Carlos</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: radial-gradient(circle, rgb(233, 241, 255) 100%, rgb(125, 90, 221) 0%);  
+        }
+        .c3-axis-y text {
+            font-size: 15px;
+        }
+
+        .c3-axis-x text {
+            font-size: 15px;
+        }
+
+        .c3-title {
+            font-size: 180%;
+        }
+
+        .c3-legend-item text {
+            font-size: 15px;
+        }
+
+        #titulo{
+            font-size:xx-large;
+            font-family: sans-serif;
+            color: black;
+            font-weight: 300;
+        }
+
+        #subti {
+            font-size: large;
+        }
+
+        .chart__{
+            background-color: rgba(255, 255, 255, 0.746);
+            box-shadow: 0 0 0 3px black; 
+            border-radius: 10px; 
+            transition: box-shadow 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, background-color 3.5s;
+        }
+        .chart__:hover{
+            background-color: rgb(255, 255, 255);
+            /* border-radius: 50px; */
+            box-shadow: 0 0 0 5px black;  
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 0.5s;
+        }
+
+
+        .gra {
+            padding: 1%;
+            width: 30%;
+            height: auto;
+
+            transition: box-shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s, border-radius 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+        }
+
+        .gra:hover {
+            background-color: rgba(238, 250, 225, 0.986);
+            border-radius: 50px;
+            box-shadow: 0 0 20px 0 black;
+            transition: box-shadow 1s ease-out 0s, border-radius 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
+        }
+
+        p#texto_exp {
+            text-align: justify;
+            font: normal 16pt Arial;
+            line-height: 1.1;
+
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .exp {
+            width: 500px;
+            height: 30px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 39px;
+            margin-bottom: 10px;
+            text-align: center;
+            background: rgb(136, 207, 253);
+            transition-property: background, height, border-radius, padding-left, padding-right, transform, width;
+            transition-duration: 4s, 2s, 5s, 2s, 2s, 3s, 1.5s;
+            transition-timing-function: ease-in-out, ease, ease-out, ease, ease, ease-in;
+        }
+
+        div.exp:hover {
+            width: 50%;
+            height: fit-content;
+            padding-left: 35px;
+            padding-right: 35px;
+            background: #d2dffc;
+            border-radius: 60px;
+            transform: scale(1.13);
+        }
+
+        div.exp:hover p#texto_exp {
+            color: rgb(14, 0, 63);
+            transition: color 3s ease-in 2s;
+        }
+
+        h2 {
+            font-weight: normal;
+        }.two {
+        height: auto;
+        position: absolute;
+        top: 20px;
+        right:20px;
+        width: 40px;  
+        transition: transform 2.5s cubic-bezier(1, -1, 0.735, 1) 0s;      
+        
+        }
+        .two:hover {
+            transform: rotate(360deg) scale(1.2);            
+            transition: transform 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;   
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load c3.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet">
+
+    <!-- Load d3.js and c3.js 
+    <script src="d3.v5.min.js" charset="utf-8"></script>
+    -->
+    <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" title="@covid19saocarlos"><img
+            class="two" src="../images/insta.jpg" alt="Instagrão"></img></a>
+
+
+    <header>
+
+        <span id="titulo">Dados sobre a COVID-19 em São Carlos - SP <br><span id="subti">Dados retirados de <a
+                    style="color: rgb(81, 50, 255);" href="http://coronavirus.saocarlos.sp.gov.br/" target="_blank">Subcomitê de
+                    Comunicação de Combate ao Coronavírus</a></span><br>
+            <div id="xambra">
+                        <span style="font-size: large;">Siga <a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank"
+                                style="font-size: large; color: rgb(81, 50, 255);">@covid19saocarlos</a> no instagram</span>
+
+            </div>
+            <span style="font-size: large; color: rgb(255, 109, 11);">Este gráfico é interativo, clique nas tags da
+                legenda</span>
+    </header>
+    <br>
+    <div id="chart" class="chart__"></div>
+   
+
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.15/c3.js"></script>
+    <script src="../data/import_data.js"></script>
+    <script>
+        function showMore() {
+            document.getElementById("xambra").innerHTML = `<a href="https://www.instagram.com/covid19saocarlos/?hl=pt-br" target="_blank" onmouseout='showLess()'>
+    <img src="../images/insta.jpg" alt="" srcset="" style="width:160px;height: auto;">
+    </a>`;
+        }
+
+        function showLess() {
+            document.getElementById("xambra").innerHTML = `<span onmouseover='showMore()' style="font-size: large; color: rgb(81, 50, 255);">Siga @covid19saocarlos no instagram</span>`;
+        }
+        var B = document.body, H = document.documentElement, height
+
+        if (typeof document.height !== 'undefined') {
+            height = document.height // For webkit browsers
+        } else {
+            height = Math.max(B.scrollHeight, B.offsetHeight, H.clientHeight, H.scrollHeight, H.offsetHeight);
+        }
+        
+   
+    const descartados_ = ['Descartados'].concat(data_array.map(el => el.descartados))
+    const confirmados_ = ['Confirmados'].concat(data_array.map(el => el.confirmados))
+    const internados_ = ['Internados'].concat(data_array.map(el => el.internados))
+    const internadosMediaMovel_ = ['Média móvel (7 dias) Internados'].concat(data_array.map(el => el.internadosMediaMovel))
+    const obitosEmInvestigacao_ = ['Óbitos em Investigação'].concat(data_array.map(el => el.obitosEmInvestigacao))
+    const obitosConfirmados_ = ['Óbitos Confirmados'].concat(data_array.map(el => el.obitosConfirmados))
+    const sindromeGripalAc_ = ['Síndrome gripal notificadas'].concat(data_array.map(el => el.sindromeGripalAc))
+    const sindromeGripalIns_ = ['Síndrome gripal ainda em isolamento'].concat(data_array.map(el => el.sindromeGripalIns))
+    const sindromeGripalAcMediaMovel_7_Dias_ = ['Média móvel (7 dias) Síndrome gripal notificadas'].concat(data_array.map(el => el.sindromeGripalAcMediaMovel_7_Dias))
+    const sindromeGripalInsMediaMovel_7_Dias_ = ['Média móvel (7 dias) Síndrome gripal ainda em isolamento'].concat(data_array.map(el => el.sindromeGripalInsMediaMovel_7_Dias))
+    const dia_ = ['x'].concat(data_array.map(el => el.dia))
+    
+      var chart = c3.generate({
+            bindto: '#chart',
+            size: { height: height * 0.75 },
+            data: {
+                x: 'x',
+                columns: [
+                dia_,descartados_,confirmados_         
+                ],
+                colors: {
+                    'Confirmados': '#ff0000',
+                    'Descartados': '#00ff00',
+                }
+
+            },
+            axis: {
+                y: {
+                    label: {
+                        text: 'Número de casos',
+                        position: 'outer-middle'
+                    }
+                },
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: function (x) {
+                            var aux = ''
+
+                            aux += x.getDate()
+                            if (aux.length == 1) {
+                                aux = '0' + aux
+                            }
+                            var aux2 = ''
+                            aux2 += (x.getMonth() + 1)
+                            if (aux2.length == 1) {
+                                aux2 = '0' + aux2
+                            }
+                            return aux + '/' + aux2;
+                        }
+                        //format: '%Y' // format string is also available for timeseries data
+                    }
+                }
+            },
+            title: {
+                text: 'Número de casos confirmados e descartados do dia 16/03/20 até 12/02/21'
+            }
+        });
+
+        // var chart2 = c3.generate({
+        //     bindto: '#chart2',
+        //     size: { height: height * 0.3 },
+
+        //     data: {
+        //         x: 'x',
+        //         columns: [
+        //             ['x', '2020-03-16', '2020-03-17', '2020-03-18', '2020-03-19', '2020-03-20', '2020-03-21', '2020-03-22', '2020-03-23', '2020-03-24', '2020-03-25', '2020-03-26', '2020-03-27', '2020-03-28', '2020-03-29', '2020-03-30', '2020-03-31', '2020-04-01', '2020-04-02', '2020-04-03', '2020-04-04', '2020-04-05', '2020-04-06', '2020-04-07', '2020-04-08', '2020-04-09', '2020-04-10', '2020-04-11', '2020-04-12', '2020-04-13', '2020-04-14', '2020-04-15', '2020-04-16', '2020-04-17', '2020-04-18', '2020-04-19', '2020-04-20', '2020-04-21', '2020-04-22', '2020-04-23', '2020-04-24', '2020-04-25', '2020-04-26', '2020-04-27', '2020-04-28', '2020-04-29', '2020-04-30', '2020-05-01', '2020-05-02', '2020-05-03', '2020-05-04', '2020-05-05', '2020-05-06', '2020-05-07', '2020-05-08', '2020-05-09', '2020-05-10', '2020-05-11', '2020-05-12', '2020-05-13', '2020-05-14', '2020-05-15', '2020-05-16', '2020-05-17', '2020-05-18', '2020-05-19', '2020-05-20', '2020-05-21', '2020-05-22', '2020-05-23', '2020-05-24', '2020-05-25', '2020-05-26', '2020-05-27', '2020-05-28', '2020-05-29', '2020-05-30', '2020-05-31', '2020-06-01', '2020-06-02', '2020-06-03', '2020-06-04', '2020-06-05', '2020-06-06'],
+        //             ['Síndrome gripal notificadas', null, null, null, null, null, null, null, null, null, null, null, 482, 530, 573, 614, 734, 765, 819, 875, 884, 892, 940, 1088, 1154, 1170, 1193, 1201, 1217, 1245, 1291, 1301, 1317, 1340, 1365, 1375, 1413, 1429, 1513, 1538, 1615, 1635, 1647, 1678, 1788, 1806, 1840, 1862, 1880, 1916, 1974, 2046, 2073, 2085, 2113, 2130, 2155, 2161, 2252, 2303, 2325, 2356, 2364, 2364, 2402, 2429, 2464, 2486, 2538, 2542, 2547, 2556, 2587, 2621, 2656, 2684, 2694, 2710, 2750, 2816],
+        //             ['Síndrome gripal ainda em isolamento', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 443, 384, 361, 273, 335, 314, 300, 278, 257, 260, 250, 257, 249, 280, 273, 268, 261, 332, 325, 343, 333, 336, 339, 375, 420, 409, 398, 393, 362, 347, 314, 359, 371, 354, 350, 329, 298, 311, 311, 319, 298, 322, 311, 285, 268, 268, 290, 302, 299, 299, 288, 317, 353]
+        //         ],
+        //         colors: {
+        //             'Síndrome gripal notificadas': '#ff0000',
+        //             'Síndrome gripal ainda em isolamento': '#0F36F9',
+        //         }
+        //     },
+        //     axis: {
+        //         y: {
+        //             label: {
+        //                 text: 'Número de casos',
+        //                 position: 'outer-middle'
+        //             }
+        //         },
+        //         x: {
+        //             type: 'timeseries',
+        //             tick: {
+        //                 format: function (x) {
+        //                     var aux = ''
+
+        //                     aux += x.getDate()
+        //                     if (aux.length == 1) {
+        //                         aux = '0' + aux
+        //                     }
+        //                     var aux2 = ''
+        //                     aux2 += (x.getMonth() + 1)
+        //                     if (aux2.length == 1) {
+        //                         aux2 = '0' + aux2
+        //                     }
+        //                     return aux + '/' + aux2;
+        //                 }
+        //                 //format: '%Y' // format string is also available for timeseries data
+        //             }
+        //         }
+        //     },
+        //     title: {
+        //         text: 'Número de casos de síndrome gripal em isolamento dia 27/03/20 até 02/06/20'
+        //     }
+        // });
+
+
+    </script>
+</body>
+
+</html>
