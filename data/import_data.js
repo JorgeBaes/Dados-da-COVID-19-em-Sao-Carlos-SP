@@ -6510,8 +6510,6 @@ const data_array_lacking_days = [
 }
 ]
 
-/////////
-
 const data_array = [
 {
 "n_boletim": 1,
@@ -6532,7 +6530,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 0,
 "MM_14D_SG_Ac": null,
-"MM_14D_internados": 4
+"MM_14D_internados": 4,
+"R_MMconfirmados_MMobitos": 0,
+"R_MMSGAc_MMconfirmados": null
 }
 ,
 {
@@ -6554,7 +6554,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 0,
 "MM_14D_SG_Ac": null,
-"MM_14D_internados": 6
+"MM_14D_internados": 6,
+"R_MMconfirmados_MMobitos": 0,
+"R_MMSGAc_MMconfirmados": null
 }
 ,
 {
@@ -6576,7 +6578,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 0,
 "MM_14D_SG_Ac": null,
-"MM_14D_internados": 7
+"MM_14D_internados": 7,
+"R_MMconfirmados_MMobitos": 0,
+"R_MMSGAc_MMconfirmados": null
 }
 ,
 {
@@ -6598,7 +6602,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 0,
 "MM_14D_SG_Ac": null,
-"MM_14D_internados": 8
+"MM_14D_internados": 8,
+"R_MMconfirmados_MMobitos": 0,
+"R_MMSGAc_MMconfirmados": null
 }
 ,
 {
@@ -6620,7 +6626,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 0,
 "MM_14D_SG_Ac": 40,
-"MM_14D_internados": 10
+"MM_14D_internados": 10,
+"R_MMconfirmados_MMobitos": 0,
+"R_MMSGAc_MMconfirmados": 40
 }
 ,
 {
@@ -6642,7 +6650,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 77,
-"MM_14D_internados": 11
+"MM_14D_internados": 11,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 77.0
 }
 ,
 {
@@ -6664,7 +6674,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 113,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 113.0
 }
 ,
 {
@@ -6686,7 +6698,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 146,
-"MM_14D_internados": 13
+"MM_14D_internados": 13,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 146.0
 }
 ,
 {
@@ -6708,7 +6722,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 195,
-"MM_14D_internados": 15
+"MM_14D_internados": 15,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 195.0
 }
 ,
 {
@@ -6730,7 +6746,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 246,
-"MM_14D_internados": 16
+"MM_14D_internados": 16,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 246.0
 }
 ,
 {
@@ -6752,7 +6770,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 301,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 301.0
 }
 ,
 {
@@ -6774,7 +6794,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 359,
-"MM_14D_internados": 20
+"MM_14D_internados": 20,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 359.0
 }
 ,
 {
@@ -6796,7 +6818,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 418,
-"MM_14D_internados": 21
+"MM_14D_internados": 21,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 418.0
 }
 ,
 {
@@ -6818,7 +6842,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 477,
-"MM_14D_internados": 22
+"MM_14D_internados": 22,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 477.0
 }
 ,
 {
@@ -6840,7 +6866,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 1,
 "MM_14D_SG_Ac": 540,
-"MM_14D_internados": 23
+"MM_14D_internados": 23,
+"R_MMconfirmados_MMobitos": 1,
+"R_MMSGAc_MMconfirmados": 540.0
 }
 ,
 {
@@ -6862,7 +6890,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 2,
 "MM_14D_SG_Ac": 613,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 2,
+"R_MMSGAc_MMconfirmados": 306.5
 }
 ,
 {
@@ -6884,7 +6914,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 2,
 "MM_14D_SG_Ac": 690,
-"MM_14D_internados": 25
+"MM_14D_internados": 25,
+"R_MMconfirmados_MMobitos": 2,
+"R_MMSGAc_MMconfirmados": 345.0
 }
 ,
 {
@@ -6906,7 +6938,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 2,
 "MM_14D_SG_Ac": 768,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 2,
+"R_MMSGAc_MMconfirmados": 384.0
 }
 ,
 {
@@ -6928,7 +6962,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 2,
 "MM_14D_SG_Ac": 847,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 2,
+"R_MMSGAc_MMconfirmados": 423.5
 }
 ,
 {
@@ -6950,7 +6986,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 3,
 "MM_14D_SG_Ac": 895,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 3,
+"R_MMSGAc_MMconfirmados": 298.3
 }
 ,
 {
@@ -6972,7 +7010,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 3,
 "MM_14D_SG_Ac": 941,
-"MM_14D_internados": 27
+"MM_14D_internados": 27,
+"R_MMconfirmados_MMobitos": 3,
+"R_MMSGAc_MMconfirmados": 313.7
 }
 ,
 {
@@ -6994,7 +7034,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 3,
 "MM_14D_SG_Ac": 986,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 3,
+"R_MMSGAc_MMconfirmados": 328.7
 }
 ,
 {
@@ -7016,7 +7058,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 0,
 "MM_14D_confirmados": 4,
 "MM_14D_SG_Ac": 1031,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 4,
+"R_MMSGAc_MMconfirmados": 257.8
 }
 ,
 {
@@ -7038,7 +7082,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 4,
 "MM_14D_SG_Ac": 1069,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 4.0,
+"R_MMSGAc_MMconfirmados": 267.3
 }
 ,
 {
@@ -7060,7 +7106,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 4,
 "MM_14D_SG_Ac": 1105,
-"MM_14D_internados": 26
+"MM_14D_internados": 26,
+"R_MMconfirmados_MMobitos": 4.0,
+"R_MMSGAc_MMconfirmados": 276.3
 }
 ,
 {
@@ -7082,7 +7130,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 5,
 "MM_14D_SG_Ac": 1140,
-"MM_14D_internados": 25
+"MM_14D_internados": 25,
+"R_MMconfirmados_MMobitos": 5.0,
+"R_MMSGAc_MMconfirmados": 228.0
 }
 ,
 {
@@ -7104,7 +7154,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 5,
 "MM_14D_SG_Ac": 1173,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 5.0,
+"R_MMSGAc_MMconfirmados": 234.6
 }
 ,
 {
@@ -7126,7 +7178,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 6,
 "MM_14D_SG_Ac": 1205,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 6.0,
+"R_MMSGAc_MMconfirmados": 200.8
 }
 ,
 {
@@ -7148,7 +7202,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 6,
 "MM_14D_SG_Ac": 1240,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 6.0,
+"R_MMSGAc_MMconfirmados": 206.7
 }
 ,
 {
@@ -7170,7 +7226,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 7,
 "MM_14D_SG_Ac": 1273,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 7.0,
+"R_MMSGAc_MMconfirmados": 181.9
 }
 ,
 {
@@ -7192,7 +7250,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 1,
 "MM_14D_confirmados": 8,
 "MM_14D_SG_Ac": 1301,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 8.0,
+"R_MMSGAc_MMconfirmados": 162.6
 }
 ,
 {
@@ -7214,7 +7274,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 9,
 "MM_14D_SG_Ac": 1327,
-"MM_14D_internados": 23
+"MM_14D_internados": 23,
+"R_MMconfirmados_MMobitos": 4.5,
+"R_MMSGAc_MMconfirmados": 147.4
 }
 ,
 {
@@ -7236,7 +7298,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 10,
 "MM_14D_SG_Ac": 1356,
-"MM_14D_internados": 22
+"MM_14D_internados": 22,
+"R_MMconfirmados_MMobitos": 5.0,
+"R_MMSGAc_MMconfirmados": 135.6
 }
 ,
 {
@@ -7258,7 +7322,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 11,
 "MM_14D_SG_Ac": 1386,
-"MM_14D_internados": 21
+"MM_14D_internados": 21,
+"R_MMconfirmados_MMobitos": 5.5,
+"R_MMSGAc_MMconfirmados": 126.0
 }
 ,
 {
@@ -7280,7 +7346,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 12,
 "MM_14D_SG_Ac": 1416,
-"MM_14D_internados": 21
+"MM_14D_internados": 21,
+"R_MMconfirmados_MMobitos": 6.0,
+"R_MMSGAc_MMconfirmados": 118.0
 }
 ,
 {
@@ -7302,7 +7370,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 13,
 "MM_14D_SG_Ac": 1446,
-"MM_14D_internados": 20
+"MM_14D_internados": 20,
+"R_MMconfirmados_MMobitos": 6.5,
+"R_MMSGAc_MMconfirmados": 111.2
 }
 ,
 {
@@ -7324,7 +7394,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 15,
 "MM_14D_SG_Ac": 1483,
-"MM_14D_internados": 19
+"MM_14D_internados": 19,
+"R_MMconfirmados_MMobitos": 7.5,
+"R_MMSGAc_MMconfirmados": 98.9
 }
 ,
 {
@@ -7346,7 +7418,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 16,
 "MM_14D_SG_Ac": 1517,
-"MM_14D_internados": 19
+"MM_14D_internados": 19,
+"R_MMconfirmados_MMobitos": 8.0,
+"R_MMSGAc_MMconfirmados": 94.8
 }
 ,
 {
@@ -7368,7 +7442,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 18,
 "MM_14D_SG_Ac": 1553,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 9.0,
+"R_MMSGAc_MMconfirmados": 86.3
 }
 ,
 {
@@ -7390,7 +7466,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 20,
 "MM_14D_SG_Ac": 1589,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 10.0,
+"R_MMSGAc_MMconfirmados": 79.5
 }
 ,
 {
@@ -7412,7 +7490,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 21,
 "MM_14D_SG_Ac": 1625,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 10.5,
+"R_MMSGAc_MMconfirmados": 77.4
 }
 ,
 {
@@ -7434,7 +7514,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 23,
 "MM_14D_SG_Ac": 1662,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 11.5,
+"R_MMSGAc_MMconfirmados": 72.3
 }
 ,
 {
@@ -7456,7 +7538,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 24,
 "MM_14D_SG_Ac": 1702,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 12.0,
+"R_MMSGAc_MMconfirmados": 70.9
 }
 ,
 {
@@ -7478,7 +7562,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 26,
 "MM_14D_SG_Ac": 1744,
-"MM_14D_internados": 15
+"MM_14D_internados": 15,
+"R_MMconfirmados_MMobitos": 13.0,
+"R_MMSGAc_MMconfirmados": 67.1
 }
 ,
 {
@@ -7500,7 +7586,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 28,
 "MM_14D_SG_Ac": 1787,
-"MM_14D_internados": 14
+"MM_14D_internados": 14,
+"R_MMconfirmados_MMobitos": 14.0,
+"R_MMSGAc_MMconfirmados": 63.8
 }
 ,
 {
@@ -7522,7 +7610,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 29,
 "MM_14D_SG_Ac": 1825,
-"MM_14D_internados": 13
+"MM_14D_internados": 13,
+"R_MMconfirmados_MMobitos": 14.5,
+"R_MMSGAc_MMconfirmados": 62.9
 }
 ,
 {
@@ -7544,7 +7634,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 30,
 "MM_14D_SG_Ac": 1863,
-"MM_14D_internados": 13
+"MM_14D_internados": 13,
+"R_MMconfirmados_MMobitos": 15.0,
+"R_MMSGAc_MMconfirmados": 62.1
 }
 ,
 {
@@ -7566,7 +7658,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 32,
 "MM_14D_SG_Ac": 1898,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 16.0,
+"R_MMSGAc_MMconfirmados": 59.3
 }
 ,
 {
@@ -7588,7 +7682,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 33,
 "MM_14D_SG_Ac": 1932,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 16.5,
+"R_MMSGAc_MMconfirmados": 58.5
 }
 ,
 {
@@ -7610,7 +7706,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 34,
 "MM_14D_SG_Ac": 1967,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 17.0,
+"R_MMSGAc_MMconfirmados": 57.9
 }
 ,
 {
@@ -7632,7 +7730,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 35,
 "MM_14D_SG_Ac": 2005,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 17.5,
+"R_MMSGAc_MMconfirmados": 57.3
 }
 ,
 {
@@ -7654,7 +7754,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 36,
 "MM_14D_SG_Ac": 2039,
-"MM_14D_internados": 11
+"MM_14D_internados": 11,
+"R_MMconfirmados_MMobitos": 18.0,
+"R_MMSGAc_MMconfirmados": 56.6
 }
 ,
 {
@@ -7676,7 +7778,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 37,
 "MM_14D_SG_Ac": 2074,
-"MM_14D_internados": 11
+"MM_14D_internados": 11,
+"R_MMconfirmados_MMobitos": 18.5,
+"R_MMSGAc_MMconfirmados": 56.1
 }
 ,
 {
@@ -7698,7 +7802,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 39,
 "MM_14D_SG_Ac": 2108,
-"MM_14D_internados": 10
+"MM_14D_internados": 10,
+"R_MMconfirmados_MMobitos": 19.5,
+"R_MMSGAc_MMconfirmados": 54.1
 }
 ,
 {
@@ -7720,7 +7826,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 40,
 "MM_14D_SG_Ac": 2142,
-"MM_14D_internados": 10
+"MM_14D_internados": 10,
+"R_MMconfirmados_MMobitos": 20.0,
+"R_MMSGAc_MMconfirmados": 53.5
 }
 ,
 {
@@ -7742,7 +7850,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 42,
 "MM_14D_SG_Ac": 2174,
-"MM_14D_internados": 10
+"MM_14D_internados": 10,
+"R_MMconfirmados_MMobitos": 21.0,
+"R_MMSGAc_MMconfirmados": 51.8
 }
 ,
 {
@@ -7764,7 +7874,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 2,
 "MM_14D_confirmados": 44,
 "MM_14D_SG_Ac": 2206,
-"MM_14D_internados": 11
+"MM_14D_internados": 11,
+"R_MMconfirmados_MMobitos": 22.0,
+"R_MMSGAc_MMconfirmados": 50.1
 }
 ,
 {
@@ -7786,7 +7898,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 46,
 "MM_14D_SG_Ac": 2237,
-"MM_14D_internados": 11
+"MM_14D_internados": 11,
+"R_MMconfirmados_MMobitos": 15.3,
+"R_MMSGAc_MMconfirmados": 48.6
 }
 ,
 {
@@ -7808,7 +7922,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 48,
 "MM_14D_SG_Ac": 2265,
-"MM_14D_internados": 12
+"MM_14D_internados": 12,
+"R_MMconfirmados_MMobitos": 16.0,
+"R_MMSGAc_MMconfirmados": 47.2
 }
 ,
 {
@@ -7830,7 +7946,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 52,
 "MM_14D_SG_Ac": 2292,
-"MM_14D_internados": 13
+"MM_14D_internados": 13,
+"R_MMconfirmados_MMobitos": 17.3,
+"R_MMSGAc_MMconfirmados": 44.1
 }
 ,
 {
@@ -7852,7 +7970,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 55,
 "MM_14D_SG_Ac": 2322,
-"MM_14D_internados": 13
+"MM_14D_internados": 13,
+"R_MMconfirmados_MMobitos": 18.3,
+"R_MMSGAc_MMconfirmados": 42.2
 }
 ,
 {
@@ -7874,7 +7994,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 59,
 "MM_14D_SG_Ac": 2351,
-"MM_14D_internados": 14
+"MM_14D_internados": 14,
+"R_MMconfirmados_MMobitos": 19.7,
+"R_MMSGAc_MMconfirmados": 39.8
 }
 ,
 {
@@ -7896,7 +8018,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 63,
 "MM_14D_SG_Ac": 2379,
-"MM_14D_internados": 14
+"MM_14D_internados": 14,
+"R_MMconfirmados_MMobitos": 21.0,
+"R_MMSGAc_MMconfirmados": 37.8
 }
 ,
 {
@@ -7918,7 +8042,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 66,
 "MM_14D_SG_Ac": 2405,
-"MM_14D_internados": 15
+"MM_14D_internados": 15,
+"R_MMconfirmados_MMobitos": 22.0,
+"R_MMSGAc_MMconfirmados": 36.4
 }
 ,
 {
@@ -7940,7 +8066,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 71,
 "MM_14D_SG_Ac": 2434,
-"MM_14D_internados": 16
+"MM_14D_internados": 16,
+"R_MMconfirmados_MMobitos": 23.7,
+"R_MMSGAc_MMconfirmados": 34.3
 }
 ,
 {
@@ -7962,7 +8090,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 76,
 "MM_14D_SG_Ac": 2458,
-"MM_14D_internados": 16
+"MM_14D_internados": 16,
+"R_MMconfirmados_MMobitos": 25.3,
+"R_MMSGAc_MMconfirmados": 32.3
 }
 ,
 {
@@ -7984,7 +8114,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 81,
 "MM_14D_SG_Ac": 2482,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 27.0,
+"R_MMSGAc_MMconfirmados": 30.6
 }
 ,
 {
@@ -8006,7 +8138,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 86,
 "MM_14D_SG_Ac": 2506,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 28.7,
+"R_MMSGAc_MMconfirmados": 29.1
 }
 ,
 {
@@ -8028,7 +8162,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 3,
 "MM_14D_confirmados": 91,
 "MM_14D_SG_Ac": 2528,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 30.3,
+"R_MMSGAc_MMconfirmados": 27.8
 }
 ,
 {
@@ -8050,7 +8186,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 97,
 "MM_14D_SG_Ac": 2552,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 24.3,
+"R_MMSGAc_MMconfirmados": 26.3
 }
 ,
 {
@@ -8072,7 +8210,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 103,
 "MM_14D_SG_Ac": 2577,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 25.8,
+"R_MMSGAc_MMconfirmados": 25.0
 }
 ,
 {
@@ -8094,7 +8234,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 110,
 "MM_14D_SG_Ac": 2605,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 27.5,
+"R_MMSGAc_MMconfirmados": 23.7
 }
 ,
 {
@@ -8116,7 +8258,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 117,
 "MM_14D_SG_Ac": 2633,
-"MM_14D_internados": 17
+"MM_14D_internados": 17,
+"R_MMconfirmados_MMobitos": 29.3,
+"R_MMSGAc_MMconfirmados": 22.5
 }
 ,
 {
@@ -8138,7 +8282,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 123,
 "MM_14D_SG_Ac": 2661,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 30.8,
+"R_MMSGAc_MMconfirmados": 21.6
 }
 ,
 {
@@ -8160,7 +8306,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 130,
 "MM_14D_SG_Ac": 2691,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 32.5,
+"R_MMSGAc_MMconfirmados": 20.7
 }
 ,
 {
@@ -8182,7 +8330,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 138,
 "MM_14D_SG_Ac": 2719,
-"MM_14D_internados": 18
+"MM_14D_internados": 18,
+"R_MMconfirmados_MMobitos": 34.5,
+"R_MMSGAc_MMconfirmados": 19.7
 }
 ,
 {
@@ -8204,7 +8354,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 145,
 "MM_14D_SG_Ac": 2747,
-"MM_14D_internados": 19
+"MM_14D_internados": 19,
+"R_MMconfirmados_MMobitos": 36.3,
+"R_MMSGAc_MMconfirmados": 18.9
 }
 ,
 {
@@ -8226,7 +8378,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 156,
 "MM_14D_SG_Ac": 2781,
-"MM_14D_internados": 19
+"MM_14D_internados": 19,
+"R_MMconfirmados_MMobitos": 39.0,
+"R_MMSGAc_MMconfirmados": 17.8
 }
 ,
 {
@@ -8248,7 +8402,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 167,
 "MM_14D_SG_Ac": 2817,
-"MM_14D_internados": 20
+"MM_14D_internados": 20,
+"R_MMconfirmados_MMobitos": 41.8,
+"R_MMSGAc_MMconfirmados": 16.9
 }
 ,
 {
@@ -8270,7 +8426,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 4,
 "MM_14D_confirmados": 179,
 "MM_14D_SG_Ac": 2856,
-"MM_14D_internados": 21
+"MM_14D_internados": 21,
+"R_MMconfirmados_MMobitos": 44.8,
+"R_MMSGAc_MMconfirmados": 16.0
 }
 ,
 {
@@ -8292,7 +8450,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 5,
 "MM_14D_confirmados": 190,
 "MM_14D_SG_Ac": 2894,
-"MM_14D_internados": 22
+"MM_14D_internados": 22,
+"R_MMconfirmados_MMobitos": 38.0,
+"R_MMSGAc_MMconfirmados": 15.2
 }
 ,
 {
@@ -8314,7 +8474,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 5,
 "MM_14D_confirmados": 201,
 "MM_14D_SG_Ac": 2932,
-"MM_14D_internados": 24
+"MM_14D_internados": 24,
+"R_MMconfirmados_MMobitos": 40.2,
+"R_MMSGAc_MMconfirmados": 14.6
 }
 ,
 {
@@ -8336,7 +8498,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 5,
 "MM_14D_confirmados": 212,
 "MM_14D_SG_Ac": 2969,
-"MM_14D_internados": 25
+"MM_14D_internados": 25,
+"R_MMconfirmados_MMobitos": 42.4,
+"R_MMSGAc_MMconfirmados": 14.0
 }
 ,
 {
@@ -8358,7 +8522,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 5,
 "MM_14D_confirmados": 224,
 "MM_14D_SG_Ac": 3006,
-"MM_14D_internados": 27
+"MM_14D_internados": 27,
+"R_MMconfirmados_MMobitos": 44.8,
+"R_MMSGAc_MMconfirmados": 13.4
 }
 ,
 {
@@ -8380,7 +8546,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 5,
 "MM_14D_confirmados": 235,
 "MM_14D_SG_Ac": 3046,
-"MM_14D_internados": 28
+"MM_14D_internados": 28,
+"R_MMconfirmados_MMobitos": 47.0,
+"R_MMSGAc_MMconfirmados": 13.0
 }
 ,
 {
@@ -8402,7 +8570,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 6,
 "MM_14D_confirmados": 246,
 "MM_14D_SG_Ac": 3087,
-"MM_14D_internados": 29
+"MM_14D_internados": 29,
+"R_MMconfirmados_MMobitos": 41.0,
+"R_MMSGAc_MMconfirmados": 12.5
 }
 ,
 {
@@ -8424,7 +8594,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 6,
 "MM_14D_confirmados": 257,
 "MM_14D_SG_Ac": 3127,
-"MM_14D_internados": 30
+"MM_14D_internados": 30,
+"R_MMconfirmados_MMobitos": 42.8,
+"R_MMSGAc_MMconfirmados": 12.2
 }
 ,
 {
@@ -8446,7 +8618,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 6,
 "MM_14D_confirmados": 270,
 "MM_14D_SG_Ac": 3172,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 45.0,
+"R_MMSGAc_MMconfirmados": 11.7
 }
 ,
 {
@@ -8468,7 +8642,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 7,
 "MM_14D_confirmados": 283,
 "MM_14D_SG_Ac": 3219,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 40.4,
+"R_MMSGAc_MMconfirmados": 11.4
 }
 ,
 {
@@ -8490,7 +8666,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 7,
 "MM_14D_confirmados": 294,
 "MM_14D_SG_Ac": 3265,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 42.0,
+"R_MMSGAc_MMconfirmados": 11.1
 }
 ,
 {
@@ -8512,7 +8690,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 7,
 "MM_14D_confirmados": 305,
 "MM_14D_SG_Ac": 3311,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 43.6,
+"R_MMSGAc_MMconfirmados": 10.9
 }
 ,
 {
@@ -8534,7 +8714,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 8,
 "MM_14D_confirmados": 317,
 "MM_14D_SG_Ac": 3361,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 39.6,
+"R_MMSGAc_MMconfirmados": 10.6
 }
 ,
 {
@@ -8556,7 +8738,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 8,
 "MM_14D_confirmados": 328,
 "MM_14D_SG_Ac": 3413,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 41.0,
+"R_MMSGAc_MMconfirmados": 10.4
 }
 ,
 {
@@ -8578,7 +8762,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 9,
 "MM_14D_confirmados": 339,
 "MM_14D_SG_Ac": 3466,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 37.7,
+"R_MMSGAc_MMconfirmados": 10.2
 }
 ,
 {
@@ -8600,7 +8786,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 9,
 "MM_14D_confirmados": 351,
 "MM_14D_SG_Ac": 3521,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 39.0,
+"R_MMSGAc_MMconfirmados": 10.0
 }
 ,
 {
@@ -8622,7 +8810,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 10,
 "MM_14D_confirmados": 363,
 "MM_14D_SG_Ac": 3579,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 36.3,
+"R_MMSGAc_MMconfirmados": 9.9
 }
 ,
 {
@@ -8644,7 +8834,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 10,
 "MM_14D_confirmados": 378,
 "MM_14D_SG_Ac": 3637,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 37.8,
+"R_MMSGAc_MMconfirmados": 9.6
 }
 ,
 {
@@ -8666,7 +8858,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 10,
 "MM_14D_confirmados": 391,
 "MM_14D_SG_Ac": 3695,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 39.1,
+"R_MMSGAc_MMconfirmados": 9.5
 }
 ,
 {
@@ -8688,7 +8882,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 11,
 "MM_14D_confirmados": 405,
 "MM_14D_SG_Ac": 3759,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 36.8,
+"R_MMSGAc_MMconfirmados": 9.3
 }
 ,
 {
@@ -8710,7 +8906,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 11,
 "MM_14D_confirmados": 420,
 "MM_14D_SG_Ac": 3822,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 38.2,
+"R_MMSGAc_MMconfirmados": 9.1
 }
 ,
 {
@@ -8732,7 +8930,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 11,
 "MM_14D_confirmados": 437,
 "MM_14D_SG_Ac": 3886,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 39.7,
+"R_MMSGAc_MMconfirmados": 8.9
 }
 ,
 {
@@ -8754,7 +8954,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 11,
 "MM_14D_confirmados": 453,
 "MM_14D_SG_Ac": 3951,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 41.2,
+"R_MMSGAc_MMconfirmados": 8.7
 }
 ,
 {
@@ -8776,7 +8978,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 12,
 "MM_14D_confirmados": 469,
 "MM_14D_SG_Ac": 4014,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 39.1,
+"R_MMSGAc_MMconfirmados": 8.6
 }
 ,
 {
@@ -8798,7 +9002,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 12,
 "MM_14D_confirmados": 485,
 "MM_14D_SG_Ac": 4074,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 40.4,
+"R_MMSGAc_MMconfirmados": 8.4
 }
 ,
 {
@@ -8820,7 +9026,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 12,
 "MM_14D_confirmados": 503,
 "MM_14D_SG_Ac": 4134,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 41.9,
+"R_MMSGAc_MMconfirmados": 8.2
 }
 ,
 {
@@ -8842,7 +9050,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 12,
 "MM_14D_confirmados": 522,
 "MM_14D_SG_Ac": 4200,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 43.5,
+"R_MMSGAc_MMconfirmados": 8.0
 }
 ,
 {
@@ -8864,7 +9074,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 12,
 "MM_14D_confirmados": 543,
 "MM_14D_SG_Ac": 4268,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 45.3,
+"R_MMSGAc_MMconfirmados": 7.9
 }
 ,
 {
@@ -8886,7 +9098,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 13,
 "MM_14D_confirmados": 564,
 "MM_14D_SG_Ac": 4334,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 43.4,
+"R_MMSGAc_MMconfirmados": 7.7
 }
 ,
 {
@@ -8908,7 +9122,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 13,
 "MM_14D_confirmados": 585,
 "MM_14D_SG_Ac": 4401,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 45.0,
+"R_MMSGAc_MMconfirmados": 7.5
 }
 ,
 {
@@ -8930,7 +9146,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 13,
 "MM_14D_confirmados": 606,
 "MM_14D_SG_Ac": 4470,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 46.6,
+"R_MMSGAc_MMconfirmados": 7.4
 }
 ,
 {
@@ -8952,7 +9170,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 13,
 "MM_14D_confirmados": 628,
 "MM_14D_SG_Ac": 4536,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 48.3,
+"R_MMSGAc_MMconfirmados": 7.2
 }
 ,
 {
@@ -8974,7 +9194,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 13,
 "MM_14D_confirmados": 649,
 "MM_14D_SG_Ac": 4600,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 49.9,
+"R_MMSGAc_MMconfirmados": 7.1
 }
 ,
 {
@@ -8996,7 +9218,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 14,
 "MM_14D_confirmados": 672,
 "MM_14D_SG_Ac": 4674,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 48.0,
+"R_MMSGAc_MMconfirmados": 7.0
 }
 ,
 {
@@ -9018,7 +9242,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 14,
 "MM_14D_confirmados": 698,
 "MM_14D_SG_Ac": 4749,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 49.9,
+"R_MMSGAc_MMconfirmados": 6.8
 }
 ,
 {
@@ -9040,7 +9266,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 14,
 "MM_14D_confirmados": 725,
 "MM_14D_SG_Ac": 4828,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 51.8,
+"R_MMSGAc_MMconfirmados": 6.7
 }
 ,
 {
@@ -9062,7 +9290,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 15,
 "MM_14D_confirmados": 752,
 "MM_14D_SG_Ac": 4972,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 50.1,
+"R_MMSGAc_MMconfirmados": 6.6
 }
 ,
 {
@@ -9084,7 +9314,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 15,
 "MM_14D_confirmados": 780,
 "MM_14D_SG_Ac": 5121,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 52.0,
+"R_MMSGAc_MMconfirmados": 6.6
 }
 ,
 {
@@ -9106,7 +9338,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 15,
 "MM_14D_confirmados": 808,
 "MM_14D_SG_Ac": 5268,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 53.9,
+"R_MMSGAc_MMconfirmados": 6.5
 }
 ,
 {
@@ -9128,7 +9362,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 15,
 "MM_14D_confirmados": 837,
 "MM_14D_SG_Ac": 5417,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 55.8,
+"R_MMSGAc_MMconfirmados": 6.5
 }
 ,
 {
@@ -9150,7 +9386,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 15,
 "MM_14D_confirmados": 865,
 "MM_14D_SG_Ac": 5573,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 57.7,
+"R_MMSGAc_MMconfirmados": 6.4
 }
 ,
 {
@@ -9172,7 +9410,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 16,
 "MM_14D_confirmados": 894,
 "MM_14D_SG_Ac": 5729,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 55.9,
+"R_MMSGAc_MMconfirmados": 6.4
 }
 ,
 {
@@ -9194,7 +9434,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 16,
 "MM_14D_confirmados": 923,
 "MM_14D_SG_Ac": 5888,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 57.7,
+"R_MMSGAc_MMconfirmados": 6.4
 }
 ,
 {
@@ -9216,7 +9458,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 16,
 "MM_14D_confirmados": 952,
 "MM_14D_SG_Ac": 6050,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 59.5,
+"R_MMSGAc_MMconfirmados": 6.4
 }
 ,
 {
@@ -9238,7 +9482,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 17,
 "MM_14D_confirmados": 981,
 "MM_14D_SG_Ac": 6216,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 57.7,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9260,7 +9506,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 17,
 "MM_14D_confirmados": 1011,
 "MM_14D_SG_Ac": 6378,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 59.5,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9282,7 +9530,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 17,
 "MM_14D_confirmados": 1040,
 "MM_14D_SG_Ac": 6540,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 61.2,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9304,7 +9554,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 18,
 "MM_14D_confirmados": 1067,
 "MM_14D_SG_Ac": 6731,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 59.3,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9326,7 +9578,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 18,
 "MM_14D_confirmados": 1096,
 "MM_14D_SG_Ac": 6924,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 60.9,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9348,7 +9602,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 18,
 "MM_14D_confirmados": 1122,
 "MM_14D_SG_Ac": 7118,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 62.3,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9370,7 +9626,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 18,
 "MM_14D_confirmados": 1149,
 "MM_14D_SG_Ac": 7313,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 63.8,
+"R_MMSGAc_MMconfirmados": 6.4
 }
 ,
 {
@@ -9392,7 +9650,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 19,
 "MM_14D_confirmados": 1177,
 "MM_14D_SG_Ac": 7448,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 61.9,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9414,7 +9674,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 19,
 "MM_14D_confirmados": 1204,
 "MM_14D_SG_Ac": 7573,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 63.4,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9436,7 +9698,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 19,
 "MM_14D_confirmados": 1230,
 "MM_14D_SG_Ac": 7698,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 64.7,
+"R_MMSGAc_MMconfirmados": 6.3
 }
 ,
 {
@@ -9458,7 +9722,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 20,
 "MM_14D_confirmados": 1257,
 "MM_14D_SG_Ac": 7844,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 62.9,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9480,7 +9746,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 20,
 "MM_14D_confirmados": 1283,
 "MM_14D_SG_Ac": 7992,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 64.2,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9502,7 +9770,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 21,
 "MM_14D_confirmados": 1310,
 "MM_14D_SG_Ac": 8147,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 62.4,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9524,7 +9794,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 21,
 "MM_14D_confirmados": 1336,
 "MM_14D_SG_Ac": 8300,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 63.6,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9546,7 +9818,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 21,
 "MM_14D_confirmados": 1361,
 "MM_14D_SG_Ac": 8452,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 64.8,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9568,7 +9842,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 22,
 "MM_14D_confirmados": 1390,
 "MM_14D_SG_Ac": 8597,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 63.2,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9590,7 +9866,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 22,
 "MM_14D_confirmados": 1416,
 "MM_14D_SG_Ac": 8742,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 64.4,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9612,7 +9890,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 23,
 "MM_14D_confirmados": 1442,
 "MM_14D_SG_Ac": 8895,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 62.7,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9634,7 +9914,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 23,
 "MM_14D_confirmados": 1468,
 "MM_14D_SG_Ac": 9031,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 63.8,
+"R_MMSGAc_MMconfirmados": 6.2
 }
 ,
 {
@@ -9656,7 +9938,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 24,
 "MM_14D_confirmados": 1495,
 "MM_14D_SG_Ac": 9163,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 62.3,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9678,7 +9962,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 25,
 "MM_14D_confirmados": 1523,
 "MM_14D_SG_Ac": 9298,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 60.9,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9700,7 +9986,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 25,
 "MM_14D_confirmados": 1549,
 "MM_14D_SG_Ac": 9433,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 62.0,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9722,7 +10010,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 26,
 "MM_14D_confirmados": 1575,
 "MM_14D_SG_Ac": 9564,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 60.6,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9744,7 +10034,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 27,
 "MM_14D_confirmados": 1599,
 "MM_14D_SG_Ac": 9696,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 59.2,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9766,7 +10058,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 27,
 "MM_14D_confirmados": 1624,
 "MM_14D_SG_Ac": 9861,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 60.1,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9788,7 +10082,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 28,
 "MM_14D_confirmados": 1652,
 "MM_14D_SG_Ac": 10010,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 59.0,
+"R_MMSGAc_MMconfirmados": 6.1
 }
 ,
 {
@@ -9810,7 +10106,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 29,
 "MM_14D_confirmados": 1681,
 "MM_14D_SG_Ac": 10154,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.0,
+"R_MMSGAc_MMconfirmados": 6.0
 }
 ,
 {
@@ -9832,7 +10130,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 29,
 "MM_14D_confirmados": 1708,
 "MM_14D_SG_Ac": 10283,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.9,
+"R_MMSGAc_MMconfirmados": 6.0
 }
 ,
 {
@@ -9854,7 +10154,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 30,
 "MM_14D_confirmados": 1737,
 "MM_14D_SG_Ac": 10414,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 57.9,
+"R_MMSGAc_MMconfirmados": 6.0
 }
 ,
 {
@@ -9876,7 +10178,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 30,
 "MM_14D_confirmados": 1765,
 "MM_14D_SG_Ac": 10539,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.8,
+"R_MMSGAc_MMconfirmados": 6.0
 }
 ,
 {
@@ -9898,7 +10202,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 31,
 "MM_14D_confirmados": 1790,
 "MM_14D_SG_Ac": 10663,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 57.7,
+"R_MMSGAc_MMconfirmados": 6.0
 }
 ,
 {
@@ -9920,7 +10226,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 31,
 "MM_14D_confirmados": 1815,
 "MM_14D_SG_Ac": 10792,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.5,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -9942,7 +10250,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 32,
 "MM_14D_confirmados": 1840,
 "MM_14D_SG_Ac": 10917,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 57.5,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -9964,7 +10274,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 32,
 "MM_14D_confirmados": 1867,
 "MM_14D_SG_Ac": 11036,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.3,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -9986,7 +10298,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 33,
 "MM_14D_confirmados": 1894,
 "MM_14D_SG_Ac": 11178,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 57.4,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10008,7 +10322,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 33,
 "MM_14D_confirmados": 1920,
 "MM_14D_SG_Ac": 11318,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 58.2,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10030,7 +10346,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 33,
 "MM_14D_confirmados": 1946,
 "MM_14D_SG_Ac": 11449,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 59.0,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10052,7 +10370,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 34,
 "MM_14D_confirmados": 1970,
 "MM_14D_SG_Ac": 11578,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 57.9,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10074,7 +10394,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 34,
 "MM_14D_confirmados": 1996,
 "MM_14D_SG_Ac": 11728,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 58.7,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10096,7 +10418,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 35,
 "MM_14D_confirmados": 2023,
 "MM_14D_SG_Ac": 11847,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 57.8,
+"R_MMSGAc_MMconfirmados": 5.9
 }
 ,
 {
@@ -10118,7 +10442,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 36,
 "MM_14D_confirmados": 2048,
 "MM_14D_SG_Ac": 11966,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 56.9,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10140,7 +10466,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 36,
 "MM_14D_confirmados": 2074,
 "MM_14D_SG_Ac": 12086,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 57.6,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10162,7 +10490,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 36,
 "MM_14D_confirmados": 2101,
 "MM_14D_SG_Ac": 12210,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 58.4,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10184,7 +10514,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 37,
 "MM_14D_confirmados": 2125,
 "MM_14D_SG_Ac": 12327,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 57.4,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10206,7 +10538,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 37,
 "MM_14D_confirmados": 2151,
 "MM_14D_SG_Ac": 12452,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 58.1,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10228,7 +10562,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 38,
 "MM_14D_confirmados": 2181,
 "MM_14D_SG_Ac": 12578,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 57.4,
+"R_MMSGAc_MMconfirmados": 5.8
 }
 ,
 {
@@ -10250,7 +10586,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 38,
 "MM_14D_confirmados": 2214,
 "MM_14D_SG_Ac": 12703,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 58.3,
+"R_MMSGAc_MMconfirmados": 5.7
 }
 ,
 {
@@ -10272,7 +10610,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 39,
 "MM_14D_confirmados": 2247,
 "MM_14D_SG_Ac": 12825,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 57.6,
+"R_MMSGAc_MMconfirmados": 5.7
 }
 ,
 {
@@ -10294,7 +10634,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 39,
 "MM_14D_confirmados": 2280,
 "MM_14D_SG_Ac": 12943,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 58.5,
+"R_MMSGAc_MMconfirmados": 5.7
 }
 ,
 {
@@ -10316,7 +10658,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 40,
 "MM_14D_confirmados": 2310,
 "MM_14D_SG_Ac": 13038,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 57.8,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10338,7 +10682,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 40,
 "MM_14D_confirmados": 2338,
 "MM_14D_SG_Ac": 13129,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 58.5,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10360,7 +10706,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 40,
 "MM_14D_confirmados": 2347,
 "MM_14D_SG_Ac": 13160,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 58.5,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10382,7 +10730,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 40,
 "MM_14D_confirmados": 2356,
 "MM_14D_SG_Ac": 13192,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 58.5,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10404,7 +10754,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 40,
 "MM_14D_confirmados": 2366,
 "MM_14D_SG_Ac": 13224,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 59.1,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10426,7 +10778,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2395,
 "MM_14D_SG_Ac": 13322,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 58.4,
+"R_MMSGAc_MMconfirmados": 5.6
 }
 ,
 {
@@ -10448,7 +10802,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2426,
 "MM_14D_SG_Ac": 13398,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 59.2,
+"R_MMSGAc_MMconfirmados": 5.5
 }
 ,
 {
@@ -10470,7 +10826,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2456,
 "MM_14D_SG_Ac": 13475,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 59.9,
+"R_MMSGAc_MMconfirmados": 5.5
 }
 ,
 {
@@ -10492,7 +10850,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2484,
 "MM_14D_SG_Ac": 13600,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 60.6,
+"R_MMSGAc_MMconfirmados": 5.5
 }
 ,
 {
@@ -10514,7 +10874,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2498,
 "MM_14D_SG_Ac": 13661,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 60.6,
+"R_MMSGAc_MMconfirmados": 5.5
 }
 ,
 {
@@ -10536,7 +10898,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 41,
 "MM_14D_confirmados": 2512,
 "MM_14D_SG_Ac": 13722,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 61.3,
+"R_MMSGAc_MMconfirmados": 5.5
 }
 ,
 {
@@ -10558,7 +10922,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 42,
 "MM_14D_confirmados": 2545,
 "MM_14D_SG_Ac": 13844,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 60.6,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10580,7 +10946,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 42,
 "MM_14D_confirmados": 2579,
 "MM_14D_SG_Ac": 13978,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 61.4,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10602,7 +10970,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 42,
 "MM_14D_confirmados": 2611,
 "MM_14D_SG_Ac": 14111,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 62.2,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10624,7 +10994,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 42,
 "MM_14D_confirmados": 2640,
 "MM_14D_SG_Ac": 14242,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 62.9,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10646,7 +11018,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2667,
 "MM_14D_SG_Ac": 14376,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 62.0,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10668,7 +11042,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2680,
 "MM_14D_SG_Ac": 14444,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 62.0,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10690,7 +11066,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2693,
 "MM_14D_SG_Ac": 14512,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 62.6,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10712,7 +11090,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2722,
 "MM_14D_SG_Ac": 14657,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 63.3,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10734,7 +11114,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2752,
 "MM_14D_SG_Ac": 14797,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 64.0,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10756,7 +11138,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2783,
 "MM_14D_SG_Ac": 14945,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 64.7,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10778,7 +11162,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 43,
 "MM_14D_confirmados": 2818,
 "MM_14D_SG_Ac": 15087,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 65.5,
+"R_MMSGAc_MMconfirmados": 5.4
 }
 ,
 {
@@ -10800,7 +11186,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2850,
 "MM_14D_SG_Ac": 15234,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 64.8,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10822,7 +11210,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2860,
 "MM_14D_SG_Ac": 15284,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 64.8,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10844,7 +11234,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2871,
 "MM_14D_SG_Ac": 15334,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 64.8,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10866,7 +11258,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2882,
 "MM_14D_SG_Ac": 15384,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 65.5,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10888,7 +11282,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2914,
 "MM_14D_SG_Ac": 15541,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 66.2,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10910,7 +11306,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2947,
 "MM_14D_SG_Ac": 15646,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 67.0,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10932,7 +11330,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 44,
 "MM_14D_confirmados": 2980,
 "MM_14D_SG_Ac": 15748,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 67.7,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10954,7 +11354,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 45,
 "MM_14D_confirmados": 3009,
 "MM_14D_SG_Ac": 15854,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 66.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10976,7 +11378,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 45,
 "MM_14D_confirmados": 3024,
 "MM_14D_SG_Ac": 15904,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 66.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -10998,7 +11402,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 45,
 "MM_14D_confirmados": 3039,
 "MM_14D_SG_Ac": 15955,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 67.5,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -11020,7 +11426,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 45,
 "MM_14D_confirmados": 3069,
 "MM_14D_SG_Ac": 16054,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 68.2,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11042,7 +11450,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 46,
 "MM_14D_confirmados": 3098,
 "MM_14D_SG_Ac": 16152,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 67.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11064,7 +11474,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 46,
 "MM_14D_confirmados": 3127,
 "MM_14D_SG_Ac": 16249,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 68.0,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11086,7 +11498,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 46,
 "MM_14D_confirmados": 3156,
 "MM_14D_SG_Ac": 16372,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 68.6,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11108,7 +11522,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 47,
 "MM_14D_confirmados": 3182,
 "MM_14D_SG_Ac": 16487,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 67.7,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11130,7 +11546,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 47,
 "MM_14D_confirmados": 3190,
 "MM_14D_SG_Ac": 16525,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 67.7,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11152,7 +11570,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 47,
 "MM_14D_confirmados": 3199,
 "MM_14D_SG_Ac": 16564,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 67.7,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11174,7 +11594,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 47,
 "MM_14D_confirmados": 3208,
 "MM_14D_SG_Ac": 16603,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 68.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11196,7 +11618,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 47,
 "MM_14D_confirmados": 3221,
 "MM_14D_SG_Ac": 16659,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 68.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11218,7 +11642,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 48,
 "MM_14D_confirmados": 3235,
 "MM_14D_SG_Ac": 16715,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 67.4,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11240,7 +11666,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 48,
 "MM_14D_confirmados": 3259,
 "MM_14D_SG_Ac": 16846,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 67.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11262,7 +11690,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 49,
 "MM_14D_confirmados": 3284,
 "MM_14D_SG_Ac": 16974,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 67.0,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11284,7 +11714,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 49,
 "MM_14D_confirmados": 3297,
 "MM_14D_SG_Ac": 17039,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 67.0,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11306,7 +11738,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 49,
 "MM_14D_confirmados": 3310,
 "MM_14D_SG_Ac": 17104,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 67.6,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11328,7 +11762,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 49,
 "MM_14D_confirmados": 3337,
 "MM_14D_SG_Ac": 17226,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 68.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11350,7 +11786,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 50,
 "MM_14D_confirmados": 3363,
 "MM_14D_SG_Ac": 17349,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 67.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11372,7 +11810,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 50,
 "MM_14D_confirmados": 3390,
 "MM_14D_SG_Ac": 17474,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 67.8,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11394,7 +11834,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 51,
 "MM_14D_confirmados": 3414,
 "MM_14D_SG_Ac": 17595,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 66.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11416,7 +11858,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 51,
 "MM_14D_confirmados": 3421,
 "MM_14D_SG_Ac": 17641,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 66.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11438,7 +11882,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 51,
 "MM_14D_confirmados": 3429,
 "MM_14D_SG_Ac": 17688,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 66.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11460,7 +11906,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 51,
 "MM_14D_confirmados": 3437,
 "MM_14D_SG_Ac": 17735,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.4,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11482,7 +11930,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 51,
 "MM_14D_confirmados": 3461,
 "MM_14D_SG_Ac": 17881,
-"MM_14D_internados": 31
+"MM_14D_internados": 31,
+"R_MMconfirmados_MMobitos": 67.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11504,7 +11954,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 52,
 "MM_14D_confirmados": 3488,
 "MM_14D_SG_Ac": 18044,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11526,7 +11978,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 52,
 "MM_14D_confirmados": 3517,
 "MM_14D_SG_Ac": 18223,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.6,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11548,7 +12002,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 52,
 "MM_14D_confirmados": 3547,
 "MM_14D_SG_Ac": 18380,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 68.2,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11570,7 +12026,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3578,
 "MM_14D_SG_Ac": 18540,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11592,7 +12050,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3588,
 "MM_14D_SG_Ac": 18595,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11614,7 +12074,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3598,
 "MM_14D_SG_Ac": 18651,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 67.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11636,7 +12098,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3609,
 "MM_14D_SG_Ac": 18707,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 68.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11658,7 +12122,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3624,
 "MM_14D_SG_Ac": 18795,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 68.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11680,7 +12146,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3639,
 "MM_14D_SG_Ac": 18884,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 68.7,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11702,7 +12170,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3671,
 "MM_14D_SG_Ac": 19052,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 69.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11724,7 +12194,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3682,
 "MM_14D_SG_Ac": 19109,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 69.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11746,7 +12218,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3693,
 "MM_14D_SG_Ac": 19167,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 69.3,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11768,7 +12242,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3704,
 "MM_14D_SG_Ac": 19225,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 69.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11790,7 +12266,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3737,
 "MM_14D_SG_Ac": 19397,
-"MM_14D_internados": 32
+"MM_14D_internados": 32,
+"R_MMconfirmados_MMobitos": 70.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11812,7 +12290,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 53,
 "MM_14D_confirmados": 3770,
 "MM_14D_SG_Ac": 19596,
-"MM_14D_internados": 33
+"MM_14D_internados": 33,
+"R_MMconfirmados_MMobitos": 71.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11834,7 +12314,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3805,
 "MM_14D_SG_Ac": 19820,
-"MM_14D_internados": 34
+"MM_14D_internados": 34,
+"R_MMconfirmados_MMobitos": 70.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11856,7 +12338,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3841,
 "MM_14D_SG_Ac": 20053,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 71.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11878,7 +12362,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3853,
 "MM_14D_SG_Ac": 20141,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 71.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11900,7 +12386,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3866,
 "MM_14D_SG_Ac": 20230,
-"MM_14D_internados": 35
+"MM_14D_internados": 35,
+"R_MMconfirmados_MMobitos": 71.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11922,7 +12410,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3879,
 "MM_14D_SG_Ac": 20319,
-"MM_14D_internados": 36
+"MM_14D_internados": 36,
+"R_MMconfirmados_MMobitos": 71.8,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -11944,7 +12434,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 54,
 "MM_14D_confirmados": 3917,
 "MM_14D_SG_Ac": 20577,
-"MM_14D_internados": 37
+"MM_14D_internados": 37,
+"R_MMconfirmados_MMobitos": 72.5,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -11966,7 +12458,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 55,
 "MM_14D_confirmados": 3956,
 "MM_14D_SG_Ac": 20833,
-"MM_14D_internados": 38
+"MM_14D_internados": 38,
+"R_MMconfirmados_MMobitos": 71.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -11988,7 +12482,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 55,
 "MM_14D_confirmados": 3996,
 "MM_14D_SG_Ac": 21094,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 72.7,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12010,7 +12506,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 55,
 "MM_14D_confirmados": 4039,
 "MM_14D_SG_Ac": 21344,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.4,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12032,7 +12530,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 55,
 "MM_14D_confirmados": 4053,
 "MM_14D_SG_Ac": 21427,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.4,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12054,7 +12554,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 55,
 "MM_14D_confirmados": 4068,
 "MM_14D_SG_Ac": 21510,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.4,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12076,7 +12578,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 56,
 "MM_14D_confirmados": 4083,
 "MM_14D_SG_Ac": 21594,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 72.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12098,7 +12602,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 56,
 "MM_14D_confirmados": 4130,
 "MM_14D_SG_Ac": 21848,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.8,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12120,7 +12626,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 57,
 "MM_14D_confirmados": 4179,
 "MM_14D_SG_Ac": 22098,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.3,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12142,7 +12650,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 58,
 "MM_14D_confirmados": 4230,
 "MM_14D_SG_Ac": 22407,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 72.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12164,7 +12674,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 58,
 "MM_14D_confirmados": 4286,
 "MM_14D_SG_Ac": 22725,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12186,7 +12698,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 58,
 "MM_14D_confirmados": 4305,
 "MM_14D_SG_Ac": 22827,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12208,7 +12722,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 58,
 "MM_14D_confirmados": 4324,
 "MM_14D_SG_Ac": 22930,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12230,7 +12746,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 59,
 "MM_14D_confirmados": 4344,
 "MM_14D_SG_Ac": 23033,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.6,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12252,7 +12770,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 60,
 "MM_14D_confirmados": 4403,
 "MM_14D_SG_Ac": 23357,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.4,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12274,7 +12794,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 61,
 "MM_14D_confirmados": 4463,
 "MM_14D_SG_Ac": 23658,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.2,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12296,7 +12818,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 62,
 "MM_14D_confirmados": 4525,
 "MM_14D_SG_Ac": 23952,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 73.0,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12318,7 +12842,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 62,
 "MM_14D_confirmados": 4590,
 "MM_14D_SG_Ac": 24288,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 74.0,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12340,7 +12866,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 62,
 "MM_14D_confirmados": 4611,
 "MM_14D_SG_Ac": 24391,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 74.0,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12362,7 +12890,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 62,
 "MM_14D_confirmados": 4633,
 "MM_14D_SG_Ac": 24494,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 74.0,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12384,7 +12914,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 63,
 "MM_14D_confirmados": 4655,
 "MM_14D_SG_Ac": 24597,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12406,7 +12938,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 64,
 "MM_14D_confirmados": 4724,
 "MM_14D_SG_Ac": 24898,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 73.8,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12428,7 +12962,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 64,
 "MM_14D_confirmados": 4795,
 "MM_14D_SG_Ac": 25199,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 74.9,
+"R_MMSGAc_MMconfirmados": 5.3
 }
 ,
 {
@@ -12450,7 +12986,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 65,
 "MM_14D_confirmados": 4870,
 "MM_14D_SG_Ac": 25501,
-"MM_14D_internados": 39
+"MM_14D_internados": 39,
+"R_MMconfirmados_MMobitos": 74.9,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12472,7 +13010,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 65,
 "MM_14D_confirmados": 4947,
 "MM_14D_SG_Ac": 25842,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 76.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12494,7 +13034,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 65,
 "MM_14D_confirmados": 4973,
 "MM_14D_SG_Ac": 25955,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 76.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12516,7 +13058,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 65,
 "MM_14D_confirmados": 4999,
 "MM_14D_SG_Ac": 26069,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 76.1,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12538,7 +13082,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 66,
 "MM_14D_confirmados": 5026,
 "MM_14D_SG_Ac": 26183,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 76.2,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12560,7 +13106,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 66,
 "MM_14D_confirmados": 5110,
 "MM_14D_SG_Ac": 26527,
-"MM_14D_internados": 40
+"MM_14D_internados": 40,
+"R_MMconfirmados_MMobitos": 77.4,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12582,7 +13130,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 67,
 "MM_14D_confirmados": 5195,
 "MM_14D_SG_Ac": 26877,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 77.5,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12604,7 +13154,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 68,
 "MM_14D_confirmados": 5281,
 "MM_14D_SG_Ac": 27202,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 77.7,
+"R_MMSGAc_MMconfirmados": 5.2
 }
 ,
 {
@@ -12626,7 +13178,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 68,
 "MM_14D_confirmados": 5368,
 "MM_14D_SG_Ac": 27523,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 78.9,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12648,7 +13202,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 68,
 "MM_14D_confirmados": 5398,
 "MM_14D_SG_Ac": 27635,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 78.9,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12670,7 +13226,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 68,
 "MM_14D_confirmados": 5428,
 "MM_14D_SG_Ac": 27747,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 78.9,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12692,7 +13250,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 69,
 "MM_14D_confirmados": 5459,
 "MM_14D_SG_Ac": 27860,
-"MM_14D_internados": 41
+"MM_14D_internados": 41,
+"R_MMconfirmados_MMobitos": 79.1,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12714,7 +13274,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 69,
 "MM_14D_confirmados": 5550,
 "MM_14D_SG_Ac": 28201,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.4,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12736,7 +13298,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 70,
 "MM_14D_confirmados": 5643,
 "MM_14D_SG_Ac": 28548,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.6,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12758,7 +13322,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 70,
 "MM_14D_confirmados": 5674,
 "MM_14D_SG_Ac": 28671,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.6,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12780,7 +13346,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 70,
 "MM_14D_confirmados": 5706,
 "MM_14D_SG_Ac": 28794,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.6,
+"R_MMSGAc_MMconfirmados": 5.1
 }
 ,
 {
@@ -12802,7 +13370,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 71,
 "MM_14D_confirmados": 5738,
 "MM_14D_SG_Ac": 28917,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.8,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12824,7 +13394,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 71,
 "MM_14D_confirmados": 5785,
 "MM_14D_SG_Ac": 29083,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 80.8,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12846,7 +13418,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 71,
 "MM_14D_confirmados": 5832,
 "MM_14D_SG_Ac": 29249,
-"MM_14D_internados": 42
+"MM_14D_internados": 42,
+"R_MMconfirmados_MMobitos": 82.1,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12868,7 +13442,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 72,
 "MM_14D_confirmados": 5928,
 "MM_14D_SG_Ac": 29583,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 82.3,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12890,7 +13466,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 73,
 "MM_14D_confirmados": 6026,
 "MM_14D_SG_Ac": 29935,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 82.5,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12912,7 +13490,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 73,
 "MM_14D_confirmados": 6059,
 "MM_14D_SG_Ac": 30049,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 82.5,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12934,7 +13514,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 73,
 "MM_14D_confirmados": 6093,
 "MM_14D_SG_Ac": 30163,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 82.5,
+"R_MMSGAc_MMconfirmados": 5.0
 }
 ,
 {
@@ -12956,7 +13538,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 73,
 "MM_14D_confirmados": 6127,
 "MM_14D_SG_Ac": 30278,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 83.9,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -12978,7 +13562,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 73,
 "MM_14D_confirmados": 6177,
 "MM_14D_SG_Ac": 30492,
-"MM_14D_internados": 43
+"MM_14D_internados": 43,
+"R_MMconfirmados_MMobitos": 83.9,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13000,7 +13586,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 74,
 "MM_14D_confirmados": 6228,
 "MM_14D_SG_Ac": 30706,
-"MM_14D_internados": 44
+"MM_14D_internados": 44,
+"R_MMconfirmados_MMobitos": 84.2,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13022,7 +13610,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 75,
 "MM_14D_confirmados": 6323,
 "MM_14D_SG_Ac": 31096,
-"MM_14D_internados": 44
+"MM_14D_internados": 44,
+"R_MMconfirmados_MMobitos": 84.3,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13044,7 +13634,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 76,
 "MM_14D_confirmados": 6421,
 "MM_14D_SG_Ac": 31491,
-"MM_14D_internados": 44
+"MM_14D_internados": 44,
+"R_MMconfirmados_MMobitos": 84.5,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13066,7 +13658,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 77,
 "MM_14D_confirmados": 6515,
 "MM_14D_SG_Ac": 31926,
-"MM_14D_internados": 45
+"MM_14D_internados": 45,
+"R_MMconfirmados_MMobitos": 84.6,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13088,7 +13682,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 78,
 "MM_14D_confirmados": 6612,
 "MM_14D_SG_Ac": 32381,
-"MM_14D_internados": 46
+"MM_14D_internados": 46,
+"R_MMconfirmados_MMobitos": 84.8,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13110,7 +13706,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 78,
 "MM_14D_confirmados": 6646,
 "MM_14D_SG_Ac": 32520,
-"MM_14D_internados": 46
+"MM_14D_internados": 46,
+"R_MMconfirmados_MMobitos": 84.8,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13132,7 +13730,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 78,
 "MM_14D_confirmados": 6681,
 "MM_14D_SG_Ac": 32660,
-"MM_14D_internados": 46
+"MM_14D_internados": 46,
+"R_MMconfirmados_MMobitos": 84.8,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13154,7 +13754,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 79,
 "MM_14D_confirmados": 6716,
 "MM_14D_SG_Ac": 32800,
-"MM_14D_internados": 47
+"MM_14D_internados": 47,
+"R_MMconfirmados_MMobitos": 85.0,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13176,7 +13778,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 80,
 "MM_14D_confirmados": 6827,
 "MM_14D_SG_Ac": 33219,
-"MM_14D_internados": 48
+"MM_14D_internados": 48,
+"R_MMconfirmados_MMobitos": 85.3,
+"R_MMSGAc_MMconfirmados": 4.9
 }
 ,
 {
@@ -13198,7 +13802,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 81,
 "MM_14D_confirmados": 6939,
 "MM_14D_SG_Ac": 33639,
-"MM_14D_internados": 50
+"MM_14D_internados": 50,
+"R_MMconfirmados_MMobitos": 85.7,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13220,7 +13826,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 82,
 "MM_14D_confirmados": 7062,
 "MM_14D_SG_Ac": 34065,
-"MM_14D_internados": 52
+"MM_14D_internados": 52,
+"R_MMconfirmados_MMobitos": 86.1,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13242,7 +13850,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 83,
 "MM_14D_confirmados": 7185,
 "MM_14D_SG_Ac": 34563,
-"MM_14D_internados": 54
+"MM_14D_internados": 54,
+"R_MMconfirmados_MMobitos": 86.6,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13264,7 +13874,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 83,
 "MM_14D_confirmados": 7226,
 "MM_14D_SG_Ac": 34720,
-"MM_14D_internados": 54
+"MM_14D_internados": 54,
+"R_MMconfirmados_MMobitos": 86.6,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13286,7 +13898,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 83,
 "MM_14D_confirmados": 7267,
 "MM_14D_SG_Ac": 34877,
-"MM_14D_internados": 55
+"MM_14D_internados": 55,
+"R_MMconfirmados_MMobitos": 86.6,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13308,7 +13922,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 84,
 "MM_14D_confirmados": 7308,
 "MM_14D_SG_Ac": 35034,
-"MM_14D_internados": 56
+"MM_14D_internados": 56,
+"R_MMconfirmados_MMobitos": 87.0,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13330,7 +13946,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 85,
 "MM_14D_confirmados": 7433,
 "MM_14D_SG_Ac": 35501,
-"MM_14D_internados": 58
+"MM_14D_internados": 58,
+"R_MMconfirmados_MMobitos": 87.4,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13352,7 +13970,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 86,
 "MM_14D_confirmados": 7565,
 "MM_14D_SG_Ac": 35966,
-"MM_14D_internados": 60
+"MM_14D_internados": 60,
+"R_MMconfirmados_MMobitos": 88.0,
+"R_MMSGAc_MMconfirmados": 4.8
 }
 ,
 {
@@ -13374,7 +13994,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 87,
 "MM_14D_confirmados": 7692,
 "MM_14D_SG_Ac": 36429,
-"MM_14D_internados": 61
+"MM_14D_internados": 61,
+"R_MMconfirmados_MMobitos": 88.4,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13396,7 +14018,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 88,
 "MM_14D_confirmados": 7814,
 "MM_14D_SG_Ac": 36907,
-"MM_14D_internados": 63
+"MM_14D_internados": 63,
+"R_MMconfirmados_MMobitos": 88.8,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13418,7 +14042,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 88,
 "MM_14D_confirmados": 7853,
 "MM_14D_SG_Ac": 37034,
-"MM_14D_internados": 63
+"MM_14D_internados": 63,
+"R_MMconfirmados_MMobitos": 88.8,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13440,7 +14066,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 89,
 "MM_14D_confirmados": 7893,
 "MM_14D_SG_Ac": 37162,
-"MM_14D_internados": 63
+"MM_14D_internados": 63,
+"R_MMconfirmados_MMobitos": 88.8,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13462,7 +14090,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 90,
 "MM_14D_confirmados": 7933,
 "MM_14D_SG_Ac": 37290,
-"MM_14D_internados": 64
+"MM_14D_internados": 64,
+"R_MMconfirmados_MMobitos": 88.1,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13484,7 +14114,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 91,
 "MM_14D_confirmados": 8056,
 "MM_14D_SG_Ac": 37672,
-"MM_14D_internados": 66
+"MM_14D_internados": 66,
+"R_MMconfirmados_MMobitos": 88.5,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13506,7 +14138,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 93,
 "MM_14D_confirmados": 8174,
 "MM_14D_SG_Ac": 38050,
-"MM_14D_internados": 67
+"MM_14D_internados": 67,
+"R_MMconfirmados_MMobitos": 87.9,
+"R_MMSGAc_MMconfirmados": 4.7
 }
 ,
 {
@@ -13528,7 +14162,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 94,
 "MM_14D_confirmados": 8290,
 "MM_14D_SG_Ac": 38397,
-"MM_14D_internados": 69
+"MM_14D_internados": 69,
+"R_MMconfirmados_MMobitos": 88.2,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13550,7 +14186,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 96,
 "MM_14D_confirmados": 8403,
 "MM_14D_SG_Ac": 38708,
-"MM_14D_internados": 70
+"MM_14D_internados": 70,
+"R_MMconfirmados_MMobitos": 87.5,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13572,7 +14210,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 96,
 "MM_14D_confirmados": 8438,
 "MM_14D_SG_Ac": 38816,
-"MM_14D_internados": 70
+"MM_14D_internados": 70,
+"R_MMconfirmados_MMobitos": 87.5,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13594,7 +14234,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 97,
 "MM_14D_confirmados": 8473,
 "MM_14D_SG_Ac": 38924,
-"MM_14D_internados": 70
+"MM_14D_internados": 70,
+"R_MMconfirmados_MMobitos": 87.5,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13616,7 +14258,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 98,
 "MM_14D_confirmados": 8508,
 "MM_14D_SG_Ac": 39033,
-"MM_14D_internados": 71
+"MM_14D_internados": 71,
+"R_MMconfirmados_MMobitos": 86.8,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13638,7 +14282,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 100,
 "MM_14D_confirmados": 8602,
 "MM_14D_SG_Ac": 39353,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 86.0,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13660,7 +14306,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 102,
 "MM_14D_confirmados": 8688,
 "MM_14D_SG_Ac": 39667,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 85.2,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13682,7 +14330,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 104,
 "MM_14D_confirmados": 8772,
 "MM_14D_SG_Ac": 39970,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 84.3,
+"R_MMSGAc_MMconfirmados": 4.6
 }
 ,
 {
@@ -13704,7 +14354,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 106,
 "MM_14D_confirmados": 8857,
 "MM_14D_SG_Ac": 40197,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 83.6,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13726,7 +14378,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 106,
 "MM_14D_confirmados": 8884,
 "MM_14D_SG_Ac": 40270,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 83.6,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13748,7 +14402,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 107,
 "MM_14D_confirmados": 8911,
 "MM_14D_SG_Ac": 40343,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 83.6,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13770,7 +14426,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 108,
 "MM_14D_confirmados": 8939,
 "MM_14D_SG_Ac": 40417,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 82.8,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13792,7 +14450,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 111,
 "MM_14D_confirmados": 9016,
 "MM_14D_SG_Ac": 40633,
-"MM_14D_internados": 71
+"MM_14D_internados": 71,
+"R_MMconfirmados_MMobitos": 81.2,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13814,7 +14474,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 113,
 "MM_14D_confirmados": 9089,
 "MM_14D_SG_Ac": 40851,
-"MM_14D_internados": 71
+"MM_14D_internados": 71,
+"R_MMconfirmados_MMobitos": 80.4,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13836,7 +14498,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 115,
 "MM_14D_confirmados": 9173,
 "MM_14D_SG_Ac": 41068,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 79.8,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13858,7 +14522,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 118,
 "MM_14D_confirmados": 9263,
 "MM_14D_SG_Ac": 41282,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 78.5,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13880,7 +14546,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 118,
 "MM_14D_confirmados": 9294,
 "MM_14D_SG_Ac": 41353,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 78.5,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13902,7 +14570,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 119,
 "MM_14D_confirmados": 9325,
 "MM_14D_SG_Ac": 41424,
-"MM_14D_internados": 72
+"MM_14D_internados": 72,
+"R_MMconfirmados_MMobitos": 78.5,
+"R_MMSGAc_MMconfirmados": 4.5
 }
 ,
 {
@@ -13924,7 +14594,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 120,
 "MM_14D_confirmados": 9356,
 "MM_14D_SG_Ac": 41496,
-"MM_14D_internados": 73
+"MM_14D_internados": 73,
+"R_MMconfirmados_MMobitos": 78.0,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -13946,7 +14618,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 122,
 "MM_14D_confirmados": 9445,
 "MM_14D_SG_Ac": 41709,
-"MM_14D_internados": 73
+"MM_14D_internados": 73,
+"R_MMconfirmados_MMobitos": 77.4,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -13968,7 +14642,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 124,
 "MM_14D_confirmados": 9536,
 "MM_14D_SG_Ac": 41920,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 76.9,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -13990,7 +14666,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 126,
 "MM_14D_confirmados": 9633,
 "MM_14D_SG_Ac": 42297,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 76.5,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14012,7 +14690,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 128,
 "MM_14D_confirmados": 9731,
 "MM_14D_SG_Ac": 42687,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 76.0,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14034,7 +14714,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 128,
 "MM_14D_confirmados": 9764,
 "MM_14D_SG_Ac": 42811,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 76.0,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14056,7 +14738,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 129,
 "MM_14D_confirmados": 9797,
 "MM_14D_SG_Ac": 42936,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 76.0,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14078,7 +14762,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 130,
 "MM_14D_confirmados": 9830,
 "MM_14D_SG_Ac": 43061,
-"MM_14D_internados": 74
+"MM_14D_internados": 74,
+"R_MMconfirmados_MMobitos": 75.6,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14100,7 +14786,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 131,
 "MM_14D_confirmados": 9929,
 "MM_14D_SG_Ac": 43440,
-"MM_14D_internados": 75
+"MM_14D_internados": 75,
+"R_MMconfirmados_MMobitos": 75.8,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14122,7 +14810,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 133,
 "MM_14D_confirmados": 10033,
 "MM_14D_SG_Ac": 43818,
-"MM_14D_internados": 76
+"MM_14D_internados": 76,
+"R_MMconfirmados_MMobitos": 75.4,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14144,7 +14834,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 135,
 "MM_14D_confirmados": 10134,
 "MM_14D_SG_Ac": 44222,
-"MM_14D_internados": 78
+"MM_14D_internados": 78,
+"R_MMconfirmados_MMobitos": 75.1,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14166,7 +14858,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 137,
 "MM_14D_confirmados": 10237,
 "MM_14D_SG_Ac": 44627,
-"MM_14D_internados": 80
+"MM_14D_internados": 80,
+"R_MMconfirmados_MMobitos": 74.7,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14188,7 +14882,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 137,
 "MM_14D_confirmados": 10275,
 "MM_14D_SG_Ac": 44764,
-"MM_14D_internados": 80
+"MM_14D_internados": 80,
+"R_MMconfirmados_MMobitos": 74.7,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14210,7 +14906,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 138,
 "MM_14D_confirmados": 10313,
 "MM_14D_SG_Ac": 44901,
-"MM_14D_internados": 81
+"MM_14D_internados": 81,
+"R_MMconfirmados_MMobitos": 74.7,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14232,7 +14930,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 139,
 "MM_14D_confirmados": 10351,
 "MM_14D_SG_Ac": 45038,
-"MM_14D_internados": 82
+"MM_14D_internados": 82,
+"R_MMconfirmados_MMobitos": 74.5,
+"R_MMSGAc_MMconfirmados": 4.4
 }
 ,
 {
@@ -14254,7 +14954,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 141,
 "MM_14D_confirmados": 10472,
 "MM_14D_SG_Ac": 45453,
-"MM_14D_internados": 83
+"MM_14D_internados": 83,
+"R_MMconfirmados_MMobitos": 74.3,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14276,7 +14978,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 144,
 "MM_14D_confirmados": 10597,
 "MM_14D_SG_Ac": 45912,
-"MM_14D_internados": 85
+"MM_14D_internados": 85,
+"R_MMconfirmados_MMobitos": 73.6,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14298,7 +15002,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 146,
 "MM_14D_confirmados": 10729,
 "MM_14D_SG_Ac": 46378,
-"MM_14D_internados": 88
+"MM_14D_internados": 88,
+"R_MMconfirmados_MMobitos": 73.5,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14320,7 +15026,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 148,
 "MM_14D_confirmados": 10875,
 "MM_14D_SG_Ac": 46851,
-"MM_14D_internados": 90
+"MM_14D_internados": 90,
+"R_MMconfirmados_MMobitos": 73.5,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14342,7 +15050,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 148,
 "MM_14D_confirmados": 10893,
 "MM_14D_SG_Ac": 46942,
-"MM_14D_internados": 90
+"MM_14D_internados": 90,
+"R_MMconfirmados_MMobitos": 73.5,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14364,7 +15074,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 148,
 "MM_14D_confirmados": 10911,
 "MM_14D_SG_Ac": 47033,
-"MM_14D_internados": 90
+"MM_14D_internados": 90,
+"R_MMconfirmados_MMobitos": 73.5,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14386,7 +15098,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 149,
 "MM_14D_confirmados": 10930,
 "MM_14D_SG_Ac": 47124,
-"MM_14D_internados": 91
+"MM_14D_internados": 91,
+"R_MMconfirmados_MMobitos": 73.4,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14408,7 +15122,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 150,
 "MM_14D_confirmados": 10989,
 "MM_14D_SG_Ac": 47425,
-"MM_14D_internados": 92
+"MM_14D_internados": 92,
+"R_MMconfirmados_MMobitos": 73.3,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14430,7 +15146,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 152,
 "MM_14D_confirmados": 11052,
 "MM_14D_SG_Ac": 47764,
-"MM_14D_internados": 94
+"MM_14D_internados": 94,
+"R_MMconfirmados_MMobitos": 72.7,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14452,7 +15170,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 153,
 "MM_14D_confirmados": 11114,
 "MM_14D_SG_Ac": 47909,
-"MM_14D_internados": 94
+"MM_14D_internados": 94,
+"R_MMconfirmados_MMobitos": 72.6,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14474,7 +15194,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 154,
 "MM_14D_confirmados": 11179,
 "MM_14D_SG_Ac": 48064,
-"MM_14D_internados": 96
+"MM_14D_internados": 96,
+"R_MMconfirmados_MMobitos": 72.6,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14496,7 +15218,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 154,
 "MM_14D_confirmados": 11202,
 "MM_14D_SG_Ac": 48121,
-"MM_14D_internados": 96
+"MM_14D_internados": 96,
+"R_MMconfirmados_MMobitos": 72.6,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14518,7 +15242,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 155,
 "MM_14D_confirmados": 11226,
 "MM_14D_SG_Ac": 48179,
-"MM_14D_internados": 97
+"MM_14D_internados": 97,
+"R_MMconfirmados_MMobitos": 72.6,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14540,7 +15266,9 @@ const data_array = [
 "MM_14D_obitosConfirmados": 156,
 "MM_14D_confirmados": 11250,
 "MM_14D_SG_Ac": 48237,
-"MM_14D_internados": 98
+"MM_14D_internados": 98,
+"R_MMconfirmados_MMobitos": 72.1,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ,
 {
@@ -14562,9 +15290,15 @@ const data_array = [
 "MM_14D_obitosConfirmados": 157,
 "MM_14D_confirmados": 11333,
 "MM_14D_SG_Ac": 48418,
-"MM_14D_internados": 99
+"MM_14D_internados": 99,
+"R_MMconfirmados_MMobitos": 72.2,
+"R_MMSGAc_MMconfirmados": 4.3
 }
 ]
+
+
+
+
 
 
 const heigth_factor = 0.24
@@ -14590,6 +15324,10 @@ const MM_14D_obitosConfirmados = ['Média móvel dos óbitos confirmados'].conca
 const MM_14D_confirmados = ['Média móvel dos casos confirmados'].concat(data_array.map(el => el.MM_14D_confirmados))
 const MM_14D_SG_Ac = ['Média móvel das síndromes gripais acumuladas'].concat(data_array.map(el => el.MM_14D_SG_Ac))
 const MM_14D_internados = ['Média móvel dos internados'].concat(data_array.map(el => el.MM_14D_internados))
+
+const razao_SGAc_e_confirmados = ['Razão entre a média móvel síndromes gripais acumuladas e a média móvel de casos confirmados'].concat(data_array.map(el => el.R_MMSGAc_MMconfirmados))
+const razao_confirmados_e_obitos = ['Razão entre a média móvel de casos confirmados e a média móvel de óbitos'].concat(data_array.map(el => el.R_MMconfirmados_MMobitos))
+
 
 const dia_ = ['x'].concat(data_array.map(el => el.dia))
 

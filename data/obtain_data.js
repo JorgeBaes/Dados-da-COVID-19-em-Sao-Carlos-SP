@@ -5819,6 +5819,9 @@ const media_movel_confirmados = mediaMovel(confirmados, 7,7)
 const media_movel_sindrome_gripal = mediaMovel(notificacoesDeSindromeGripalAcumulada, 7,7).map(el => el==0?null:el)
 const media_movel_obitos_confirmados = mediaMovel(obitosConfirmados, 7,7)
 
+const razao_MMSGAc_e_MMconfirmados = media_movel_sindrome_gripal.map( (el,index) => media_movel_confirmados[index]==0?el:parseFloat(el/(media_movel_confirmados[index])).toFixed(1))
+const razao_MMconfirmados_e_MMobitos = media_movel_confirmados.map( (el,index) => media_movel_obitos_confirmados[index]==0?el:parseFloat(el/(media_movel_obitos_confirmados[index])).toFixed(1))
+
 array.map( (el,index) => {
     // el.TC_30D_obitosConfirmados = derivada_obitos_confirmados[index]
     el.TC_30D_SG_Ac = derivada_sindrome_gripal[index]
@@ -5831,6 +5834,9 @@ array.map( (el,index) => {
     el.MM_14D_SG_Ac = media_movel_sindrome_gripal[index]
     el.MM_14D_confirmados = media_movel_confirmados[index]
     el.MM_14D_obitosConfirmados = media_movel_obitos_confirmados[index]
+
+    el.razao_SGAc_e_confirmados = razao_MMSGAc_e_MMconfirmados[index]
+    el.razao_confirmados_e_obitos = razao_MMconfirmados_e_MMobitos[index]
 
     if(el.TC_30D_SG_Ac == 0){
         el.TC_30D_SG_Ac = null
@@ -5850,52 +5856,52 @@ array.map( (el,index) => {
 })
 
 
-console.log('/////////')
-console.log()
-console.log()
-console.log('const data_array_lacking_days = [')
-array.forEach(({ 
-    descartados, 
-    confirmados, 
-    internados,
-    obitosEmInvestigacao, 
-    obitosConfirmados, 
-    sindromeGripalAc, 
-    sindromeGripalIns,
-    n_boletim, dia,
-    TC_30D_confirmados,TC_30D_SG_Ac,
-    TC_30D_e_MM_14D_confirmados,TC_30D_e_MM_14D_SG_Ac,
-    MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados
-    },index,arr) => {
-    console.log('{')
-    console.log(`"n_boletim": ${n_boletim},`)
-    console.log(`"dia": "${dia}",`) 
-    console.log(`"n_dia": ${dif_date(dia_inicial,dia)+1},`)
-    console.log(`"descartados": ${descartados},`)
-    console.log(`"confirmados": ${confirmados},`)
-    console.log(`"internados": ${internados},`)
-    console.log(`"sindromeGripalAc": ${sindromeGripalAc},`)
-    console.log(`"sindromeGripalIns": ${sindromeGripalIns},`)
-    console.log(`"obitosEmInvestigacao": ${obitosEmInvestigacao},`)
-    console.log(`"obitosConfirmados": ${obitosConfirmados},`)
-    console.log(`"TC_30D_confirmados": ${TC_30D_confirmados},`)
-    console.log(`"TC_30D_SG_Ac": ${TC_30D_SG_Ac},`)  
-    console.log(`"TC_30D_e_MM_14D_confirmados": ${TC_30D_e_MM_14D_confirmados},`)
-    console.log(`"TC_30D_e_MM_14D_SG_Ac": ${TC_30D_e_MM_14D_SG_Ac},`) 
-    console.log(`"MM_14D_obitosConfirmados": ${MM_14D_obitosConfirmados},`)      
-    console.log(`"MM_14D_confirmados": ${MM_14D_confirmados},`)      
-    console.log(`"MM_14D_SG_Ac": ${MM_14D_SG_Ac},`)      
-    console.log(`"MM_14D_internados": ${MM_14D_internados}`)           
-    console.log('}')
-    if(index != arr.length-1){
-        console.log(',')
-    }
-})
-console.log(']')
+// console.log('/////////')
+// console.log()
+// console.log()
+// console.log('const data_array_lacking_days = [')
+// array.forEach(({ 
+//     descartados, 
+//     confirmados, 
+//     internados,
+//     obitosEmInvestigacao, 
+//     obitosConfirmados, 
+//     sindromeGripalAc, 
+//     sindromeGripalIns,
+//     n_boletim, dia,
+//     TC_30D_confirmados,TC_30D_SG_Ac,
+//     TC_30D_e_MM_14D_confirmados,TC_30D_e_MM_14D_SG_Ac,
+//     MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados
+//     },index,arr) => {
+//     console.log('{')
+//     console.log(`"n_boletim": ${n_boletim},`)
+//     console.log(`"dia": "${dia}",`) 
+//     console.log(`"n_dia": ${dif_date(dia_inicial,dia)+1},`)
+//     console.log(`"descartados": ${descartados},`)
+//     console.log(`"confirmados": ${confirmados},`)
+//     console.log(`"internados": ${internados},`)
+//     console.log(`"sindromeGripalAc": ${sindromeGripalAc},`)
+//     console.log(`"sindromeGripalIns": ${sindromeGripalIns},`)
+//     console.log(`"obitosEmInvestigacao": ${obitosEmInvestigacao},`)
+//     console.log(`"obitosConfirmados": ${obitosConfirmados},`)
+//     console.log(`"TC_30D_confirmados": ${TC_30D_confirmados},`)
+//     console.log(`"TC_30D_SG_Ac": ${TC_30D_SG_Ac},`)  
+//     console.log(`"TC_30D_e_MM_14D_confirmados": ${TC_30D_e_MM_14D_confirmados},`)
+//     console.log(`"TC_30D_e_MM_14D_SG_Ac": ${TC_30D_e_MM_14D_SG_Ac},`) 
+//     console.log(`"MM_14D_obitosConfirmados": ${MM_14D_obitosConfirmados},`)      
+//     console.log(`"MM_14D_confirmados": ${MM_14D_confirmados},`)      
+//     console.log(`"MM_14D_SG_Ac": ${MM_14D_SG_Ac},`)      
+//     console.log(`"MM_14D_internados": ${MM_14D_internados}`)           
+//     console.log('}')
+//     if(index != arr.length-1){
+//         console.log(',')
+//     }
+// })
+// console.log(']')
 
-console.log()
-console.log('/////////')
-console.log()
+// console.log()
+// console.log('/////////')
+// console.log()
 
 //////////////////////
 
@@ -5972,7 +5978,8 @@ new_array.forEach(({
     n_boletim, dia, dados_medidos,
     TC_30D_confirmados,TC_30D_SG_Ac,
     TC_30D_e_MM_14D_confirmados,TC_30D_e_MM_14D_SG_Ac,
-    MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados
+    MM_14D_internados,MM_14D_SG_Ac,MM_14D_confirmados,MM_14D_obitosConfirmados,
+    razao_confirmados_e_obitos,razao_SGAc_e_confirmados
     },index,arr) => {
     console.log('{')
     console.log(`"n_boletim": ${n_boletim},`)
@@ -5993,7 +6000,9 @@ new_array.forEach(({
     console.log(`"MM_14D_obitosConfirmados": ${MM_14D_obitosConfirmados},`)      
     console.log(`"MM_14D_confirmados": ${MM_14D_confirmados},`)      
     console.log(`"MM_14D_SG_Ac": ${MM_14D_SG_Ac},`)      
-    console.log(`"MM_14D_internados": ${MM_14D_internados}`)           
+    console.log(`"MM_14D_internados": ${MM_14D_internados},`)  
+    console.log(`"R_MMconfirmados_MMobitos": ${razao_confirmados_e_obitos},`)  
+    console.log(`"R_MMSGAc_MMconfirmados": ${razao_SGAc_e_confirmados}`)           
     console.log('}')
     if(index != arr.length-1){
         console.log(',')
